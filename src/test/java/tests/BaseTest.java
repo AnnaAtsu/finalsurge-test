@@ -17,7 +17,7 @@ public class BaseTest {
     @BeforeMethod
     public void setup() {
         Configuration.browser = "chrome";
-        Configuration.baseUrl = "https://log.finalsurge.com/";
+        Configuration.baseUrl = "https://log.finalsurge.com";
         Configuration.timeout = 10000;
         Configuration.clickViaJs = true;
         Configuration.browserSize = "1920x1080";
