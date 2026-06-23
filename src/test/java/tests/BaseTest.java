@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.LoginPage;
+import pages.RegisterPage;
 
 import java.util.HashMap;
 
@@ -14,6 +15,8 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class BaseTest {
     LoginPage loginPage;
+    RegisterPage registerPage;
+
     @BeforeMethod
     public void setup() {
         Configuration.browser = "chrome";
@@ -34,6 +37,7 @@ public class BaseTest {
         Configuration.browserCapabilities = options;
 
         loginPage = new LoginPage();
+        registerPage = new RegisterPage();
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)

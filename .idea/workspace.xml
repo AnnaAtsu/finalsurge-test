@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d16654c-077b-4955-b046-e440735bfda5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/CalendarPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/DashboardPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/ReportsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/TrainingPlansPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/UserProfilePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/WorkoutsPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dto/Register.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dto/RegisterFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/RegisterPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/RegisterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/elements/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elements/Elements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,20 +30,28 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "AnnaAtsu"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AnnaAtsu&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/AnnaAtsu/finalsurge-test.git",
-    "accountId": "d47bf71c-16d9-4a93-8ab7-f7dd3430d6e4"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AnnaAtsu/finalsurge-test.git&quot;,
+    &quot;accountId&quot;: &quot;d47bf71c-16d9-4a93-8ab7-f7dd3430d6e4&quot;
   }
-}]]></component>
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
@@ -57,8 +69,22 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.LoginTest.checkLogOut.executor": "Run",
     "TestNG.LoginTest.checkLogin.executor": "Run",
-    "git-widget-placeholder": "master",
+    "TestNG.LoginTest.checkRegistration.executor": "Run",
+    "TestNG.LoginTest.checkRequestNewPassword.executor": "Run",
+    "TestNG.LoginTest.checkRequestNewPasswordPage.executor": "Run",
+    "TestNG.LoginTest.checkSucceccfullLogout.executor": "Run",
+    "TestNG.LoginTest.checkSuccessfullLogin.executor": "Run",
+    "TestNG.LoginTest.checkSuccessfullLogout.executor": "Run",
+    "TestNG.LoginTest.checkUnregisteredPassword.executor": "Run",
+    "TestNG.LoginTest.loginWithRememberMeCheckbox.executor": "Run",
+    "TestNG.RegisterTest.checkSuccessfullRegistration.executor": "Run",
+    "TestNG.RegisterTest.checkValidMessageForWeakPassword.executor": "Run",
+    "TestNG.RegisterTest.checkValidMessagesForEmailForRegistration.executor": "Run",
+    "TestNG.RegisterTest.checkValidMessagesForEmptyRegistration.executor": "Run",
+    "TestNG.RegisterTest.checkValidMessagesForFullRegistration.executor": "Run",
+    "git-widget-placeholder": "feature/login",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/takan/IdeaProjects/autojava/finalsurge-test",
     "settings.editor.selected.configurable": "preferences.lookFeel"
@@ -69,8 +95,8 @@
       <recent name="C:\Users\takan\IdeaProjects\autojava\finalsurge-test" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="LoginTest.checkLogin" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.RegisterTest.checkValidMessageForWeakPassword">
+    <configuration name="RegisterTest.checkSuccessfullRegistration" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -79,8 +105,80 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.LoginTest" />
-      <option name="METHOD_NAME" value="checkLogin" />
+      <option name="MAIN_CLASS_NAME" value="tests.RegisterTest" />
+      <option name="METHOD_NAME" value="checkSuccessfullRegistration" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterTest.checkValidMessageForWeakPassword" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="finalsurge-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RegisterTest" />
+      <option name="METHOD_NAME" value="checkValidMessageForWeakPassword" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterTest.checkValidMessagesForEmailForRegistration" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="finalsurge-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RegisterTest" />
+      <option name="METHOD_NAME" value="checkValidMessagesForEmailForRegistration" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterTest.checkValidMessagesForEmptyRegistration" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="finalsurge-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RegisterTest" />
+      <option name="METHOD_NAME" value="checkValidMessagesForEmptyRegistration" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterTest.checkValidMessagesForFullRegistration" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="finalsurge-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RegisterTest" />
+      <option name="METHOD_NAME" value="checkValidMessagesForFullRegistration" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -90,9 +188,20 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.LoginTest.checkLogin" />
+        <item itemvalue="TestNG.RegisterTest.checkValidMessageForWeakPassword" />
+        <item itemvalue="TestNG.RegisterTest.checkValidMessagesForEmailForRegistration" />
+        <item itemvalue="TestNG.RegisterTest.checkValidMessagesForEmptyRegistration" />
+        <item itemvalue="TestNG.RegisterTest.checkValidMessagesForFullRegistration" />
+        <item itemvalue="TestNG.RegisterTest.checkSuccessfullRegistration" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-ab7203c4" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
