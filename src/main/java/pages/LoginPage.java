@@ -2,13 +2,15 @@ package pages;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebElementCondition;
 import lombok.extern.log4j.Log4j2;
+import org.testng.asserts.SoftAssert;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import java.time.Duration;
+
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.*;
 
 @Log4j2
 public class LoginPage extends BasePage{
@@ -21,6 +23,10 @@ public class LoginPage extends BasePage{
     private  final SelenideElement LOGIN_ERROR = $x("//label[@class='error' and @for='login_name']");
     private final SelenideElement PASSWORD_ERROR = $x("//label[@class='error' and @for='login_password']");
     private final String LOGIN_FORM_TITLE = "Account Login";
+    private final SelenideElement INVALID_LOGIN_CREDS_ERROR = $(".alert.alert-error strong");
+    private final SelenideElement FORGOT_PASSWORD_LINK = $("#pass_login");
+    private final SelenideElement REQUEST_NEW_PASSWORD_BUTTON = $x("//button[normalize-space()='Request New Password']");
+    private final SelenideElement LOGOUT_BUTTON = $x("//a[text()='Logout']");
 
 
     public LoginPage openPage() {
@@ -38,6 +44,7 @@ public class LoginPage extends BasePage{
         LOGIN_FIELD.should(visible);
         PASSWORD_FIELD.should(visible);
         SIGN_UP.shouldBe(visible);
+        FORGOT_PASSWORD_LINK.shouldBe(visible);
         CHECKBOX_REMEMBER_ME.should(visible);
         return this;
     }
@@ -55,18 +62,64 @@ public class LoginPage extends BasePage{
     }
 
     public void verifyEmailError() {
+        log.info("Проверка ошибки email");
         LOGIN_ERROR.should(visible);
         LOGIN_ERROR.shouldHave(text("Please enter your e-mail address."));
     }
 
     public void verifyPasswordError() {
+        log.info("Проверка ошибки пароля");
         PASSWORD_ERROR.should(visible);
         PASSWORD_ERROR.shouldHave(text("Please enter a password."));
     }
 
     public void verifyNotvalidLoginError() {
+        log.info("Проверка ошибки валидности email");
         LOGIN_ERROR.should(visible);
         LOGIN_ERROR.shouldHave(text("Please enter a valid email address."));
     }
 
+    public void verifyNotvalidLoginCredsError() {
+        log.info("Проверка ошибки невалидных кредов");
+        INVALID_LOGIN_CREDS_ERROR.should(visible);
+        INVALID_LOGIN_CREDS_ERROR.shouldHave(text("Invalid login credentials. Please try again."));
+    }
+    public  void clickForgotPasswordLink() {
+        log.info("Нажать на ссылку Forgot password");
+        FORGOT_PASSWORD_LINK.shouldBe(visible, Duration.ofSeconds(5));
+        FORGOT_PASSWORD_LINK.click();
+    }
+
+    public void verifyRequestPasswordButton() {
+        log.info("Проверка кнопки веридикации кредов");
+        REQUEST_NEW_PASSWORD_BUTTON.shouldBe(visible);
+        REQUEST_NEW_PASSWORD_BUTTON.shouldHave(text("Request New Password"));
+    }
+
+    public void logoutButtonClick() {
+        log.info("Нажать на ссылку Logout");
+        LOGOUT_BUTTON.shouldBe(visible, Duration.ofSeconds(5));
+        LOGOUT_BUTTON.click();
+    }
+
+    public void notRegisteredLinkClick() {
+        log.info("Нажать на ссылку Not registered?");
+        SIGN_UP.shouldBe(visible, Duration.ofSeconds(5));
+        SIGN_UP.click();
+    }
+
+    public void rememberMeCheckboxClick() {
+        log.info("Нажать чекбок Remember me");
+        CHECKBOX_REMEMBER_ME.shouldBe(visible);
+        CHECKBOX_REMEMBER_ME.click();
+        CHECKBOX_REMEMBER_ME.shouldBe(checked);
+    }
+
+    public void isCheckBoxRememberMeNotSelected() {
+        log.info("Проверка выбора чекбокса Remember me");
+        SoftAssert softAssert = new SoftAssert();
+        CHECKBOX_REMEMBER_ME.shouldBe(visible);
+        softAssert.assertFalse(CHECKBOX_REMEMBER_ME.isSelected());
+        softAssert.assertAll();
+    }
 }
