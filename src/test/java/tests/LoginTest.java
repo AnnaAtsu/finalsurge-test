@@ -1,7 +1,6 @@
 package tests;
 
 import lombok.extern.log4j.Log4j2;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -11,9 +10,9 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static elements.Elements.*;
+import static io.qameta.allure.internal.shadowed.jackson.databind.cfg.CoercionAction.Fail;
 
 @Log4j2
-@Listeners
 public class LoginTest extends BaseTest {
 
      @Test(description = "Успешный вход с валидными email и паролем")
@@ -23,6 +22,7 @@ public class LoginTest extends BaseTest {
          loginPage.isPageOpened();
          loginPage.enterCreds(email, password);
          loginPage.pushLoginButton();
+         softAssert.fail("Ошибка");
          softAssert.assertEquals(title(), titleForDashboardPage);
          softAssert.assertAll();
      }
