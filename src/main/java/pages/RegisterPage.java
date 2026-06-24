@@ -28,6 +28,7 @@ public class RegisterPage extends BasePage{
     private final SelenideElement EMPTY_FIELD_RE_PASSWORD_ERROR_MESSAGE = $x("//label[@class='error' and @for='create_passwordmatch']");
 
     private final SelenideElement WEAK_PASSWORD_ERROR_MESSAGE = $(".alert.alert-error");
+    ;
 
 
     public RegisterPage openPage() {
@@ -59,12 +60,13 @@ public class RegisterPage extends BasePage{
     }
 
     public void pushRegisterButton() {
-        log.info("Нажать кнопку создания нового аккаунта");
+        log.info("Нажать кнопку создания нового аккаунта Create New Account");
         CREATE_NEW_ACCOUNT_BUTTON.shouldBe(visible);
         CREATE_NEW_ACCOUNT_BUTTON.click();
     }
 
     public void verifyEmptyFieldsErrorMessage() {
+        log.info("Проверка валидации пустых полей при создании аккаунта");
         EMPTY_FIELD_EMAIL_ERROR_MESSAGE.shouldBe(visible)
                                        .shouldHave(text("This field is required."));
         EMPTY_FIELD_LAST_NAME_ERROR_MESSAGE.shouldBe(visible)
@@ -78,13 +80,20 @@ public class RegisterPage extends BasePage{
     }
 
     public void verifyInvalidEmailErrorMessage() {
+        log.info("Проверка валидации невалидного email при создании аккаунта");
         EMPTY_FIELD_EMAIL_ERROR_MESSAGE.shouldBe(visible)
                                              .shouldHave(text("Please enter a valid email address."));
     }
 
     public void verifyWeakPasswordErrorMessage() {
+        log.info("Проверка валидации слабого пароля при создании аккаунта");
         WEAK_PASSWORD_ERROR_MESSAGE.shouldBe(visible)
                 .shouldHave(text(" *Please enter a Password value with at least one number, lower-case letter, and upper-case letter between 7 and 15 characters in length."));
     }
 
+    public void clickLoginLink() {
+        log.info("Нажать на ссылку Already have an account? Login here.");
+        ALREADY_HAVE_ACCOUNT_LINK.shouldBe(visible);
+        ALREADY_HAVE_ACCOUNT_LINK.click();
+    }
 }

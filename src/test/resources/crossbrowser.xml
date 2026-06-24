@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="saucedemo" parallel="tests">
+    <listeners>
+        <listener class-name="listeners.TestListener"></listener>
+    </listeners>
+    <test name="Chrome">
+        <classes>
+            <class name="tests.LoginTest">
+                <methods>
+                    <include name="checkLoginWithEmptyLogin"/>
+                </methods>
+            </class>
+            <parameter name="browser" value="chrome"/>
+        </classes>
+    </test>
+
+    <test name="Safari">
+        <classes>
+            <class name="tests.RegisterTest"/>
+            <parameter name="browser" value="firefox"/>
+        </classes>
+    </test>
+</suite>
