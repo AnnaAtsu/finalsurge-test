@@ -6,8 +6,7 @@ import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import static com.codeborne.selenide.Selenide.title;
-import static elements.Elements.titleForCreateNewAccount;
-import static elements.Elements.titleForDashboardPage;
+import static elements.Elements.*;
 
 @Log4j2
 public class RegisterTest extends BaseTest {
@@ -15,7 +14,7 @@ public class RegisterTest extends BaseTest {
     Register registerTestSuccessfullRegistration = RegisterFactory.getRegister("Texts56456!");
     Register registerTestforWeakPassword = RegisterFactory.getRegister("Te");
     Register registerTestForEmailValidation = new Register("John", "Doe", "jjfjg@", "Texts56456!");
-    @Test(description = "Успешная регистрация в системе")
+    @Test(testName = "Успешная регистрация в системе", description = "Успешная регистрация в системе")
     public void checkSuccessfullRegistration() {
         SoftAssert softAssert = new SoftAssert();
         registerPage.openPage()
@@ -26,7 +25,7 @@ public class RegisterTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(description = "Проверка валидации некорректного email")
+    @Test(testName = "Ввалидация некорректного email", description = "Проверка валидации некорректного email")
     public void checkValidMessageForEmailForRegistration() {
         SoftAssert softAssert = new SoftAssert();
         registerPage.openPage()
@@ -38,7 +37,7 @@ public class RegisterTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(description = "Проверка валидации пустых полей")
+    @Test(testName = "Ввалидация пустых полей", description = "Проверка валидации пустых полей")
     public void checkValidMessagesForEmptyRegistration() {
         SoftAssert softAssert = new SoftAssert();
         registerPage.openPage()
@@ -49,7 +48,7 @@ public class RegisterTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(description = "Проверка валидации слабого пароля")
+    @Test(testName = "Ввалидация слабого пароля", description = "Проверка валидации слабого пароля")
     public void checkValidMessageForWeakPassword() {
         SoftAssert softAssert = new SoftAssert();
         registerPage.openPage()
@@ -58,6 +57,17 @@ public class RegisterTest extends BaseTest {
         registerPage.pushRegisterButton();
         registerPage.verifyWeakPasswordErrorMessage();
         softAssert.assertEquals(title(), titleForCreateNewAccount);
+        softAssert.assertAll();
+    }
+
+    @Test(testName = "Проверка перехода на страницу логина по ссылке по страницы регистрации", description = "Проверка перехода на страницу логина")
+    public void checkLoginLink() {
+        SoftAssert softAssert = new SoftAssert();
+        registerPage.openPage()
+                .isPageOpened();
+        registerPage.clickLoginLink();
+        loginPage.isPageOpened();
+        softAssert.assertEquals(title(), titleForLoginPage);
         softAssert.assertAll();
     }
 }

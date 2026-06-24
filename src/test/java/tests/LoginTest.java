@@ -15,7 +15,7 @@ import static io.qameta.allure.internal.shadowed.jackson.databind.cfg.CoercionAc
 @Log4j2
 public class LoginTest extends BaseTest {
 
-     @Test(description = "Успешный вход с валидными email и паролем")
+     @Test(testName = "Успешная авторизация", description = "Успешный вход с валидными email и паролем")
     public void checkSuccessfullLogin() {
          SoftAssert softAssert = new SoftAssert();
          loginPage.openPage();
@@ -27,7 +27,7 @@ public class LoginTest extends BaseTest {
          softAssert.assertAll();
      }
 
-     @Test(description = "Авторизация с пустым полем login. Ошибка входа: пустое поле Email")
+     @Test(testName = "Авторизация с пустым полем логина", description = "Авторизация с пустым полем login. Ошибка входа: пустое поле Email")
     public void checkLoginWithEmptyLogin() {
          loginPage.openPage();
          loginPage.isPageOpened();
@@ -36,7 +36,7 @@ public class LoginTest extends BaseTest {
          loginPage.verifyEmailError();
      }
 
-    @Test(description = "Авторизация с пустым полем password. Ошибка входа: пустое поле Password")
+    @Test(testName = "Авторизация с пустым полем пароля",description = "Авторизация с пустым полем password. Ошибка входа: пустое поле Password")
     public void checkLoginWithEmptyPassword() {
         loginPage.openPage();
         loginPage.isPageOpened();
@@ -45,7 +45,7 @@ public class LoginTest extends BaseTest {
         loginPage.verifyPasswordError();
     }
 
-    @Test(description = "Авторизация с невалидным полем login. Ошибка входа: email без @")
+    @Test(testName = "Авторизация с невалидным полем login",description = "Авторизация с невалидным полем login. Ошибка входа: email без @")
     public void checkLoginWithUnvalidLogin() {
         loginPage.openPage();
         loginPage.isPageOpened();
@@ -54,7 +54,7 @@ public class LoginTest extends BaseTest {
         loginPage.verifyNotvalidLoginError();
     }
 
-    @Test(description = "Авторизация с пустыми полями login и password. Ошибка входа: пустое поле Email. Ошибка входа: пустое поле Password ")
+    @Test(testName = "Авторизация с пустыми полями login и password", description = "Авторизация с пустыми полями login и password. Ошибка входа: пустое поле Email. Ошибка входа: пустое поле Password ")
     public void checkLoginWithEmptyFields() {
         loginPage.openPage();
         loginPage.isPageOpened();
@@ -64,7 +64,7 @@ public class LoginTest extends BaseTest {
         loginPage.verifyEmailError();
     }
 
-    @Test(description = "Авторизация с email, которого нет в системе. Сообщение об ошибке: `\"Invalid login credentials. Please try again.\"`")
+    @Test(testName = "Авторизация с email, которого нет в системе", description = "Авторизация с email, которого нет в системе. Сообщение об ошибке: `\"Invalid login credentials. Please try again.\"`")
     public void checkUnregisteredLogin() {
         loginPage.openPage();
         loginPage.isPageOpened();
@@ -73,7 +73,7 @@ public class LoginTest extends BaseTest {
         loginPage.verifyNotvalidLoginCredsError();
     }
 
-    @Test(description = "Авторизация с password, которого нет в системе. Сообщение об ошибке: `\"Invalid login credentials. Please try again.\"`")
+    @Test(testName = "Авторизация с password, которого нет в системе",description = "Авторизация с password, которого нет в системе. Сообщение об ошибке: `\"Invalid login credentials. Please try again.\"`")
     public void checkUnregisteredPassword() {
         loginPage.openPage();
         loginPage.isPageOpened();
@@ -82,7 +82,7 @@ public class LoginTest extends BaseTest {
         loginPage.verifyNotvalidLoginCredsError();
     }
 
-    @Test(description = "Редирект на Can/t sign in: запросить email")
+    @Test(testName = "Редирект на Can/t sign in", description = "Редирект на Can/t sign in: запросить email")
     public void checkRequestNewPassword() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -97,7 +97,7 @@ public class LoginTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(description = "Ссылка sign in. Проверка перехода на страницу регистрации")
+    @Test(testName = "Редирект по ссылке sign in", description = "Ссылка sign in. Проверка перехода на страницу регистрации")
     public void checkRegistration() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -108,7 +108,7 @@ public class LoginTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(description = "Разлогин: успешный логаут. Редирект на Account Login, отображается страница логина")
+    @Test(testName = "Успешная проверка разлогина", description = "Разлогин: успешный логаут. Редирект на Account Login, отображается страница логина")
     public void checkSuccessfullLogout() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -122,7 +122,7 @@ public class LoginTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(description = "Чекбокс Remember me: отображается, не прожат. После клика прожат")
+    @Test(testName = "Проверка чекбокса Remember me: отображается, не прожат", description = "Чекбокс Remember me: отображается, не прожат. После клика прожат")
     public void loginWithRememberMeCheckbox() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
