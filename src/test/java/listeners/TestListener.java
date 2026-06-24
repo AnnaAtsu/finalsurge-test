@@ -1,14 +1,12 @@
 package listeners;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import utils.AllureUtils;
-
 import java.util.concurrent.TimeUnit;
 
 public class TestListener implements ITestListener {
+
 
     @Override
     public void onTestStart(ITestResult iTestResult) {
@@ -27,17 +25,6 @@ public class TestListener implements ITestListener {
                 getExecutionTime(iTestResult));
 
         System.out.println("Тест упал: " + iTestResult.getName());
-
-        //  Получаем драйвер из контекста
-        WebDriver driver = (WebDriver) iTestResult.getTestContext().getAttribute("driver");
-
-        if (driver != null) {
-            // Делаем скриншот и прикрепляем к Allure
-            AllureUtils.takeScreenshot(driver);
-            System.out.println("Скриншот сделан и прикреплен к отчету");
-        } else {
-            System.out.println("Driver is null, cannot take screenshot");
-        }
     }
 
     @Override

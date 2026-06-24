@@ -3,7 +3,6 @@ package tests;
 import dto.Register;
 import dto.RegisterFactory;
 import lombok.extern.log4j.Log4j2;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import static com.codeborne.selenide.Selenide.title;
@@ -11,8 +10,7 @@ import static elements.Elements.titleForCreateNewAccount;
 import static elements.Elements.titleForDashboardPage;
 
 @Log4j2
-@Listeners
-public class RegisterTest extends BaseTest{
+public class RegisterTest extends BaseTest {
 
     Register registerTestSuccessfullRegistration = RegisterFactory.getRegister("Texts56456!");
     Register registerTestforWeakPassword = RegisterFactory.getRegister("Te");
