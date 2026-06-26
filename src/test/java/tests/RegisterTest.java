@@ -21,6 +21,7 @@ public class RegisterTest extends BaseTest {
                 .isPageOpened();
         registerPage.createAccount(registerTestSuccessfullRegistration);
         registerPage.pushRegisterButton();
+        verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
     }
@@ -33,6 +34,7 @@ public class RegisterTest extends BaseTest {
         registerPage.createAccount(registerTestForEmailValidation);
         registerPage.pushRegisterButton();
         registerPage.verifyInvalidEmailErrorMessage();
+        verifyUrl(urlRegister);
         softAssert.assertEquals(title(), titleForCreateNewAccount);
         softAssert.assertAll();
     }
@@ -44,6 +46,7 @@ public class RegisterTest extends BaseTest {
                 .isPageOpened();
         registerPage.pushRegisterButton();
         registerPage.verifyEmptyFieldsErrorMessage();
+        verifyUrl(urlRegister);
         softAssert.assertEquals(title(), titleForCreateNewAccount);
         softAssert.assertAll();
     }
@@ -56,6 +59,7 @@ public class RegisterTest extends BaseTest {
         registerPage.createAccount(registerTestforWeakPassword);
         registerPage.pushRegisterButton();
         registerPage.verifyWeakPasswordErrorMessage();
+        verifyUrl(urlRegister);
         softAssert.assertEquals(title(), titleForCreateNewAccount);
         softAssert.assertAll();
     }
@@ -67,6 +71,7 @@ public class RegisterTest extends BaseTest {
                 .isPageOpened();
         registerPage.clickLoginLink();
         loginPage.isPageOpened();
+        verifyUrl(urlLogin);
         softAssert.assertEquals(title(), titleForLoginPage);
         softAssert.assertAll();
     }
