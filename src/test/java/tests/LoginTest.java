@@ -22,64 +22,88 @@ public class LoginTest extends BaseTest {
          loginPage.isPageOpened();
          loginPage.enterCreds(email, password);
          loginPage.pushLoginButton();
-         softAssert.fail("Ошибка");
+         verifyUrl(urlCalendar);
          softAssert.assertEquals(title(), titleForDashboardPage);
          softAssert.assertAll();
      }
 
      @Test(testName = "Авторизация с пустым полем логина", description = "Авторизация с пустым полем login. Ошибка входа: пустое поле Email")
     public void checkLoginWithEmptyLogin() {
+         SoftAssert softAssert = new SoftAssert();
          loginPage.openPage();
          loginPage.isPageOpened();
          loginPage.enterCreds("", password);
          loginPage.pushLoginButton();
          loginPage.verifyEmailError();
+         verifyUrl(urlLogin);
+         softAssert.assertEquals(title(), titleForLoginPage);
+         softAssert.assertAll();
      }
 
     @Test(testName = "Авторизация с пустым полем пароля",description = "Авторизация с пустым полем password. Ошибка входа: пустое поле Password")
     public void checkLoginWithEmptyPassword() {
+        SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
         loginPage.isPageOpened();
         loginPage.enterCreds(email, "");
         loginPage.pushLoginButton();
         loginPage.verifyPasswordError();
+        verifyUrl(urlLogin);
+        softAssert.assertEquals(title(), titleForLoginPage);
+        softAssert.assertAll();
     }
 
     @Test(testName = "Авторизация с невалидным полем login",description = "Авторизация с невалидным полем login. Ошибка входа: email без @")
     public void checkLoginWithUnvalidLogin() {
+        SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
         loginPage.isPageOpened();
         loginPage.enterCreds("atsulud3", password);
         loginPage.pushLoginButton();
         loginPage.verifyNotvalidLoginError();
+        verifyUrl(urlLogin);
+        softAssert.assertEquals(title(), titleForLoginPage);
+        softAssert.assertAll();
     }
 
     @Test(testName = "Авторизация с пустыми полями login и password", description = "Авторизация с пустыми полями login и password. Ошибка входа: пустое поле Email. Ошибка входа: пустое поле Password ")
     public void checkLoginWithEmptyFields() {
+        SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
         loginPage.isPageOpened();
         loginPage.enterCreds("", "");
         loginPage.pushLoginButton();
         loginPage.verifyEmailError();
         loginPage.verifyEmailError();
+        verifyUrl(urlLogin);
+        softAssert.assertEquals(title(), titleForLoginPage);
+        softAssert.assertAll();
     }
 
     @Test(testName = "Авторизация с email, которого нет в системе", description = "Авторизация с email, которого нет в системе. Сообщение об ошибке: `\"Invalid login credentials. Please try again.\"`")
     public void checkUnregisteredLogin() {
+        SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
         loginPage.isPageOpened();
         loginPage.enterCreds("atsulud3@ya.ru", password);
         loginPage.pushLoginButton();
         loginPage.verifyNotvalidLoginCredsError();
+        verifyUrl(urlLogin);
+        softAssert.assertEquals(title(), titleForLoginPage);
+        softAssert.assertAll();
     }
 
     @Test(testName = "Авторизация с password, которого нет в системе",description = "Авторизация с password, которого нет в системе. Сообщение об ошибке: `\"Invalid login credentials. Please try again.\"`")
     public void checkUnregisteredPassword() {
+        SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
         loginPage.isPageOpened();
         loginPage.enterCreds(email, "123");
         loginPage.pushLoginButton();
         loginPage.verifyNotvalidLoginCredsError();
+        verifyUrl(urlLogin);
+        softAssert.assertEquals(title(), titleForLoginPage);
+        softAssert.assertAll();
     }
 
     @Test(testName = "Редирект на Can/t sign in", description = "Редирект на Can/t sign in: запросить email")
@@ -92,6 +116,7 @@ public class LoginTest extends BaseTest {
         $(byText(CANT_SIGN_IN_FORM_TITLE)).shouldBe(visible);
         String actualTitle = $$("p.heading_main.formpad").get(1).getText();
         $("#forgot-validate").shouldBe(visible, Duration.ofSeconds(5));
+        verifyUrl(urlLogin);
         softAssert.assertEquals(title(), titleForLoginPage);
         softAssert.assertEquals(actualTitle, titleForRequestNewPasswordPage);
         softAssert.assertAll();
@@ -104,6 +129,7 @@ public class LoginTest extends BaseTest {
         loginPage.isPageOpened();
         loginPage.notRegisteredLinkClick();
         registerPage.isPageOpened();
+        verifyUrl(urlRegister);
         softAssert.assertEquals(title(), titleForCreateNewAccount);
         softAssert.assertAll();
     }
@@ -118,6 +144,7 @@ public class LoginTest extends BaseTest {
         softAssert.assertEquals(title(), titleForDashboardPage);
         loginPage.logoutButtonClick();
         $(byText(LOGIN_FORM_TITLE)).shouldBe(visible);
+        verifyUrl(urlLogout);
         softAssert.assertEquals(title(), titleForLogoutPage);
         softAssert.assertAll();
     }
@@ -131,6 +158,7 @@ public class LoginTest extends BaseTest {
         loginPage.rememberMeCheckboxClick();
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
+        verifyUrl(urlRegister);
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
 

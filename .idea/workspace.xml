@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d16654c-077b-4955-b046-e440735bfda5" name="Changes" comment="написала 14 тестов по авторизации, добавила логирование, ломбок, faker">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/DashboardTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/listeners/TestListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/listeners/TestListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/elements/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elements/Elements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/DashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/DashboardPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/RegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/RegisterTest.java" afterDir="false" />
@@ -66,6 +67,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.DashboardTest.checkClickNavMenu.executor": "Run",
+    "TestNG.DashboardTest.checkGarminButton.executor": "Run",
+    "TestNG.DashboardTest.checkWeeklySummary.executor": "Run",
+    "TestNG.DashboardTest.openDashboardPage.executor": "Run",
     "TestNG.LoginTest.checkLogOut.executor": "Run",
     "TestNG.LoginTest.checkLogin.executor": "Run",
     "TestNG.LoginTest.checkRegistration.executor": "Run",
@@ -77,12 +82,13 @@
     "TestNG.LoginTest.checkUnregisteredPassword.executor": "Run",
     "TestNG.LoginTest.executor": "Run",
     "TestNG.LoginTest.loginWithRememberMeCheckbox.executor": "Run",
+    "TestNG.RegisterTest.checkLoginLink.executor": "Run",
     "TestNG.RegisterTest.checkSuccessfullRegistration.executor": "Run",
     "TestNG.RegisterTest.checkValidMessageForWeakPassword.executor": "Run",
     "TestNG.RegisterTest.checkValidMessagesForEmailForRegistration.executor": "Run",
     "TestNG.RegisterTest.checkValidMessagesForEmptyRegistration.executor": "Run",
     "TestNG.RegisterTest.checkValidMessagesForFullRegistration.executor": "Run",
-    "git-widget-placeholder": "feature/login",
+    "git-widget-placeholder": "feature/dashboard",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/takan/IdeaProjects/autojava/finalsurge-test",
     "settings.editor.selected.configurable": "preferences.lookFeel"
@@ -93,8 +99,62 @@
       <recent name="C:\Users\takan\IdeaProjects\autojava\finalsurge-test" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.LoginTest">
-    <configuration name="LoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.DashboardTest.checkGarminButton">
+    <configuration name="DashboardTest.checkClickNavMenu" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="finalsurge-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.DashboardTest" />
+      <option name="METHOD_NAME" value="checkClickNavMenu" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DashboardTest.checkGarminButton" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="finalsurge-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.DashboardTest" />
+      <option name="METHOD_NAME" value="checkGarminButton" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DashboardTest.checkWeeklySummary" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="finalsurge-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.DashboardTest" />
+      <option name="METHOD_NAME" value="checkWeeklySummary" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest.checkRequestNewPassword" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -104,24 +164,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.LoginTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegisterTest.checkValidMessageForWeakPassword" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="finalsurge-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.RegisterTest" />
-      <option name="METHOD_NAME" value="checkValidMessageForWeakPassword" />
+      <option name="METHOD_NAME" value="checkRequestNewPassword" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -129,7 +172,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegisterTest.checkValidMessagesForEmailForRegistration" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="RegisterTest.checkLoginLink" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -139,43 +182,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.RegisterTest" />
-      <option name="METHOD_NAME" value="checkValidMessagesForEmailForRegistration" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegisterTest.checkValidMessagesForEmptyRegistration" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="finalsurge-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.RegisterTest" />
-      <option name="METHOD_NAME" value="checkValidMessagesForEmptyRegistration" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegisterTest.checkValidMessagesForFullRegistration" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="finalsurge-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.RegisterTest" />
-      <option name="METHOD_NAME" value="checkValidMessagesForFullRegistration" />
+      <option name="METHOD_NAME" value="checkLoginLink" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -185,20 +192,13 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.LoginTest" />
-        <item itemvalue="TestNG.RegisterTest.checkValidMessagesForFullRegistration" />
-        <item itemvalue="TestNG.RegisterTest.checkValidMessagesForEmptyRegistration" />
-        <item itemvalue="TestNG.RegisterTest.checkValidMessagesForEmailForRegistration" />
-        <item itemvalue="TestNG.RegisterTest.checkValidMessageForWeakPassword" />
+        <item itemvalue="TestNG.DashboardTest.checkGarminButton" />
+        <item itemvalue="TestNG.DashboardTest.checkWeeklySummary" />
+        <item itemvalue="TestNG.DashboardTest.checkClickNavMenu" />
+        <item itemvalue="TestNG.LoginTest.checkRequestNewPassword" />
+        <item itemvalue="TestNG.RegisterTest.checkLoginLink" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-ab7203c4" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
