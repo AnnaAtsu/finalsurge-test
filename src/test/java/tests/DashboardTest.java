@@ -72,7 +72,7 @@ public class DashboardTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(testName = "Отображение сводки за 6 недель", description = "Виджет показывает неделю Week of... календаря нет")
+    @Test(testName = "Отображение сводки за 6 недель", description = "Виджет показывает 6 строк для 6 недель")
     public void checkSixWeeksWidget() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -80,6 +80,45 @@ public class DashboardTest extends BaseTest {
         loginPage.pushLoginButton();
         dashboardPage.isPageOpened();
         verifyUrl(urlCalendar);
-        //доделать
+        dashboardPage.clickSixWeeksButton();
+        softAssert.assertEquals(dashboardPage.verifyWeekCount(), 6);
+        softAssert.assertAll();
+    }
+
+    @Test(testName = "Навигационная панель: есть дропдауны ", description = "Дропдаун работает и ведёт на соответствующую страницу")
+    public void checkDropdownsOnPAge() {
+        loginPage.openPage();
+        loginPage.enterCreds(email, password);
+        loginPage.pushLoginButton();
+        dashboardPage.isPageOpened();
+        verifyUrl(urlCalendar);
+        dashboardPage.verifyDropdownMenuShouldBeVisibleAfterClick();
+    }
+
+    @Test(testName = "Навигационная панель: дропдаун Message Board", description = "Страница TeamForum: красное инфосообщение на странице об органичении доступа")
+    public void checkMessageBoardPage() {
+        loginPage.openPage();
+        loginPage.enterCreds(email, password);
+        loginPage.pushLoginButton();
+        dashboardPage.isPageOpened();
+        verifyUrl(urlCalendar);
+        dashboardPage.clickMessageBoardButton();
+        verifyUrl(urlTeamForum);
+        isTextDisplayed(MESSAGE_BOARD_ACCESS_TEXT);
+    }
+    @Test(testName = "Логотип: переход на другую страницу ", description = "Страница Default: отображается блок Training Volume")
+    public void checkMainLogo() {
+        SoftAssert softAssert = new SoftAssert();
+        loginPage.openPage();
+        loginPage.enterCreds(email, password);
+        loginPage.pushLoginButton();
+        dashboardPage.isPageOpened();
+        verifyUrl(urlCalendar);
+        dashboardPage.clickMainLogo();
+        verifyUrl(urlDefaultFromMainLogo);
+        softAssert.assertEquals(title(), titleForDefaultPage);
+        isTextDisplayed(MESSAGE_TRAINING_VOLUME);
+        isTextDisplayed(MESSAGE_WORKOUT_REPORTS);
+        isTextDisplayed(VIEW_CALENDAR_BUTTON);
     }
 }

@@ -17,6 +17,7 @@ import utils.AllureUtils;
 
 import java.util.HashMap;
 
+import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.WebDriverConditions.url;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -66,5 +67,9 @@ public class BaseTest {
 
     public void verifyUrl(String expectedUrl) {
         webdriver().shouldHave(url(expectedUrl));
+    }
+
+    public boolean isTextDisplayed(String text) {
+        return $x("//*[contains(text(), '" + text + "')]").isDisplayed();
     }
 }
