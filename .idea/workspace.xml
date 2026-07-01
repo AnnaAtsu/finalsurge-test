@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d16654c-077b-4955-b046-e440735bfda5" name="Changes" comment="написала 14 тестов по авторизации, добавила логирование, ломбок, faker">
+    <list default="true" id="5d16654c-077b-4955-b046-e440735bfda5" name="Changes" comment="написала тесты для DashboardPage">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dto/FeedBackFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dto/Feedback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/FeedbackPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/CalendarTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/FeedBackTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/elements/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elements/Elements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/DashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/DashboardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CalendarPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CalendarPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DashboardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DashboardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/login" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,6 +68,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.CalendarTest.checkFeedBackPage.executor": "Run",
     "TestNG.DashboardTest.checkClickNavMenu.executor": "Run",
     "TestNG.DashboardTest.checkDropdownsOnPAge.executor": "Run",
     "TestNG.DashboardTest.checkGarminButton.executor": "Run",
@@ -74,6 +77,7 @@
     "TestNG.DashboardTest.checkSixWeeksWidget.executor": "Run",
     "TestNG.DashboardTest.checkWeeklySummary.executor": "Run",
     "TestNG.DashboardTest.openDashboardPage.executor": "Run",
+    "TestNG.FeedBackTest.checkSendFeedBack.executor": "Run",
     "TestNG.LoginTest.checkLogOut.executor": "Run",
     "TestNG.LoginTest.checkLogin.executor": "Run",
     "TestNG.LoginTest.checkRegistration.executor": "Run",
@@ -91,7 +95,7 @@
     "TestNG.RegisterTest.checkValidMessagesForEmailForRegistration.executor": "Run",
     "TestNG.RegisterTest.checkValidMessagesForEmptyRegistration.executor": "Run",
     "TestNG.RegisterTest.checkValidMessagesForFullRegistration.executor": "Run",
-    "git-widget-placeholder": "feature/dashboard",
+    "git-widget-placeholder": "feature/calendar",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/takan/IdeaProjects/autojava/finalsurge-test",
     "settings.editor.selected.configurable": "preferences.lookFeel"
@@ -102,7 +106,25 @@
       <recent name="C:\Users\takan\IdeaProjects\autojava\finalsurge-test" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.DashboardTest.checkMainLogo">
+  <component name="RunManager" selected="TestNG.FeedBackTest.checkSendFeedBack">
+    <configuration name="CalendarTest.checkFeedBackPage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="finalsurge-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.CalendarTest" />
+      <option name="METHOD_NAME" value="checkFeedBackPage" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DashboardTest.checkDropdownsOnPAge" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
@@ -114,24 +136,6 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.DashboardTest" />
       <option name="METHOD_NAME" value="checkDropdownsOnPAge" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DashboardTest.checkGarminButton" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="finalsurge-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.DashboardTest" />
-      <option name="METHOD_NAME" value="checkGarminButton" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -175,7 +179,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DashboardTest.checkSixWeeksWidget" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="FeedBackTest.checkSendFeedBack" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -184,8 +188,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.DashboardTest" />
-      <option name="METHOD_NAME" value="checkSixWeeksWidget" />
+      <option name="MAIN_CLASS_NAME" value="tests.FeedBackTest" />
+      <option name="METHOD_NAME" value="checkSendFeedBack" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -195,11 +199,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.FeedBackTest.checkSendFeedBack" />
+        <item itemvalue="TestNG.CalendarTest.checkFeedBackPage" />
         <item itemvalue="TestNG.DashboardTest.checkMainLogo" />
         <item itemvalue="TestNG.DashboardTest.checkMessageBoardPage" />
         <item itemvalue="TestNG.DashboardTest.checkDropdownsOnPAge" />
-        <item itemvalue="TestNG.DashboardTest.checkSixWeeksWidget" />
-        <item itemvalue="TestNG.DashboardTest.checkGarminButton" />
       </list>
     </recent_temporary>
   </component>
@@ -227,11 +231,20 @@
       <option name="project" value="LOCAL" />
       <updated>1782225836840</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="написала тесты для DashboardPage">
+      <option name="closed" value="true" />
+      <created>1782824732055</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1782824732055</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="написала 14 тестов по авторизации, добавила логирование, ломбок, faker" />
-    <option name="LAST_COMMIT_MESSAGE" value="написала 14 тестов по авторизации, добавила логирование, ломбок, faker" />
+    <MESSAGE value="написала тесты для DashboardPage" />
+    <option name="LAST_COMMIT_MESSAGE" value="написала тесты для DashboardPage" />
   </component>
 </project>
