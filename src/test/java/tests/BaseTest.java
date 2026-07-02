@@ -9,9 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.ITestResult;
-import pages.DashboardPage;
-import pages.LoginPage;
-import pages.RegisterPage;
+import pages.*;
 import listeners.TestListener;
 import utils.AllureUtils;
 
@@ -27,6 +25,8 @@ public class BaseTest {
     LoginPage loginPage;
     RegisterPage registerPage;
     DashboardPage dashboardPage;
+    CalendarPage calendarPage;
+    FeedbackPage feedbackPage;
 
     @BeforeMethod
     public void setup() {
@@ -50,6 +50,8 @@ public class BaseTest {
         loginPage = new LoginPage();
         registerPage = new RegisterPage();
         dashboardPage = new DashboardPage();
+        calendarPage = new CalendarPage();
+        feedbackPage = new FeedbackPage();
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)
