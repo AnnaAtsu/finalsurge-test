@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d16654c-077b-4955-b046-e440735bfda5" name="Changes" comment="написала тесты для DashboardPage">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dto/FeedBackFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dto/Feedback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/FeedbackPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/CalendarTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/FeedBackTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/WorkoutsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elements/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elements/Elements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/CalendarPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CalendarPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CalendarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CalendarTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +64,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.CalendarTest.checkActivityColors.executor": "Run",
+    "TestNG.CalendarTest.checkActivityLabelExistence.executor": "Run",
+    "TestNG.CalendarTest.checkCalendarActualMonthExistence.executor": "Run",
+    "TestNG.CalendarTest.checkCalendarMonthNavigation.executor": "Run",
+    "TestNG.CalendarTest.checkCalendarMonthNavigationToTheLeft.executor": "Run",
+    "TestNG.CalendarTest.checkEmptyCalendarCell.executor": "Run",
     "TestNG.CalendarTest.checkFeedBackPage.executor": "Run",
+    "TestNG.CalendarTest.checkFullCalendarCell.executor": "Run",
     "TestNG.DashboardTest.checkClickNavMenu.executor": "Run",
     "TestNG.DashboardTest.checkDropdownsOnPAge.executor": "Run",
     "TestNG.DashboardTest.checkGarminButton.executor": "Run",
@@ -77,6 +80,7 @@
     "TestNG.DashboardTest.checkSixWeeksWidget.executor": "Run",
     "TestNG.DashboardTest.checkWeeklySummary.executor": "Run",
     "TestNG.DashboardTest.openDashboardPage.executor": "Run",
+    "TestNG.FeedBackTest.checkFeedBackPage.executor": "Run",
     "TestNG.FeedBackTest.checkSendFeedBack.executor": "Run",
     "TestNG.LoginTest.checkLogOut.executor": "Run",
     "TestNG.LoginTest.checkLogin.executor": "Run",
@@ -95,7 +99,7 @@
     "TestNG.RegisterTest.checkValidMessagesForEmailForRegistration.executor": "Run",
     "TestNG.RegisterTest.checkValidMessagesForEmptyRegistration.executor": "Run",
     "TestNG.RegisterTest.checkValidMessagesForFullRegistration.executor": "Run",
-    "git-widget-placeholder": "feature/calendar",
+    "git-widget-placeholder": "feature/dashboard",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/takan/IdeaProjects/autojava/finalsurge-test",
     "settings.editor.selected.configurable": "preferences.lookFeel"
@@ -106,8 +110,8 @@
       <recent name="C:\Users\takan\IdeaProjects\autojava\finalsurge-test" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.FeedBackTest.checkSendFeedBack">
-    <configuration name="CalendarTest.checkFeedBackPage" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.CalendarTest.checkActivityColors">
+    <configuration name="CalendarTest.checkActivityColors" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -117,7 +121,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.CalendarTest" />
-      <option name="METHOD_NAME" value="checkFeedBackPage" />
+      <option name="METHOD_NAME" value="checkActivityColors" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -125,7 +129,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DashboardTest.checkDropdownsOnPAge" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CalendarTest.checkActivityLabelExistence" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -134,8 +138,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.DashboardTest" />
-      <option name="METHOD_NAME" value="checkDropdownsOnPAge" />
+      <option name="MAIN_CLASS_NAME" value="tests.CalendarTest" />
+      <option name="METHOD_NAME" value="checkActivityLabelExistence" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -143,7 +147,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DashboardTest.checkMainLogo" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CalendarTest.checkCalendarMonthNavigationToTheLeft" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -152,8 +156,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.DashboardTest" />
-      <option name="METHOD_NAME" value="checkMainLogo" />
+      <option name="MAIN_CLASS_NAME" value="tests.CalendarTest" />
+      <option name="METHOD_NAME" value="checkCalendarMonthNavigationToTheLeft" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -161,7 +165,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DashboardTest.checkMessageBoardPage" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CalendarTest.checkEmptyCalendarCell" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -170,8 +174,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.DashboardTest" />
-      <option name="METHOD_NAME" value="checkMessageBoardPage" />
+      <option name="MAIN_CLASS_NAME" value="tests.CalendarTest" />
+      <option name="METHOD_NAME" value="checkEmptyCalendarCell" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -179,7 +183,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FeedBackTest.checkSendFeedBack" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CalendarTest.checkFullCalendarCell" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -188,8 +192,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.FeedBackTest" />
-      <option name="METHOD_NAME" value="checkSendFeedBack" />
+      <option name="MAIN_CLASS_NAME" value="tests.CalendarTest" />
+      <option name="METHOD_NAME" value="checkFullCalendarCell" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -199,11 +203,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.FeedBackTest.checkSendFeedBack" />
-        <item itemvalue="TestNG.CalendarTest.checkFeedBackPage" />
-        <item itemvalue="TestNG.DashboardTest.checkMainLogo" />
-        <item itemvalue="TestNG.DashboardTest.checkMessageBoardPage" />
-        <item itemvalue="TestNG.DashboardTest.checkDropdownsOnPAge" />
+        <item itemvalue="TestNG.CalendarTest.checkActivityColors" />
+        <item itemvalue="TestNG.CalendarTest.checkActivityLabelExistence" />
+        <item itemvalue="TestNG.CalendarTest.checkEmptyCalendarCell" />
+        <item itemvalue="TestNG.CalendarTest.checkFullCalendarCell" />
+        <item itemvalue="TestNG.CalendarTest.checkCalendarMonthNavigationToTheLeft" />
       </list>
     </recent_temporary>
   </component>
