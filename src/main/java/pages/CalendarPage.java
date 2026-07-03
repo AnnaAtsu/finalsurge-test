@@ -18,7 +18,9 @@ import static com.codeborne.selenide.Selenide.*;
 
 @Log4j2
 public class CalendarPage extends BasePage{
+
     private final SelenideElement GIVE_FEEDBACK_LINK = $x("//a[text()='Give Feedback']");
+    private final SelenideElement CUSTOMER_SUPPORT_LINK = $x("//a[text()='Customer Support']");
     private final SelenideElement CALENDAR_CONTENT_BLOCK = $("#CalendarContent");
     private final SelenideElement TRAINING_CALENDAR_LINK = $x("//a[text()='Training Calendar']");
 
@@ -51,6 +53,12 @@ public class CalendarPage extends BasePage{
 
     public CalendarPage ckickGiveFeedBackLink() {
         log.info("Нажать на кнопку фидбека");
+        GIVE_FEEDBACK_LINK.shouldBe(visible).click();
+        return this;
+    }
+
+    public CalendarPage clickCustomerSupportLink() {
+        log.info("Нажать на кнопку клиентской поддержки");
         GIVE_FEEDBACK_LINK.shouldBe(visible).click();
         return this;
     }

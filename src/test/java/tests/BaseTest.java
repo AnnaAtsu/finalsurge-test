@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import io.qameta.allure.testng.AllureTestNg;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -15,11 +16,12 @@ import utils.AllureUtils;
 
 import java.util.HashMap;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.WebDriverConditions.url;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-
+@Log4j2
 @Listeners({TestListener.class, AllureTestNg.class})
 public class BaseTest {
     LoginPage loginPage;
@@ -27,6 +29,8 @@ public class BaseTest {
     DashboardPage dashboardPage;
     CalendarPage calendarPage;
     FeedbackPage feedbackPage;
+    WorkoutsPage workoutsPage;
+    CustomerSupportPage customerSupportPage;
 
     @BeforeMethod
     public void setup() {
@@ -52,6 +56,8 @@ public class BaseTest {
         dashboardPage = new DashboardPage();
         calendarPage = new CalendarPage();
         feedbackPage = new FeedbackPage();
+        workoutsPage = new WorkoutsPage();
+        customerSupportPage = new CustomerSupportPage();
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)
@@ -72,6 +78,12 @@ public class BaseTest {
     }
 
     public boolean isTextDisplayed(String text) {
+        log.info("Проверка отображения текста " + text);
         return $x("//*[contains(text(), '" + text + "')]").isDisplayed();
+    }
+
+    public void isTextNotDisplayed(String text) {
+        log.info("Проверка, что текст отсутствует: " + text);
+        $x("//*[contains(text(), '" + text + "')]").shouldNotBe(visible);
     }
 }

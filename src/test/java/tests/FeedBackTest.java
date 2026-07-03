@@ -45,7 +45,7 @@ public class FeedBackTest extends BaseTest {
         softAssert.assertEquals(title(), titleForFeedbackPage);
         verifyUrl(urlFeedback);
         feedbackPage.isPageOpened();
-        isTextDisplayed("Provide Feedback");
+        isTextDisplayed(FEEDBACK_TITLE);
         feedbackPage.fillFeedback(feedbackTest)
                         .pushFeedbackButton();
         isTextDisplayed(MESSAGE_FEEDBACK);
