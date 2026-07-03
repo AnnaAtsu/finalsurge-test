@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d16654c-077b-4955-b046-e440735bfda5" name="Changes" comment="написала тесты для DashboardPage">
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/WorkoutsTest.java" afterDir="false" />
+    <list default="true" id="5d16654c-077b-4955-b046-e440735bfda5" name="Changes" comment="написала тесты для CalendarPage">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/CustomerSupportPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/CustomerSupportTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/elements/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elements/Elements.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/CalendarPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CalendarPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CalendarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CalendarTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/WorkoutsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/WorkoutsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/FeedBackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/FeedBackTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/WorkoutsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/WorkoutsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +66,7 @@
     "Maven.finalsurge-test [clean].executor": "Run",
     "Maven.finalsurge-test [compile].executor": "Run",
     "Maven.finalsurge-test [io.qameta.allure:allure-maven:2.15.2:report].executor": "Run",
+    "Maven.finalsurge-test [io.qameta.allure:allure-maven:2.15.2:serve].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -72,6 +78,7 @@
     "TestNG.CalendarTest.checkEmptyCalendarCell.executor": "Run",
     "TestNG.CalendarTest.checkFeedBackPage.executor": "Run",
     "TestNG.CalendarTest.checkFullCalendarCell.executor": "Run",
+    "TestNG.CustomerSupportTest.checkCustomerSupportPage.executor": "Run",
     "TestNG.DashboardTest.checkClickNavMenu.executor": "Run",
     "TestNG.DashboardTest.checkDropdownsOnPAge.executor": "Run",
     "TestNG.DashboardTest.checkGarminButton.executor": "Run",
@@ -99,6 +106,12 @@
     "TestNG.RegisterTest.checkValidMessagesForEmailForRegistration.executor": "Run",
     "TestNG.RegisterTest.checkValidMessagesForEmptyRegistration.executor": "Run",
     "TestNG.RegisterTest.checkValidMessagesForFullRegistration.executor": "Run",
+    "TestNG.WorkoutsTest.checkActivityTypeExistence.executor": "Run",
+    "TestNG.WorkoutsTest.checkCalendarActualMonthExistence.executor": "Run",
+    "TestNG.WorkoutsTest.checkCancelButton.executor": "Run",
+    "TestNG.WorkoutsTest.checkEmptyNameWorkout.executor": "Run",
+    "TestNG.WorkoutsTest.checkIntervalExistence.executor": "Run",
+    "TestNG.WorkoutsTest.checkTtitleDescriptionExistence.executor": "Run",
     "git-widget-placeholder": "feature/dashboard",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/takan/IdeaProjects/autojava/finalsurge-test",
@@ -110,8 +123,8 @@
       <recent name="C:\Users\takan\IdeaProjects\autojava\finalsurge-test" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.CalendarTest.checkActivityColors">
-    <configuration name="CalendarTest.checkActivityColors" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.CustomerSupportTest.checkCustomerSupportPage">
+    <configuration name="CustomerSupportTest.checkCustomerSupportPage" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -120,8 +133,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CalendarTest" />
-      <option name="METHOD_NAME" value="checkActivityColors" />
+      <option name="MAIN_CLASS_NAME" value="tests.CustomerSupportTest" />
+      <option name="METHOD_NAME" value="checkCustomerSupportPage" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -129,7 +142,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalendarTest.checkActivityLabelExistence" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="WorkoutsTest.checkCancelButton" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -138,8 +151,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CalendarTest" />
-      <option name="METHOD_NAME" value="checkActivityLabelExistence" />
+      <option name="MAIN_CLASS_NAME" value="tests.WorkoutsTest" />
+      <option name="METHOD_NAME" value="checkCancelButton" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -147,7 +160,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalendarTest.checkCalendarMonthNavigationToTheLeft" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="WorkoutsTest.checkEmptyNameWorkout" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -156,8 +169,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CalendarTest" />
-      <option name="METHOD_NAME" value="checkCalendarMonthNavigationToTheLeft" />
+      <option name="MAIN_CLASS_NAME" value="tests.WorkoutsTest" />
+      <option name="METHOD_NAME" value="checkEmptyNameWorkout" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -165,7 +178,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalendarTest.checkEmptyCalendarCell" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="WorkoutsTest.checkIntervalExistence" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -174,8 +187,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CalendarTest" />
-      <option name="METHOD_NAME" value="checkEmptyCalendarCell" />
+      <option name="MAIN_CLASS_NAME" value="tests.WorkoutsTest" />
+      <option name="METHOD_NAME" value="checkIntervalExistence" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -183,7 +196,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalendarTest.checkFullCalendarCell" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="WorkoutsTest.checkTtitleDescriptionExistence" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -192,8 +205,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CalendarTest" />
-      <option name="METHOD_NAME" value="checkFullCalendarCell" />
+      <option name="MAIN_CLASS_NAME" value="tests.WorkoutsTest" />
+      <option name="METHOD_NAME" value="checkTtitleDescriptionExistence" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -203,20 +216,13 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.CalendarTest.checkActivityColors" />
-        <item itemvalue="TestNG.CalendarTest.checkActivityLabelExistence" />
-        <item itemvalue="TestNG.CalendarTest.checkEmptyCalendarCell" />
-        <item itemvalue="TestNG.CalendarTest.checkFullCalendarCell" />
-        <item itemvalue="TestNG.CalendarTest.checkCalendarMonthNavigationToTheLeft" />
+        <item itemvalue="TestNG.CustomerSupportTest.checkCustomerSupportPage" />
+        <item itemvalue="TestNG.WorkoutsTest.checkEmptyNameWorkout" />
+        <item itemvalue="TestNG.WorkoutsTest.checkCancelButton" />
+        <item itemvalue="TestNG.WorkoutsTest.checkIntervalExistence" />
+        <item itemvalue="TestNG.WorkoutsTest.checkTtitleDescriptionExistence" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-ab7203c4" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -243,12 +249,21 @@
       <option name="project" value="LOCAL" />
       <updated>1782824732055</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="написала тесты для CalendarPage">
+      <option name="closed" value="true" />
+      <created>1783002825787</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1783002825787</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="написала 14 тестов по авторизации, добавила логирование, ломбок, faker" />
     <MESSAGE value="написала тесты для DashboardPage" />
-    <option name="LAST_COMMIT_MESSAGE" value="написала тесты для DashboardPage" />
+    <MESSAGE value="написала тесты для CalendarPage" />
+    <option name="LAST_COMMIT_MESSAGE" value="написала тесты для CalendarPage" />
   </component>
 </project>
