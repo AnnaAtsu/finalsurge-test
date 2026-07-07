@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d16654c-077b-4955-b046-e440735bfda5" name="Changes" comment="написала тесты для CalendarPage">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/CustomerSupportPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/CustomerSupportTest.java" afterDir="false" />
+    <list default="true" id="5d16654c-077b-4955-b046-e440735bfda5" name="Changes" comment="тест для feedback">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/WorkoutReportPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/WorkoutReportTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/elements/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elements/Elements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CalendarPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CalendarPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/WorkoutsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/WorkoutsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/FeedBackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/FeedBackTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/WorkoutsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/WorkoutsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +103,13 @@
     "TestNG.RegisterTest.checkValidMessagesForEmailForRegistration.executor": "Run",
     "TestNG.RegisterTest.checkValidMessagesForEmptyRegistration.executor": "Run",
     "TestNG.RegisterTest.checkValidMessagesForFullRegistration.executor": "Run",
+    "TestNG.WorkoutReportTest.checkReportComment.executor": "Run",
+    "TestNG.WorkoutReportTest.checkReportForActivity.executor": "Run",
+    "TestNG.WorkoutReportTest.checkReportForActivityButton.executor": "Run",
+    "TestNG.WorkoutReportTest.checkReportForDates.executor": "Run",
+    "TestNG.WorkoutReportTest.checkReportForListView.executor": "Run",
+    "TestNG.WorkoutReportTest.checkReportForWeek.executor": "Run",
+    "TestNG.WorkoutReportTest.openDashboardPage.executor": "Run",
     "TestNG.WorkoutsTest.checkActivityTypeExistence.executor": "Run",
     "TestNG.WorkoutsTest.checkCalendarActualMonthExistence.executor": "Run",
     "TestNG.WorkoutsTest.checkCancelButton.executor": "Run",
@@ -123,8 +127,8 @@
       <recent name="C:\Users\takan\IdeaProjects\autojava\finalsurge-test" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.CustomerSupportTest.checkCustomerSupportPage">
-    <configuration name="CustomerSupportTest.checkCustomerSupportPage" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.WorkoutReportTest.checkReportComment">
+    <configuration name="WorkoutReportTest.checkReportComment" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -133,8 +137,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CustomerSupportTest" />
-      <option name="METHOD_NAME" value="checkCustomerSupportPage" />
+      <option name="MAIN_CLASS_NAME" value="tests.WorkoutReportTest" />
+      <option name="METHOD_NAME" value="checkReportComment" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -142,7 +146,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WorkoutsTest.checkCancelButton" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="WorkoutReportTest.checkReportForActivity" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -151,8 +155,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.WorkoutsTest" />
-      <option name="METHOD_NAME" value="checkCancelButton" />
+      <option name="MAIN_CLASS_NAME" value="tests.WorkoutReportTest" />
+      <option name="METHOD_NAME" value="checkReportForActivity" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -160,7 +164,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WorkoutsTest.checkEmptyNameWorkout" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="WorkoutReportTest.checkReportForActivityButton" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -169,8 +173,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.WorkoutsTest" />
-      <option name="METHOD_NAME" value="checkEmptyNameWorkout" />
+      <option name="MAIN_CLASS_NAME" value="tests.WorkoutReportTest" />
+      <option name="METHOD_NAME" value="checkReportForActivityButton" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -178,7 +182,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WorkoutsTest.checkIntervalExistence" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="WorkoutReportTest.checkReportForListView" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -187,8 +191,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.WorkoutsTest" />
-      <option name="METHOD_NAME" value="checkIntervalExistence" />
+      <option name="MAIN_CLASS_NAME" value="tests.WorkoutReportTest" />
+      <option name="METHOD_NAME" value="checkReportForListView" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -196,7 +200,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WorkoutsTest.checkTtitleDescriptionExistence" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="WorkoutReportTest.checkReportForWeek" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -205,8 +209,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.WorkoutsTest" />
-      <option name="METHOD_NAME" value="checkTtitleDescriptionExistence" />
+      <option name="MAIN_CLASS_NAME" value="tests.WorkoutReportTest" />
+      <option name="METHOD_NAME" value="checkReportForWeek" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -216,13 +220,20 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.CustomerSupportTest.checkCustomerSupportPage" />
-        <item itemvalue="TestNG.WorkoutsTest.checkEmptyNameWorkout" />
-        <item itemvalue="TestNG.WorkoutsTest.checkCancelButton" />
-        <item itemvalue="TestNG.WorkoutsTest.checkIntervalExistence" />
-        <item itemvalue="TestNG.WorkoutsTest.checkTtitleDescriptionExistence" />
+        <item itemvalue="TestNG.WorkoutReportTest.checkReportComment" />
+        <item itemvalue="TestNG.WorkoutReportTest.checkReportForActivityButton" />
+        <item itemvalue="TestNG.WorkoutReportTest.checkReportForActivity" />
+        <item itemvalue="TestNG.WorkoutReportTest.checkReportForWeek" />
+        <item itemvalue="TestNG.WorkoutReportTest.checkReportForListView" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-ab7203c4" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -259,6 +270,17 @@
     </task>
     <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="написала 14 тестов по авторизации, добавила логирование, ломбок, faker" />

@@ -36,6 +36,7 @@ public class WorkoutsPage extends BasePage{
     private final SelenideElement SAVE_BUTTON = $("#saveButton");
 
 
+
     @Override
     public WorkoutsPage isPageOpened() {
         log.info("Проверка, открыта ли страница с тренировкой");
@@ -83,7 +84,7 @@ public class WorkoutsPage extends BasePage{
     }
 
     public WorkoutsPage verifySelectedActivity(String subActivity) {
-        log.info("Проверка отображения типа активности" + subActivity);
+        log.info("Проверка отображения типа активности " + subActivity);
         ACTIVITY_SELECT.shouldBe(visible)
                 .selectOptionContainingText(subActivity);
                return this;
