@@ -2,8 +2,8 @@ package elements;
 
 public class Elements {
 
-    public final static String email = "atsulus20@mail.ru";
-    public final static  String password = "Atsulus2026!";
+    //public final static String email = ConfigReader.getEmail();
+    //public final static  String password = ConfigReader.getPassword();
 
     public final static String titleForRequestNewPasswordPage =  "Can't sign in?";
     public final static String titleForDashboardPage = "Final Surge - Training Calendar";
@@ -17,6 +17,9 @@ public class Elements {
     public final static String titleForFeedbackPage = "Final Surge - Send Feedback";
     public final static String titleForCUSTOMER_SUPPORTPage = "Final Surge - Customer Support";
     public final static String titleForWorkoutReportPage = "Final Surge - Athlete Workout Report";
+    public final static String titleForUserProfilePage = "Final Surge - User Profile";
+
+
 
     public final static String CANT_SIGN_IN_FORM_TITLE = "Can't sign in?";
     public final static String LOGIN_FORM_TITLE = "Account Login";
@@ -52,5 +55,6 @@ public class Elements {
     public final static String urlFeedback = "https://log.finalsurge.com/Feedback.cshtml";
     public final static String urlCustomerSupport = "https://log.finalsurge.com/CustSupport.cshtml";
     public final static String urlWorkoutReport = "https://log.finalsurge.com/WorkoutReport.cshtml";
+    public final static String urlUserProfile = "https://log.finalsurge.com/UserProfile.cshtml";
 
 }

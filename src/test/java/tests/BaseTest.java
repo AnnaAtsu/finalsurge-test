@@ -32,6 +32,7 @@ public class BaseTest {
     WorkoutsPage workoutsPage;
     CustomerSupportPage customerSupportPage;
     WorkoutReportPage workoutReportPage;
+    UserProfilePage userProfilePage;
 
     @BeforeMethod
     public void setup() {
@@ -60,6 +61,7 @@ public class BaseTest {
         workoutsPage = new WorkoutsPage();
         customerSupportPage = new CustomerSupportPage();
         workoutReportPage = new WorkoutReportPage();
+        userProfilePage = new UserProfilePage();
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)

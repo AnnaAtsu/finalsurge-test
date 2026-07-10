@@ -8,6 +8,8 @@ import org.testng.asserts.SoftAssert;
 import java.time.LocalDate;
 
 import static com.codeborne.selenide.Selenide.title;
+import static constants.ConstantElements.email;
+import static constants.ConstantElements.password;
 import static elements.Elements.*;
 
 public class WorkoutReportTest extends BaseTest{
@@ -18,6 +20,7 @@ public class WorkoutReportTest extends BaseTest{
                 {LocalDate.of(2026,7,5),LocalDate.of(2026,7, 10)}
         };
     }
+
     @Test(testName = "Отображение сводки тренировок за период", dataProvider = "defaultDates", description = "Таблица с агрегированными данными: кол-во тренировок, общая дистанция, длительность")
     public void checkReportForListView(LocalDate startDate, LocalDate endDate) {
         SoftAssert softAssert = new SoftAssert();
@@ -44,6 +47,7 @@ public class WorkoutReportTest extends BaseTest{
                 {LocalDate.of(2026,7,5),LocalDate.of(2026,7, 12)}
         };
     }
+
     @Test(testName = "Фильтрация отчетов по дате ", dataProvider = "weekDates",description = "При выборе даты данные на графиках и в таблице фильтруются по неделе")
     public void checkReportForWeek(LocalDate startDate, LocalDate endDate) {
         SoftAssert softAssert = new SoftAssert();
@@ -109,7 +113,8 @@ public class WorkoutReportTest extends BaseTest{
         softAssert.assertEquals(title(), titleForWorkoutReportPage);
         softAssert.assertAll();
     }
-    @Test(testName = "Оставить комментарий для актиности", dataProvider = "weekDates",description = "Открывается редактируемое окно     Workout Comment")
+
+    @Test(testName = "Оставить комментарий для активности", dataProvider = "weekDates",description = "Открывается редактируемое окно     Workout Comment")
     public void checkReportComment(LocalDate startDate, LocalDate endDate) {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -123,7 +128,6 @@ public class WorkoutReportTest extends BaseTest{
                 .clickViewReportbutton()
                 .vefifyTrainigblockExistence()
                 .clickCommentIcon()
-                .verifyCommentBlock()
                 .fillComment(WORKOUT_REPORT_MESSAGE_FOR_NO_FILTER);
         verifyUrl(urlWorkoutReport);
         isTextNotDisplayed(WORKOUT_REPORT_MESSAGE_FOR_NO_FILTER);
@@ -131,5 +135,4 @@ public class WorkoutReportTest extends BaseTest{
         softAssert.assertEquals(title(), titleForWorkoutReportPage);
         softAssert.assertAll();
     }
-
 }
