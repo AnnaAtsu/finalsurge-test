@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import static com.codeborne.selenide.Selenide.title;
+import static constants.ConstantElements.email;
+import static constants.ConstantElements.password;
 import static elements.Elements.*;
 
 @Log4j2

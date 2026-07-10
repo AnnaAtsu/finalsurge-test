@@ -9,6 +9,8 @@ import java.time.Duration;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static constants.ConstantElements.email;
+import static constants.ConstantElements.password;
 import static elements.Elements.*;
 import static io.qameta.allure.internal.shadowed.jackson.databind.cfg.CoercionAction.Fail;
 

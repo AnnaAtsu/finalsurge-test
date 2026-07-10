@@ -7,6 +7,7 @@ import lombok.extern.log4j.Log4j2;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static elements.Elements.WORKOUT_REPORT_MESSAGE_FOR_NO_FILTER;
@@ -25,6 +26,7 @@ public class WorkoutReportPage extends BasePage{
     private final SelenideElement COMMENT_BLOCK = $("#WorkoutComments");
     private final SelenideElement COMMENT_TEXTAREA = $("#CommentDesc");
     private final SelenideElement ADD_COMMENT_BUTTON  = $("#saveButtonComment");
+    private final SelenideElement COMMENT_IFRAME = $("#WorkoutCommentsiFrame");
 
     @Override
     public WorkoutReportPage isPageOpened() {
@@ -87,25 +89,21 @@ public class WorkoutReportPage extends BasePage{
         $x("//h4[contains(text(), '" + activityType + "')]").shouldBe(visible);
         return this;
     }
+
     public WorkoutReportPage clickCommentIcon() {
         log.info("Нажать на иконку комментария");
-        LEAVE_COMMENT_ICON.shouldBe(visible);
+        LEAVE_COMMENT_ICON.shouldBe(visible).shouldBe(enabled);
         LEAVE_COMMENT_ICON.click();
-        return this;
-    }
-    public WorkoutReportPage verifyCommentBlock() {
-        log.info("Проверка отображения блока с комментарем");
-        COMMENT_BLOCK.shouldBe(visible);
-        COMMENT_TEXTAREA.shouldBe(visible);
-        ADD_COMMENT_BUTTON.shouldBe(visible);
         return this;
     }
 
     public WorkoutReportPage fillComment(String message) {
-        log.info("Добавление комметнария");
-        COMMENT_BLOCK.shouldBe(visible);
+        log.info("Добавление комментария");
+        COMMENT_IFRAME.shouldBe(visible);
+        switchTo().frame("WorkoutCommentsiFrame");
         COMMENT_TEXTAREA.shouldBe(visible).setValue(message);
         ADD_COMMENT_BUTTON.shouldBe(visible).click();
+        switchTo().defaultContent();
         return this;
     }
 
