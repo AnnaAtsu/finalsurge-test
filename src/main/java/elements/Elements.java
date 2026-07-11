@@ -34,6 +34,7 @@ public class Elements {
     public final static String WORKOUT_REPORT_HEADER_FOR_GROUP_BY_WEEK = "Week of Sunday";
     public final static String MESSAGE_TRAINING_VOLUME = "Training Volume";
     public final static String MESSAGE_WORKOUT_REPORTS = "Workout Reports";
+    public final static String MESSAGE_CALENDAR_SYNC_SUCCESFULL = "Your Calendar Sync has been disabled.";
 
     public final static String VIEW_CALENDAR_BUTTON = "View Calendar";
     public final static String WORKOUT_QUICK_ADD_TITLE = "Workout Quick Add";
