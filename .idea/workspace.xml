@@ -5,23 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d16654c-077b-4955-b046-e440735bfda5" name="Changes" comment="тест для feedback">
-      <change afterPath="$PROJECT_DIR$/src/test/java/constants/ConstantElements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/UserProfileTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/ConfigReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/elements/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elements/Elements.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/UserProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/UserProfilePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/WorkoutReportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/WorkoutReportPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CalendarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CalendarTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CustomerSupportTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CustomerSupportTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DashboardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DashboardTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/FeedBackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/FeedBackTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/WorkoutReportTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/WorkoutReportTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/WorkoutsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/WorkoutsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/UserProfileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/UserProfileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,12 +38,12 @@
     &quot;assignee&quot;: &quot;AnnaAtsu&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/AnnaAtsu/finalsurge-test.git&quot;,
-    &quot;accountId&quot;: &quot;d47bf71c-16d9-4a93-8ab7-f7dd3430d6e4&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/AnnaAtsu/finalsurge-test",
+    "accountId": "d22df9c9-9be2-42d4-87da-a5bd7df5e467"
   }
-}</component>
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -63,7 +52,6 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="3FGb7jHMOcDljkf3ClNMFS2J5qc" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -76,6 +64,7 @@
     "Maven.finalsurge-test [io.qameta.allure:allure-maven:2.15.2:serve].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TestNG.CalendarTest.checkActivityColors.executor": "Run",
     "TestNG.CalendarTest.checkActivityLabelExistence.executor": "Run",
@@ -113,7 +102,10 @@
     "TestNG.RegisterTest.checkValidMessagesForEmailForRegistration.executor": "Run",
     "TestNG.RegisterTest.checkValidMessagesForEmptyRegistration.executor": "Run",
     "TestNG.RegisterTest.checkValidMessagesForFullRegistration.executor": "Run",
+    "TestNG.UserProfileTest.checkCalendarSyncChange.executor": "Run",
     "TestNG.UserProfileTest.checkEditNameSurname.executor": "Run",
+    "TestNG.UserProfileTest.checkSettingsChange.executor": "Run",
+    "TestNG.UserProfileTest.checkSettingsLanguageChange.executor": "Run",
     "TestNG.UserProfileTest.checkUserPrifilePage.executor": "Run",
     "TestNG.WorkoutReportTest.checkReportComment.executor": "Run",
     "TestNG.WorkoutReportTest.checkReportForActivity.executor": "Run",
@@ -128,7 +120,7 @@
     "TestNG.WorkoutsTest.checkEmptyNameWorkout.executor": "Run",
     "TestNG.WorkoutsTest.checkIntervalExistence.executor": "Run",
     "TestNG.WorkoutsTest.checkTtitleDescriptionExistence.executor": "Run",
-    "git-widget-placeholder": "feature/dashboard",
+    "git-widget-placeholder": "dashboard",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/takan/IdeaProjects/autojava/finalsurge-test",
     "settings.editor.selected.configurable": "preferences.lookFeel"
@@ -139,8 +131,8 @@
       <recent name="C:\Users\takan\IdeaProjects\autojava\finalsurge-test" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.UserProfileTest.checkEditNameSurname">
-    <configuration name="LoginTest.checkSuccessfullLogin" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.UserProfileTest.checkCalendarSyncChange">
+    <configuration name="UserProfileTest.checkCalendarSyncChange" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -149,8 +141,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.LoginTest" />
-      <option name="METHOD_NAME" value="checkSuccessfullLogin" />
+      <option name="MAIN_CLASS_NAME" value="tests.UserProfileTest" />
+      <option name="METHOD_NAME" value="checkCalendarSyncChange" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -176,6 +168,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserProfileTest.checkSettingsChange" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="finalsurge-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.UserProfileTest" />
+      <option name="METHOD_NAME" value="checkSettingsChange" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserProfileTest.checkSettingsLanguageChange" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="finalsurge-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.UserProfileTest" />
+      <option name="METHOD_NAME" value="checkSettingsLanguageChange" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserProfileTest.checkUserPrifilePage" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
@@ -194,56 +222,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WorkoutReportTest.checkReportComment" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="finalsurge-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.WorkoutReportTest" />
-      <option name="METHOD_NAME" value="checkReportComment" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WorkoutsTest.checkCalendarActualMonthExistence" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="finalsurge-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.WorkoutsTest" />
-      <option name="METHOD_NAME" value="checkCalendarActualMonthExistence" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.UserProfileTest.checkCalendarSyncChange" />
+        <item itemvalue="TestNG.UserProfileTest.checkSettingsLanguageChange" />
+        <item itemvalue="TestNG.UserProfileTest.checkSettingsChange" />
         <item itemvalue="TestNG.UserProfileTest.checkEditNameSurname" />
         <item itemvalue="TestNG.UserProfileTest.checkUserPrifilePage" />
-        <item itemvalue="TestNG.LoginTest.checkSuccessfullLogin" />
-        <item itemvalue="TestNG.WorkoutsTest.checkCalendarActualMonthExistence" />
-        <item itemvalue="TestNG.WorkoutReportTest.checkReportComment" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-ab7203c4" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
       </set>
     </attachedChunks>
   </component>
