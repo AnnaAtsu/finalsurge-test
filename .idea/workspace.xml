@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d16654c-077b-4955-b046-e440735bfda5" name="Changes" comment="тест для feedback">
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/DailyVitalsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/images/cat.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/elements/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elements/Elements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/DailyVitalsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ReportsPage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/UserProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/UserProfilePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/UserProfileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/UserProfileTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +42,12 @@
     &quot;assignee&quot;: &quot;AnnaAtsu&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/AnnaAtsu/finalsurge-test",
-    "accountId": "d22df9c9-9be2-42d4-87da-a5bd7df5e467"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AnnaAtsu/finalsurge-test&quot;,
+    &quot;accountId&quot;: &quot;d22df9c9-9be2-42d4-87da-a5bd7df5e467&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -75,6 +79,7 @@
     "TestNG.CalendarTest.checkFeedBackPage.executor": "Run",
     "TestNG.CalendarTest.checkFullCalendarCell.executor": "Run",
     "TestNG.CustomerSupportTest.checkCustomerSupportPage.executor": "Run",
+    "TestNG.DailyVitalsTest.checkSelectDate.executor": "Run",
     "TestNG.DashboardTest.checkClickNavMenu.executor": "Run",
     "TestNG.DashboardTest.checkDropdownsOnPAge.executor": "Run",
     "TestNG.DashboardTest.checkGarminButton.executor": "Run",
@@ -102,8 +107,12 @@
     "TestNG.RegisterTest.checkValidMessagesForEmailForRegistration.executor": "Run",
     "TestNG.RegisterTest.checkValidMessagesForEmptyRegistration.executor": "Run",
     "TestNG.RegisterTest.checkValidMessagesForFullRegistration.executor": "Run",
+    "TestNG.UserProfileTest.checkANotification.executor": "Run",
+    "TestNG.UserProfileTest.checkAvatarUploaded.executor": "Run",
     "TestNG.UserProfileTest.checkCalendarSyncChange.executor": "Run",
     "TestNG.UserProfileTest.checkEditNameSurname.executor": "Run",
+    "TestNG.UserProfileTest.checkNotification.executor": "Run",
+    "TestNG.UserProfileTest.checkPrivacy.executor": "Run",
     "TestNG.UserProfileTest.checkSettingsChange.executor": "Run",
     "TestNG.UserProfileTest.checkSettingsLanguageChange.executor": "Run",
     "TestNG.UserProfileTest.checkUserPrifilePage.executor": "Run",
@@ -122,17 +131,18 @@
     "TestNG.WorkoutsTest.checkTtitleDescriptionExistence.executor": "Run",
     "git-widget-placeholder": "dashboard",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/takan/IdeaProjects/autojava/finalsurge-test",
+    "last_opened_file_path": "/Users/anna/IdeaProjects/finalsurge-test/src/test/resources/images",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources/images" />
       <recent name="C:\Users\takan\IdeaProjects\autojava\finalsurge-test" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.UserProfileTest.checkCalendarSyncChange">
-    <configuration name="UserProfileTest.checkCalendarSyncChange" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.DailyVitalsTest.checkSelectDate">
+    <configuration name="DailyVitalsTest.checkSelectDate" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -141,8 +151,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.UserProfileTest" />
-      <option name="METHOD_NAME" value="checkCalendarSyncChange" />
+      <option name="MAIN_CLASS_NAME" value="tests.DailyVitalsTest" />
+      <option name="METHOD_NAME" value="checkSelectDate" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -150,7 +160,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserProfileTest.checkEditNameSurname" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="UserProfileTest.checkANotification" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -160,7 +170,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.UserProfileTest" />
-      <option name="METHOD_NAME" value="checkEditNameSurname" />
+      <option name="METHOD_NAME" value="checkANotification" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -168,7 +178,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserProfileTest.checkSettingsChange" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="UserProfileTest.checkAvatarUploaded" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -178,7 +188,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.UserProfileTest" />
-      <option name="METHOD_NAME" value="checkSettingsChange" />
+      <option name="METHOD_NAME" value="checkAvatarUploaded" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -186,7 +196,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserProfileTest.checkSettingsLanguageChange" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="UserProfileTest.checkNotification" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -196,7 +206,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.UserProfileTest" />
-      <option name="METHOD_NAME" value="checkSettingsLanguageChange" />
+      <option name="METHOD_NAME" value="checkNotification" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -204,7 +214,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserProfileTest.checkUserPrifilePage" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="UserProfileTest.checkPrivacy" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -214,7 +224,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.UserProfileTest" />
-      <option name="METHOD_NAME" value="checkUserPrifilePage" />
+      <option name="METHOD_NAME" value="checkPrivacy" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -224,11 +234,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.UserProfileTest.checkCalendarSyncChange" />
-        <item itemvalue="TestNG.UserProfileTest.checkSettingsLanguageChange" />
-        <item itemvalue="TestNG.UserProfileTest.checkSettingsChange" />
-        <item itemvalue="TestNG.UserProfileTest.checkEditNameSurname" />
-        <item itemvalue="TestNG.UserProfileTest.checkUserPrifilePage" />
+        <item itemvalue="TestNG.DailyVitalsTest.checkSelectDate" />
+        <item itemvalue="TestNG.UserProfileTest.checkNotification" />
+        <item itemvalue="TestNG.UserProfileTest.checkPrivacy" />
+        <item itemvalue="TestNG.UserProfileTest.checkANotification" />
+        <item itemvalue="TestNG.UserProfileTest.checkAvatarUploaded" />
       </list>
     </recent_temporary>
   </component>
@@ -272,7 +282,15 @@
       <option name="project" value="LOCAL" />
       <updated>1783002825787</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="тесты для профиля">
+      <option name="closed" value="true" />
+      <created>1783768273106</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1783768273108</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,6 +308,7 @@
     <MESSAGE value="написала 14 тестов по авторизации, добавила логирование, ломбок, faker" />
     <MESSAGE value="написала тесты для DashboardPage" />
     <MESSAGE value="написала тесты для CalendarPage" />
-    <option name="LAST_COMMIT_MESSAGE" value="написала тесты для CalendarPage" />
+    <MESSAGE value="тесты для профиля" />
+    <option name="LAST_COMMIT_MESSAGE" value="тесты для профиля" />
   </component>
 </project>

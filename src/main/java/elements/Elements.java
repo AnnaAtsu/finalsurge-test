@@ -18,7 +18,7 @@ public class Elements {
     public final static String titleForCUSTOMER_SUPPORTPage = "Final Surge - Customer Support";
     public final static String titleForWorkoutReportPage = "Final Surge - Athlete Workout Report";
     public final static String titleForUserProfilePage = "Final Surge - User Profile";
-
+    public final static String titleForDailyVitalsPage = "Final Surge - Daily Vitals";
 
 
     public final static String CANT_SIGN_IN_FORM_TITLE = "Can't sign in?";
@@ -26,6 +26,7 @@ public class Elements {
     public final static String REGISTRATION_FORM_TITLE = "Create a New Account for Free";
     public final static String CUSTOMER_SUPPORT_TITLE = "Final Surge Support Site";
     public final static String FEEDBACK_TITLE = "Provide Feedback";
+    public final static String DAILY_VITALS_TITLE = "View & Add Vitals";
 
     public final static String MESSAGE_BOARD_ACCESS_TEXT = "*You currently do not have access to any Message Boards. Your coach has the ability to create Message Boards and give teams access to them.";
     public final static String MESSAGE_FEEDBACK = "Your feedback has been sent to our staff. We appreciate the time you have taken to send this to us and we will respond as soon as possible.";
@@ -57,5 +58,6 @@ public class Elements {
     public final static String urlCustomerSupport = "https://log.finalsurge.com/CustSupport.cshtml";
     public final static String urlWorkoutReport = "https://log.finalsurge.com/WorkoutReport.cshtml";
     public final static String urlUserProfile = "https://log.finalsurge.com/UserProfile.cshtml";
+    public final static String urlDailyVitals = "https://log.finalsurge.com/DailyVitals.cshtml";
 
 }
