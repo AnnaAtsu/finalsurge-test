@@ -94,7 +94,7 @@
 
 ## 5. Ежедневные показатели (Daily Vitals)
 
-🔗 `https://log.finalsurge.com/Workouts.cshtml` (вложенный раздел → Daily Vitals `https://log.finalsurge.com/DailyVitals.cshtm`)
+🔗 `https://log.finalsurge.com/Workouts.cshtml` (вложенный раздел → Daily Vitals `https://log.finalsurge.com/DailyVitals.cshtml`)
 
 | ID           | Проверка                          | Ожидаемый результат                                                        |
 |--------------|-----------------------------------|----------------------------------------------------------------------------|

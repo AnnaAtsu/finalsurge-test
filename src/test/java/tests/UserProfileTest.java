@@ -14,7 +14,6 @@ import static elements.Elements.*;
 
 public class UserProfileTest extends BaseTest{
 
-
     private static final Faker faker = new Faker();
 
     @DataProvider(name = "validUserData")
@@ -27,7 +26,8 @@ public class UserProfileTest extends BaseTest{
         };
     }
 
-    @Test(testName = "Просмотр профиля ",  description = "Отображаются: имя, email, фото профиля")
+    @Test(testName = "Просмотр профиля "
+            ,  description = "Отображаются: имя, email, фото профиля")
     public void checkUserPrifilePage() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -42,7 +42,9 @@ public class UserProfileTest extends BaseTest{
         softAssert.assertAll();
     }
 
-    @Test(testName = "Редактирование имени и фамилии", dataProvider = "validUserData", description = "После сохранения новое имя отображается в профиле и шапке сайта")
+    @Test(testName = "Редактирование имени и фамилии"
+            , dataProvider = "validUserData"
+            , description = "После сохранения новое имя отображается в профиле и шапке сайта")
     public void checkEditNameSurname(String firstName, String lastName) {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -56,7 +58,8 @@ public class UserProfileTest extends BaseTest{
         softAssert.assertAll();
     }
 
-    @Test(testName = "Редактирование User Settings тип тренировки",  description = "Выбор типа тренировки")
+    @Test(testName = "Редактирование User Settings тип тренировки"
+            ,  description = "Выбор типа тренировки")
     public void checkSettingsTrainningChange() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -71,7 +74,8 @@ public class UserProfileTest extends BaseTest{
         softAssert.assertAll();
     }
 
-    @Test(testName = "Редактирование User Settings язык",  description = "Выбор языка типа тренировки")
+    @Test(testName = "Редактирование User Settings язык"
+            ,  description = "Выбор языка типа тренировки")
     public void checkSettingsLanguageChange() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -86,7 +90,8 @@ public class UserProfileTest extends BaseTest{
         softAssert.assertAll();
     }
 
-    @Test(testName = "Редактирование Calendar Sync",  description = "Чекбоксы on/off - сохранить изменения ")
+    @Test(testName = "Редактирование Calendar Sync"
+            ,  description = "Чекбоксы on/off - сохранить изменения ")
     public void checkCalendarSyncChange() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -101,7 +106,8 @@ public class UserProfileTest extends BaseTest{
         softAssert.assertAll();
     }
 
-    @Test(testName = "Загрузка аватара",  description = "После выбора файла изображение отображается в профиле")
+    @Test(testName = "Загрузка аватара"
+            ,  description = "После выбора файла изображение отображается в профиле")
     public void checkAvatarUploaded() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -110,7 +116,37 @@ public class UserProfileTest extends BaseTest{
         userProfilePage.openPage()
                 .isPageOpened()
                 .clickEditButton()
-                //доделать
+                .uploadProfileImage("images/cat.jpg")
+                .saveSettings();
+        softAssert.assertAll();
+    }
+
+    @Test(testName = "Настройки уведомлений (Notifications)"
+            ,  description = "Чекбоксы вкл/выкл сохраняются, настройки применяются ")
+    public void checkNotification() {
+        SoftAssert softAssert = new SoftAssert();
+        loginPage.openPage();
+        loginPage.enterCreds(email, password);
+        loginPage.pushLoginButton();
+        userProfilePage.openPage()
+                .isPageOpened()
+                .clickEditSettingsButton()
+                .changeEmailNotification()
+                .saveSettings();
+        softAssert.assertAll();
+    }
+
+    @Test(testName = "Настройки приватности"
+            ,  description = "Настройки видимости профиля сохраняются")
+    public void checkPrivacy() {
+        SoftAssert softAssert = new SoftAssert();
+        loginPage.openPage();
+        loginPage.enterCreds(email, password);
+        loginPage.pushLoginButton();
+        userProfilePage.openPage()
+                .isPageOpened()
+                .clickEditSettingsButton()
+                .changeUpdates()
                 .saveSettings();
         softAssert.assertAll();
     }

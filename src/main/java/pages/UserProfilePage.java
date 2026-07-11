@@ -1,11 +1,13 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import lombok.extern.log4j.Log4j2;
 import org.testng.asserts.SoftAssert;
 
+import java.io.File;
 import java.util.List;
 import java.util.Random;
 
@@ -37,6 +39,14 @@ public class UserProfilePage extends BasePage{
     private final SelenideElement CHECKED_LANGUAGE =
             $x("//p[i[contains(@class,'flag-')]]");
     private String selectedLanguage;
+    private String initialUpdatesValue;
+
+    private final SelenideElement PUSH_IMAGE_BUTTON = $("#EditProfilePicOther");
+    private final SelenideElement SELECT_IMAGE_BUTTON =  $x("//input[@type='file' and @name='profilepic']");
+    private final SelenideElement UPLOAD_BUTTON = $("#NextStep");
+    private final SelenideElement UPLOADER_FRAME = $("#uploader");
+    private final SelenideElement SAVE_NEW_IMAGE_BUTTON = $x("//a[text()='Save']");
+
 
 
     public UserProfilePage openPage() {
@@ -150,9 +160,57 @@ public class UserProfilePage extends BasePage{
 
     public UserProfilePage changeCalendarSync() {
         log.info("Нажать на радиобаттон синхронизации");
-        $("#SyncOff").shouldBe(selected);
-        $("#SyncOn").click();
-        $("#SyncOn").shouldBe(selected);
+        SelenideElement selectedRadio = $$("input[name='ECalSync']")
+                .findBy(selected);
+        initialUpdatesValue = selectedRadio.getAttribute("id");
+        if ("SyncOff".equals(initialUpdatesValue)) {
+            $("#SyncOn").parent().click();
+            $("#SyncOn").shouldBe(selected);
+        } else {
+            $("#SyncOff").parent().click();
+            $("#SyncOff").shouldBe(selected);
+        }
+        return this;
+    }
+
+    public UserProfilePage uploadProfileImage(String fileName) {
+        log.info("Загрузка изображения профиля");
+        PUSH_IMAGE_BUTTON.click();
+        switchTo().frame(UPLOADER_FRAME);
+        SELECT_IMAGE_BUTTON.uploadFromClasspath(fileName);
+        switchTo().defaultContent();
+        UPLOAD_BUTTON.shouldBe(visible).click();
+        SAVE_NEW_IMAGE_BUTTON.shouldBe(visible).click();
+        return this;
+    }
+
+    public UserProfilePage changeEmailNotification() {
+        log.info("Нажать на радиобаттон почтовых уведомлений");
+        SelenideElement selectedRadio = $$("input[name='EmailWorkouts']")
+                .findBy(selected);
+        initialUpdatesValue = selectedRadio.getAttribute("id");
+        if ("EW0".equals(initialUpdatesValue)) {
+            $("#EW1").parent().click();
+            $("#EW1").shouldBe(selected);
+        } else {
+            $("#EW0").parent().click();
+            $("#EW0").shouldBe(selected);
+        }
+        return this;
+    }
+
+    public UserProfilePage changeUpdates() {
+        log.info("Нажать на радиобаттон почтовых уведомлений");
+        SelenideElement selectedRadio = $$("input[name='EmailUpdates']")
+                .findBy(selected);
+        initialUpdatesValue = selectedRadio.getAttribute("id");
+        if ("EU1".equals(initialUpdatesValue)) {
+            $("#EU2").parent().click();
+            $("#EU2").shouldBe(selected);
+        } else {
+            $("#EU1").parent().click();
+            $("#EU1").shouldBe(selected);
+        }
         return this;
     }
 }
