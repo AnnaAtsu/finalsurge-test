@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import dto.WorkOuts;
 import lombok.extern.log4j.Log4j2;
 
 import java.time.Duration;
@@ -34,6 +35,7 @@ public class WorkoutsPage extends BasePage{
     private final SelenideElement WORKOUT_PACE_INPUT = $("#Pace");
     private final SelenideElement CANCEL_BUTTON = $("#CancelClose");
     private final SelenideElement SAVE_BUTTON = $("#saveButton");
+    private final SelenideElement WORKOUT_NOTES_INPUT = $("#PostDesc");
 
 
 
@@ -116,4 +118,18 @@ public class WorkoutsPage extends BasePage{
     SAVE_BUTTON.shouldBe(visible).click();
         return this;
     }
+
+    public WorkoutsPage fillQuickWorkout(WorkOuts workOuts) {
+        log.info("Редактирование витальной тренировки '{}'", workOuts.getName());
+        WORKOUT_NAME_INPUT.setValue(workOuts.getName());
+        WORKOUT_DESCRIPTION_INPUT.setValue(workOuts.getDescription());
+        WORKOUT_DISTANCE_INPUT.setValue(workOuts.getDistance());
+        WORKOUT_PACE_INPUT.setValue(workOuts.getPace());
+        WORKOUT_CALENDAR_INPUT.setValue(workOuts.getDate());
+        ACTIVITY_SELECT.selectOptionContainingText("Walk");
+        WORKOUT_NOTES_INPUT.setValue(workOuts.getNotes());
+        return this;
+    }
+
+
 }
