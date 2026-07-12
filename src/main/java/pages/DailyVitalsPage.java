@@ -2,6 +2,8 @@ package pages;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import dto.DailyVitals;
+import dto.Feedback;
 import lombok.extern.log4j.Log4j2;
 
 import java.util.List;
@@ -19,6 +21,21 @@ public class DailyVitalsPage extends BasePage{
     private final SelenideElement TABLE =
             $("table.table.table-striped.table-condensed");
     private final SelenideElement SAVE_VITALS_BUTTON  = $("#saveButton");
+    private final SelenideElement VITALS_DATE_FIELD  = $("#VitalsDate");
+    private final SelenideElement VITALS_WEIGHT_FIELD  = $("#Weight");
+    private final SelenideElement VITALS_STEPS_FIELD  = $("#Steps");
+    private final SelenideElement VITALS_CALORIE_CONSUMED_FIELD  = $("#Calories");
+    private final SelenideElement VITALS_BODY_FAT_FIELD  = $("#BodyFat");
+    private final SelenideElement VITALS_WATER_FIELD  = $("#WaterPercent");
+    private final SelenideElement VITALS_RESTINGHR_FIELD  = $("#RestHR");
+    private final SelenideElement VITALS_HRVARIABILITY_FIELD  = $("#HRVar");
+    private final SelenideElement VITALS_HOURS_SLEEP_FIELD  = $("#SleepHours");
+    private final SelenideElement VITALS_HEALTH_NOTES_FIELD  = $("#HealthNotes");
+    private final SelenideElement VITALS_SLEEP_AMOUNT_SELECT  = $("#SleepAmount");
+    private final SelenideElement VITALS_SLEEP_QUALITY_SELECT  = $("#SleepQuality");
+    private final SelenideElement HIGH_CHART_TABLE  = $x("//rect[@class=' highcharts-background']");
+    private final SelenideElement WEIGHT_INDICATOR  = $x("//text[text()='Weight']");
+
 
     public DailyVitalsPage openPage() {
         log.info("Открыть страницу ежедневных тренировок");
@@ -50,9 +67,64 @@ public class DailyVitalsPage extends BasePage{
         return this;
     }
 
+    public DailyVitalsPage openeditedPage() {
+        log.info("Открыть отредактированную страницу ежедневных тренировок");
+        Selenide.open("/DailyVitals?vitalsdate=7/12/2026&edit=1");
+        return this;
+    }
+
     public DailyVitalsPage clickSaveVitalButton() {
         log.info("Нажать на кнопку сохранения показателей");
         SAVE_VITALS_BUTTON.shouldBe(visible).click();
+        return this;
+    }
+
+    public DailyVitalsPage fillVital(DailyVitals dailyVitalsk) {
+        log.info("Создание витальной тренировки '{}'", dailyVitalsk.getHealthNotes());
+        VITALS_DATE_FIELD.setValue(dailyVitalsk.getDate());
+        VITALS_STEPS_FIELD.setValue(dailyVitalsk.getSteps());
+        VITALS_CALORIE_CONSUMED_FIELD.setValue(dailyVitalsk.getCaloriesConsumed());
+        VITALS_WEIGHT_FIELD.setValue(dailyVitalsk.getWeight());
+        VITALS_BODY_FAT_FIELD.setValue(dailyVitalsk.getBodyFat());
+        VITALS_WATER_FIELD.setValue(dailyVitalsk.getWater());
+        VITALS_RESTINGHR_FIELD.setValue(dailyVitalsk.getRestingHR());
+        VITALS_HRVARIABILITY_FIELD.setValue(dailyVitalsk.getHRVariability());
+        VITALS_HOURS_SLEEP_FIELD.setValue(dailyVitalsk.getSleepHours());
+        VITALS_HEALTH_NOTES_FIELD.setValue(dailyVitalsk.getHealthNotes());
+        VITALS_SLEEP_AMOUNT_SELECT.selectOptionContainingText("Enough");
+        VITALS_SLEEP_QUALITY_SELECT.selectOptionContainingText("Moderate");
+        return this;
+    }
+
+    public DailyVitalsPage editVital(DailyVitals dailyVitalsk) {
+        log.info("Редактирование витальной тренировки '{}'", dailyVitalsk.getHealthNotes());
+        VITALS_DATE_FIELD.setValue(dailyVitalsk.getDate());
+        VITALS_STEPS_FIELD.clear();
+        VITALS_STEPS_FIELD.setValue(dailyVitalsk.getSteps());
+        VITALS_CALORIE_CONSUMED_FIELD.clear();
+        VITALS_CALORIE_CONSUMED_FIELD.setValue(dailyVitalsk.getCaloriesConsumed());
+        VITALS_WEIGHT_FIELD.clear();
+        VITALS_WEIGHT_FIELD.setValue(dailyVitalsk.getWeight());
+        VITALS_BODY_FAT_FIELD.clear();
+        VITALS_BODY_FAT_FIELD.setValue(dailyVitalsk.getBodyFat());
+        VITALS_WATER_FIELD.clear();
+        VITALS_WATER_FIELD.setValue(dailyVitalsk.getWater());
+        VITALS_RESTINGHR_FIELD.clear();
+        VITALS_RESTINGHR_FIELD.setValue(dailyVitalsk.getRestingHR());
+        VITALS_HRVARIABILITY_FIELD.clear();
+        VITALS_HRVARIABILITY_FIELD.setValue(dailyVitalsk.getHRVariability());
+        VITALS_HOURS_SLEEP_FIELD.clear();
+        VITALS_HOURS_SLEEP_FIELD.setValue(dailyVitalsk.getSleepHours());
+        VITALS_HEALTH_NOTES_FIELD.clear();
+        VITALS_HEALTH_NOTES_FIELD.setValue(dailyVitalsk.getHealthNotes());
+        return this;
+    }
+
+    public DailyVitalsPage findWeightIcon() {
+        log.info("Нажать на кнопку сохранения показателей");
+        PAST_DAYS_SELECT.selectOptionContainingText("This Year");
+        HIGH_CHART_TABLE.shouldBe(visible);
+        WEIGHT_INDICATOR.shouldBe(visible).click();
         return this;
     }
 }
