@@ -1,5 +1,9 @@
 package tests;
 
+import dto.DailyVitals;
+import dto.DailyVitalsFactory;
+import dto.WorkOuts;
+import dto.WorkOutsFactory;
 import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -101,6 +105,26 @@ public class WorkoutsTest extends BaseTest{
         workoutsPage.clickAddWorkout()
                         .clickSaveWorkout();
         isTextDisplayed(ACTIVITY_ADD_ERROR_MESSAGE);
+        softAssert.assertAll();
+    }
+
+    WorkOuts workOuts = WorkOutsFactory.getWorkOuts();
+    @Test(testName = "Cоздание тренировки: добавление заметок (Comment) "
+            , description = "Поле   принимает  текст, сохраняется ")
+    public void checkCreateWorkout() {
+        SoftAssert softAssert = new SoftAssert();
+        WorkOuts workOuts = WorkOutsFactory.getWorkOuts();
+        String expectedWorkoutName = workOuts.getName();
+        loginPage.openPage();
+        loginPage.isPageOpened();
+        loginPage.enterCreds(email, password);
+        loginPage.pushLoginButton();
+        verifyUrl(urlCalendar);
+        softAssert.assertEquals(title(), titleForDashboardPage);
+        workoutsPage.clickAddWorkout()
+                .fillQuickWorkout(workOuts)
+                .clickSaveWorkout();
+        isTextDisplayed(expectedWorkoutName);
         softAssert.assertAll();
     }
 }
