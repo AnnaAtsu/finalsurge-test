@@ -68,7 +68,7 @@ public class DailyVitalsTest extends BaseTest{
     }
 
     @Test(testName = "График изменения веса за период"
-            ,  description = "График отображает динамику веса по дням, значения корректны")
+            ,  description = "График отображает динамику веса по дням")
     public void checkWeightChange() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -76,8 +76,20 @@ public class DailyVitalsTest extends BaseTest{
         loginPage.pushLoginButton();
         dailyVitalsPage.openPage()
                 .isPageOpened()
-                        .findWeightIcon();
+                .clickIconsExceptWeight();
+        softAssert.assertAll();
+    }
 
+    @Test(testName = "График изменения HR за период"
+            ,  description = "рафик отображает динамику Resting HR по дням ")
+    public void checkRestingHRChange() {
+        SoftAssert softAssert = new SoftAssert();
+        loginPage.openPage();
+        loginPage.enterCreds(email, password);
+        loginPage.pushLoginButton();
+        dailyVitalsPage.openPage()
+                .isPageOpened()
+                .clickIconsExceptRestingHR();
         softAssert.assertAll();
     }
 }

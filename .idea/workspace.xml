@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d16654c-077b-4955-b046-e440735bfda5" name="Changes" comment="тест для feedback">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dto/DailyVitals.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dto/DailyVitalsFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/DailyVitalsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/DailyVitalsPage.java" afterDir="false" />
@@ -52,7 +50,6 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="3FGb7jHMOcDljkf3ClNMFS2J5qc" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -79,6 +76,7 @@
     "TestNG.DailyVitalsTest.addVital.executor": "Run",
     "TestNG.DailyVitalsTest.checkEdditVital.executor": "Run",
     "TestNG.DailyVitalsTest.checkSelectDate.executor": "Run",
+    "TestNG.DailyVitalsTest.checkWeightChange.executor": "Run",
     "TestNG.DashboardTest.checkClickNavMenu.executor": "Run",
     "TestNG.DashboardTest.checkDropdownsOnPAge.executor": "Run",
     "TestNG.DashboardTest.checkGarminButton.executor": "Run",
@@ -128,7 +126,7 @@
     "TestNG.WorkoutsTest.checkEmptyNameWorkout.executor": "Run",
     "TestNG.WorkoutsTest.checkIntervalExistence.executor": "Run",
     "TestNG.WorkoutsTest.checkTtitleDescriptionExistence.executor": "Run",
-    "git-widget-placeholder": "feature/dashboard",
+    "git-widget-placeholder": "dashboard",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/anna/IdeaProjects/finalsurge-test/src/test/resources/images",
     "settings.editor.selected.configurable": "preferences.lookFeel"
@@ -140,7 +138,7 @@
       <recent name="C:\Users\takan\IdeaProjects\autojava\finalsurge-test" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.DailyVitalsTest.checkEdditVital">
+  <component name="RunManager" selected="TestNG.DailyVitalsTest.checkRestingHRChange">
     <configuration name="DailyVitalsTest.addVital" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
@@ -177,6 +175,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DailyVitalsTest.checkRestingHRChange" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="finalsurge-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.DailyVitalsTest" />
+      <option name="METHOD_NAME" value="checkRestingHRChange" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DailyVitalsTest.checkSelectDate" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
@@ -195,7 +211,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserProfileTest.checkNotification" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DailyVitalsTest.checkWeightChange" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -204,26 +220,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.UserProfileTest" />
-      <option name="METHOD_NAME" value="checkNotification" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserProfileTest.checkPrivacy" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="finalsurge-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.UserProfileTest" />
-      <option name="METHOD_NAME" value="checkPrivacy" />
+      <option name="MAIN_CLASS_NAME" value="tests.DailyVitalsTest" />
+      <option name="METHOD_NAME" value="checkWeightChange" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -233,11 +231,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.DailyVitalsTest.checkRestingHRChange" />
+        <item itemvalue="TestNG.DailyVitalsTest.checkWeightChange" />
         <item itemvalue="TestNG.DailyVitalsTest.checkEdditVital" />
         <item itemvalue="TestNG.DailyVitalsTest.addVital" />
         <item itemvalue="TestNG.DailyVitalsTest.checkSelectDate" />
-        <item itemvalue="TestNG.UserProfileTest.checkNotification" />
-        <item itemvalue="TestNG.UserProfileTest.checkPrivacy" />
       </list>
     </recent_temporary>
   </component>
