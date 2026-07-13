@@ -4,6 +4,9 @@ import dto.DailyVitals;
 import dto.DailyVitalsFactory;
 import dto.FeedBackFactory;
 import dto.Feedback;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -16,6 +19,8 @@ public class DailyVitalsTest extends BaseTest{
 
     @Test(testName = "Выбор даты для показателей"
             ,  description = "Дата выбирается через календарь ")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("DailyVitals component")
     public void checkSelectDate() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -30,11 +35,10 @@ public class DailyVitalsTest extends BaseTest{
         softAssert.assertAll();
     }
 
-
-    DailyVitals dailyVitals = DailyVitalsFactory.getDailyVitals();
-
     @Test(testName = "Добавление ежедневных показателей"
             ,  description = "Поля Weight, Resting HR, Sleep Hours и др. заполняются и сохраняются ")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("DailyVitals component")
     public void checkAddVital() {
         SoftAssert softAssert = new SoftAssert();
         DailyVitals dailyVitals = DailyVitalsFactory.getDailyVitals();
@@ -53,6 +57,8 @@ public class DailyVitalsTest extends BaseTest{
 
     @Test(testName = "Редактирование записи показателей"
             ,  description = "После подтверждения запись отредактирована")
+    @Severity(SeverityLevel.BLOCKER)
+    @Feature("DailyVitals component")
     public void checkEdditVital() {
         SoftAssert softAssert = new SoftAssert();
         DailyVitals dailyVitals = DailyVitalsFactory.getDailyVitals();
@@ -69,6 +75,8 @@ public class DailyVitalsTest extends BaseTest{
 
     @Test(testName = "График изменения веса за период"
             ,  description = "График отображает динамику веса по дням")
+    @Severity(SeverityLevel.MINOR)
+    @Feature("DailyVitals component")
     public void checkWeightChange() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -82,6 +90,8 @@ public class DailyVitalsTest extends BaseTest{
 
     @Test(testName = "График изменения HR за период"
             ,  description = "рафик отображает динамику Resting HR по дням ")
+    @Severity(SeverityLevel.MINOR)
+    @Feature("DailyVitals component")
     public void checkRestingHRChange() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();

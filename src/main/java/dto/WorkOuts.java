@@ -3,8 +3,7 @@ package dto;
 import com.github.javafaker.DateAndTime;
 import lombok.*;
 
-@Getter
-@Setter
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -16,9 +15,4 @@ public class WorkOuts {
     private String distance;
     private String pace;
     private String notes;
-
-
-    public WorkOuts(DateAndTime date, String name, String description
-            , String distance, String pace, String notes) {
-    }
 }

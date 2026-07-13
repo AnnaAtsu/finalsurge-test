@@ -2,6 +2,9 @@ package tests;
 
 import dto.FeedBackFactory;
 import dto.Feedback;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -15,8 +18,9 @@ public class CustomerSupportTest extends BaseTest {
 
     Feedback customerSupportTest = FeedBackFactory.getFeedback();
 
-
-    @Test
+    @Test(testName = "Переход на страницу поддержки", description ="Проверка отображения страницы")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("CustomerSupport component")
     public void checkCustomerSupportPage() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
