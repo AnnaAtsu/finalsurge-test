@@ -3,8 +3,6 @@ package dto;
 import com.github.javafaker.DateAndTime;
 import lombok.*;
 
-@Getter
-@Setter
 @Data
 @Builder
 @NoArgsConstructor
@@ -20,7 +18,4 @@ public class DailyVitals {
     private String hRVariability;
     private String sleepHours;
     private String healthNotes;
-
-    public DailyVitals(DateAndTime date, int number, int number1, int number2, int number3, int number4, int number5, int i, int numberBetween, String sentence) {
-    }
 }

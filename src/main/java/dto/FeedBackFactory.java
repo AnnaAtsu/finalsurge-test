@@ -9,8 +9,8 @@ public class FeedBackFactory {
     public static Feedback getFeedback() {
         Faker faker = new Faker();
         return new Feedback(
-                faker.phoneNumber(),
-                faker.address()
+                faker.phoneNumber().phoneNumber(),
+                faker.address().fullAddress()
         );
     }
 }

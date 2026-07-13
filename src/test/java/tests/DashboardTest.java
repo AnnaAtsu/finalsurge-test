@@ -1,5 +1,8 @@
 package tests;
 
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -13,6 +16,8 @@ import static elements.Elements.*;
 public class DashboardTest extends BaseTest {
 
     @Test(testName = "Успешный переход на страницу дашборда", description = "Успешный переход на страницу дашборда")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("Dashboard component")
     public void openDashboardPage() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -25,6 +30,8 @@ public class DashboardTest extends BaseTest {
    }
 
     @Test(testName = "Навигационное меню: все пункты кликабельны", description = "Каждый пункт меню ведёт на соответствующую страницу (Calendar, Workouts, Reports и т.д.)")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("Dashboard component")
     public void checkClickNavMenu() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -46,6 +53,8 @@ public class DashboardTest extends BaseTest {
         softAssert.assertAll();
     }
     @Test(testName = "Отображение сводки за неделю (Weekly Summary)", description = "Виджет показывает неделю и уменьшенный календарь")
+    @Severity(SeverityLevel.BLOCKER)
+    @Feature("Dashboard component")
     public void checkWeeklySummary() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -60,6 +69,8 @@ public class DashboardTest extends BaseTest {
     }
 
     @Test(testName = "Навигационное меню: кнопка Garmin", description = "Переход на страницу с ссылками на часы ")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("Dashboard component")
     public void checkGarminButton() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -75,6 +86,8 @@ public class DashboardTest extends BaseTest {
     }
 
     @Test(testName = "Отображение сводки за 6 недель", description = "Виджет показывает 6 строк для 6 недель")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("Dashboard component")
     public void checkSixWeeksWidget() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -88,6 +101,8 @@ public class DashboardTest extends BaseTest {
     }
 
     @Test(testName = "Навигационная панель: есть дропдауны ", description = "Дропдаун работает и ведёт на соответствующую страницу")
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("Dashboard component")
     public void checkDropdownsOnPAge() {
         loginPage.openPage();
         loginPage.enterCreds(email, password);
@@ -98,6 +113,8 @@ public class DashboardTest extends BaseTest {
     }
 
     @Test(testName = "Навигационная панель: дропдаун Message Board", description = "Страница TeamForum: красное инфосообщение на странице об органичении доступа")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("Dashboard component")
     public void checkMessageBoardPage() {
         loginPage.openPage();
         loginPage.enterCreds(email, password);
@@ -109,6 +126,8 @@ public class DashboardTest extends BaseTest {
         isTextDisplayed(MESSAGE_BOARD_ACCESS_TEXT);
     }
     @Test(testName = "Логотип: переход на другую страницу ", description = "Страница Default: отображается блок Training Volume")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("Dashboard component")
     public void checkMainLogo() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
