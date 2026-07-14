@@ -4,6 +4,7 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import dto.FeedBackFactory;
 import dto.Feedback;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -18,6 +19,7 @@ public class FeedbackPage extends BasePage{
     private final SelenideElement FEEDBACK_FIELD  = $("#Feedback");
     private final SelenideElement FEEDBACK_SEND_BUTTON  = $("#submitButton");
 
+    @Step("Открыть страницу фидбека")
     public FeedbackPage openPage() {
         log.info("Открыть страницу фидбека");
         Selenide.open("/Feedback.cshtml");
@@ -25,6 +27,7 @@ public class FeedbackPage extends BasePage{
     }
 
     @Override
+    @Step("Проверка, открыта ли страница фидбека")
     public FeedbackPage isPageOpened() {
         log.info("Проверка, открыта ли страница фидбека");
         PHONE_FIELD.should(visible);
@@ -35,6 +38,7 @@ public class FeedbackPage extends BasePage{
     }
 
 
+    @Step("Создание аккаунта '{}'")
     public FeedbackPage fillFeedback(Feedback feedback) {
         log.info("Создание аккаунта '{}'", feedback.getPhoneNumber());
         PHONE_FIELD.sendKeys(feedback.getPhoneNumber());
@@ -43,6 +47,7 @@ public class FeedbackPage extends BasePage{
     }
 
 
+    @Step("Нажать на кнопку Save Feedback")
     public FeedbackPage pushFeedbackButton() {
         log.info("Нажать на кнопку Save Feedback");
         FEEDBACK_SEND_BUTTON.click();

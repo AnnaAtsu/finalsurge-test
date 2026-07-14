@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import dto.Register;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 
 import static com.codeborne.selenide.Condition.text;
@@ -31,12 +32,14 @@ public class RegisterPage extends BasePage{
     ;
 
 
+    @Step("Открыть страницу регистрации")
     public RegisterPage openPage() {
         log.info("Открыть страницу регистрации");
         Selenide.open("/register.cshtml");
         return this;
     }
     @Override
+    @Step("Проверка, открыта ли страница регистрации")
     public RegisterPage isPageOpened() {
         log.info("Проверка, открыта ли страница регистрации");
         $(byText(REGISTRATION_FORM_TITLE)).shouldBe(visible);
@@ -50,7 +53,8 @@ public class RegisterPage extends BasePage{
         return this;
     }
 
-        public void createAccount(Register register) {
+    @Step("Создание аккаунта '{}'")
+    public void createAccount(Register register) {
         log.info("Создание аккаунта '{}'", register.getFirstName());
         FIRST_NAME_FIELD.sendKeys(register.getFirstName());
         LAST_NAME_FIELD.sendKeys(register.getLastName());
@@ -59,12 +63,14 @@ public class RegisterPage extends BasePage{
         RE_PASSWORD_FIELD.sendKeys(register.getPassword());
     }
 
+    @Step("Нажать кнопку создания нового аккаунта Create New Account")
     public void pushRegisterButton() {
         log.info("Нажать кнопку создания нового аккаунта Create New Account");
         CREATE_NEW_ACCOUNT_BUTTON.shouldBe(visible);
         CREATE_NEW_ACCOUNT_BUTTON.click();
     }
 
+    @Step("Проверка валидации пустых полей при создании аккаунта")
     public void verifyEmptyFieldsErrorMessage() {
         log.info("Проверка валидации пустых полей при создании аккаунта");
         EMPTY_FIELD_EMAIL_ERROR_MESSAGE.shouldBe(visible)
@@ -79,18 +85,21 @@ public class RegisterPage extends BasePage{
                                          .shouldHave(text("This field is required."));
     }
 
+    @Step("Проверка валидации невалидного email при создании аккаунта")
     public void verifyInvalidEmailErrorMessage() {
         log.info("Проверка валидации невалидного email при создании аккаунта");
         EMPTY_FIELD_EMAIL_ERROR_MESSAGE.shouldBe(visible)
                                              .shouldHave(text("Please enter a valid email address."));
     }
 
+    @Step("Проверка валидации слабого пароля при создании аккаунта")
     public void verifyWeakPasswordErrorMessage() {
         log.info("Проверка валидации слабого пароля при создании аккаунта");
         WEAK_PASSWORD_ERROR_MESSAGE.shouldBe(visible)
                 .shouldHave(text(" *Please enter a Password value with at least one number, lower-case letter, and upper-case letter between 7 and 15 characters in length."));
     }
 
+    @Step("Нажать на ссылку Already have an account? Login here.")
     public void clickLoginLink() {
         log.info("Нажать на ссылку Already have an account? Login here.");
         ALREADY_HAVE_ACCOUNT_LINK.shouldBe(visible);

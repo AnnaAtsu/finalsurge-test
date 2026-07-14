@@ -1,6 +1,5 @@
 package tests;
 
-import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -13,6 +12,7 @@ import static constants.ConstantElements.email;
 import static constants.ConstantElements.password;
 import static elements.Elements.*;
 import static elements.Elements.titleForDashboardPage;
+import static urls.Urls.urlCalendar;
 
 @Log4j2
 public class CalendarTest extends BaseTest{
@@ -27,7 +27,7 @@ public class CalendarTest extends BaseTest{
         loginPage.isPageOpened();
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
-        verifyUrl(urlCalendar);
+        urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         calendarPage.verifyCurrentMonthAndYear();
         softAssert.assertAll();
@@ -42,7 +42,7 @@ public class CalendarTest extends BaseTest{
         loginPage.isPageOpened();
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
-        verifyUrl(urlCalendar);
+        urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
         calendarPage.verifyCalendarBlock();
@@ -57,7 +57,7 @@ public class CalendarTest extends BaseTest{
         loginPage.isPageOpened();
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
-        verifyUrl(urlCalendar);
+        urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
         calendarPage.goToNextMonth()
@@ -74,7 +74,7 @@ public class CalendarTest extends BaseTest{
         loginPage.isPageOpened();
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
-        verifyUrl(urlCalendar);
+        urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
         calendarPage.goToPrevMonth()
@@ -91,7 +91,7 @@ public class CalendarTest extends BaseTest{
         loginPage.isPageOpened();
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
-        verifyUrl(urlCalendar);
+        urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
         calendarPage.checkCellWithoutWorkout();
@@ -106,7 +106,7 @@ public class CalendarTest extends BaseTest{
         loginPage.isPageOpened();
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
-        verifyUrl(urlCalendar);
+        urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
         calendarPage.checkCellWithtWorkout();
@@ -121,7 +121,7 @@ public class CalendarTest extends BaseTest{
         loginPage.isPageOpened();
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
-        verifyUrl(urlCalendar);
+        urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
         calendarPage.checkActivityLabelExistence();
@@ -136,7 +136,7 @@ public class CalendarTest extends BaseTest{
         loginPage.isPageOpened();
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
-        verifyUrl(urlCalendar);
+        urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
         calendarPage.checkColorInWorkout("Bike", "#4dbd53")

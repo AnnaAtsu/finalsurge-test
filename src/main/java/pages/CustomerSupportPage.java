@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -16,6 +17,7 @@ public class CustomerSupportPage extends BasePage{
     private final SelenideElement FEEDBACK_SEND_BUTTON  = $("#submitButton");
 
 
+    @Step("Открыть страницу поддержки")
     public CustomerSupportPage openPage() {
         log.info("Открыть страницу поддержки");
         Selenide.open("/CustSupport.cshtml");
@@ -23,6 +25,7 @@ public class CustomerSupportPage extends BasePage{
     }
 
     @Override
+    @Step("Проверка, открыта ли страница саппорта")
     public CustomerSupportPage isPageOpened() {
         log.info("Проверка, открыта ли страница саппорта");
         PHONE_FIELD.should(visible);

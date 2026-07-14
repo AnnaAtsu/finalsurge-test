@@ -4,6 +4,7 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import dto.DailyVitals;
 import dto.Feedback;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 
 import java.util.List;
@@ -51,12 +52,14 @@ public class DailyVitalsPage extends BasePage{
             $x("//*[local-name()='path' and @stroke]");
 
 
+    @Step("Открыть страницу ежедневных тренировок")
     public DailyVitalsPage openPage() {
         log.info("Открыть страницу ежедневных тренировок");
         Selenide.open("/DailyVitals.cshtml");
         return this;
     }
     @Override
+    @Step("Проверка, что страница ежедневных тренировок открыта")
     public DailyVitalsPage isPageOpened() {
         log.info("Проверка, что страница ежедневных тренировок открыта");
         ADD_VITALS_BUTTON.shouldBe(visible);
@@ -65,6 +68,7 @@ public class DailyVitalsPage extends BasePage{
         return this ;
     }
 
+    @Step("Отредактировать настройки профиля")
     public String selectRandomTimePeriod() {
         log.info("Отредактировать настройки профиля");
         List<String> sports = PAST_DAYS_SELECT.$$("option")
@@ -75,24 +79,28 @@ public class DailyVitalsPage extends BasePage{
         return randomPeriod;
     }
 
+    @Step("Нажать на кнопку добавления показателей")
     public DailyVitalsPage clickAddVitalButton() {
         log.info("Нажать на кнопку добавления показателей");
         ADD_VITALS_BUTTON.shouldBe(visible).click();
         return this;
     }
 
+    @Step("Открыть отредактированную страницу ежедневных тренировок")
     public DailyVitalsPage openeditedPage() {
         log.info("Открыть отредактированную страницу ежедневных тренировок");
         Selenide.open("/DailyVitals?vitalsdate=7/12/2026&edit=1");
         return this;
     }
 
+    @Step("Нажать на кнопку сохранения показателей")
     public DailyVitalsPage clickSaveVitalButton() {
         log.info("Нажать на кнопку сохранения показателей");
         SAVE_VITALS_BUTTON.shouldBe(visible).click();
         return this;
     }
 
+    @Step("Создание витальной тренировки '{}'")
     public DailyVitalsPage fillVital(DailyVitals dailyVitalsk) {
         log.info("Создание витальной тренировки '{}'", dailyVitalsk.getHealthNotes());
         VITALS_DATE_FIELD.setValue(dailyVitalsk.getDate());
@@ -110,6 +118,7 @@ public class DailyVitalsPage extends BasePage{
         return this;
     }
 
+    @Step("Нажать все графы, кроме графы веса")
     public DailyVitalsPage clickIconsExceptWeight() {
         log.info("Нажать все графы, кроме графы веса");
         PAST_DAYS_SELECT.selectOptionContainingText("This Year");
@@ -124,6 +133,7 @@ public class DailyVitalsPage extends BasePage{
         return this;
     }
 
+    @Step("Редактирование витальной тренировки '{}'")
     public DailyVitalsPage editVital(DailyVitals dailyVitalsk) {
         log.info("Редактирование витальной тренировки '{}'", dailyVitalsk.getHealthNotes());
         VITALS_DATE_FIELD.setValue(dailyVitalsk.getDate());
@@ -148,6 +158,7 @@ public class DailyVitalsPage extends BasePage{
         return this;
     }
 
+    @Step("Нажать все графы, кроме графы HR")
     public DailyVitalsPage clickIconsExceptRestingHR() {
         log.info("Нажать все графы, кроме графы HR");
         PAST_DAYS_SELECT.selectOptionContainingText("This Year");

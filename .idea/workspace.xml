@@ -5,10 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d16654c-077b-4955-b046-e440735bfda5" name="Changes" comment="тест для feedback">
+      <change afterPath="$PROJECT_DIR$/src/main/java/urls/Urls.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/assertions/TextAssertion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/assertions/UrlAssertion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/regress.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dto/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dto/Feedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dto/WorkOuts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dto/WorkOuts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/elements/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elements/Elements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CalendarPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CalendarPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CustomerSupportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CustomerSupportPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/DailyVitalsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/DailyVitalsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/DashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/DashboardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/FeedbackPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/FeedbackPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/RegisterPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/UserProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/UserProfilePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/WorkoutReportPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/WorkoutReportPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/WorkoutsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/WorkoutsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CalendarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CalendarTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CustomerSupportTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CustomerSupportTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/DailyVitalsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DailyVitalsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DashboardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DashboardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/FeedBackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/FeedBackTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/RegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/RegisterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/UserProfileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/UserProfileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/WorkoutReportTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/WorkoutReportTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/WorkoutsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/WorkoutsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/crossbrowser.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/crossbrowser.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +77,7 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="3FGb7jHMOcDljkf3ClNMFS2J5qc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -123,10 +151,11 @@
     "TestNG.WorkoutsTest.checkActivityTypeExistence.executor": "Run",
     "TestNG.WorkoutsTest.checkCalendarActualMonthExistence.executor": "Run",
     "TestNG.WorkoutsTest.checkCancelButton.executor": "Run",
+    "TestNG.WorkoutsTest.checkCreateWorkout.executor": "Run",
     "TestNG.WorkoutsTest.checkEmptyNameWorkout.executor": "Run",
     "TestNG.WorkoutsTest.checkIntervalExistence.executor": "Run",
     "TestNG.WorkoutsTest.checkTtitleDescriptionExistence.executor": "Run",
-    "git-widget-placeholder": "dashboard",
+    "git-widget-placeholder": "feature/dashboard",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/anna/IdeaProjects/finalsurge-test/src/test/resources/images",
     "settings.editor.selected.configurable": "preferences.lookFeel"
@@ -138,7 +167,7 @@
       <recent name="C:\Users\takan\IdeaProjects\autojava\finalsurge-test" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.DailyVitalsTest.checkRestingHRChange">
+  <component name="RunManager" selected="TestNG.WorkoutsTest.checkCreateWorkout">
     <configuration name="DailyVitalsTest.addVital" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
@@ -193,24 +222,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DailyVitalsTest.checkSelectDate" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="finalsurge-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.DailyVitalsTest" />
-      <option name="METHOD_NAME" value="checkSelectDate" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DailyVitalsTest.checkWeightChange" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
@@ -229,13 +240,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WorkoutsTest.checkCreateWorkout" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="finalsurge-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.WorkoutsTest" />
+      <option name="METHOD_NAME" value="checkCreateWorkout" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.WorkoutsTest.checkCreateWorkout" />
         <item itemvalue="TestNG.DailyVitalsTest.checkRestingHRChange" />
         <item itemvalue="TestNG.DailyVitalsTest.checkWeightChange" />
         <item itemvalue="TestNG.DailyVitalsTest.checkEdditVital" />
         <item itemvalue="TestNG.DailyVitalsTest.addVital" />
-        <item itemvalue="TestNG.DailyVitalsTest.checkSelectDate" />
       </list>
     </recent_temporary>
   </component>

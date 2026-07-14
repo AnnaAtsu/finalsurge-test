@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" name="saucedemo" parallel="tests">
+<suite thread-count="2" name="finalsurge" parallel="tests">
     <listeners>
         <listener class-name="listeners.TestListener"></listener>
     </listeners>

@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebElementCondition;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.testng.asserts.SoftAssert;
 
@@ -29,6 +30,7 @@ public class LoginPage extends BasePage{
     private final SelenideElement LOGOUT_BUTTON = $x("//a[text()='Logout']");
 
 
+    @Step("Открыть страницу авторизации")
     public LoginPage openPage() {
         log.info("Открыть страницу авторизации");
         Selenide.open("/login.cshtml");
@@ -37,6 +39,7 @@ public class LoginPage extends BasePage{
 
 
     @Override
+    @Step("Проверка, открыта ли страница авторизации")
     public LoginPage isPageOpened() {
         log.info("Проверка, открыта ли страница авторизации");
         $(byText(LOGIN_FORM_TITLE)).shouldBe(visible);
@@ -49,6 +52,7 @@ public class LoginPage extends BasePage{
         return this;
     }
 
+    @Step("Ввести креды для авторизации")
     public void enterCreds(String email, String password) {
         log.info("Ввести креды для авторизации");
         LOGIN_FIELD.sendKeys(email);
@@ -56,58 +60,68 @@ public class LoginPage extends BasePage{
 
     }
 
+    @Step("Нажать кнопку логина")
     public void pushLoginButton() {
         log.info("Нажать кнопку логина");
         LOGIN_BUTTON.click();
     }
 
+    @Step("Проверка ошибки email")
     public void verifyEmailError() {
         log.info("Проверка ошибки email");
         LOGIN_ERROR.should(visible);
         LOGIN_ERROR.shouldHave(text("Please enter your e-mail address."));
     }
 
+    @Step("Проверка ошибки пароля")
     public void verifyPasswordError() {
         log.info("Проверка ошибки пароля");
         PASSWORD_ERROR.should(visible);
         PASSWORD_ERROR.shouldHave(text("Please enter a password."));
     }
 
+    @Step("Проверка ошибки валидности email")
     public void verifyNotvalidLoginError() {
         log.info("Проверка ошибки валидности email");
         LOGIN_ERROR.should(visible);
         LOGIN_ERROR.shouldHave(text("Please enter a valid email address."));
     }
 
+    @Step("Проверка ошибки невалидных кредов")
     public void verifyNotvalidLoginCredsError() {
         log.info("Проверка ошибки невалидных кредов");
         INVALID_LOGIN_CREDS_ERROR.should(visible);
         INVALID_LOGIN_CREDS_ERROR.shouldHave(text("Invalid login credentials. Please try again."));
     }
+    @Step("Нажать на ссылку Forgot password")
     public  void clickForgotPasswordLink() {
         log.info("Нажать на ссылку Forgot password");
         FORGOT_PASSWORD_LINK.shouldBe(visible, Duration.ofSeconds(5));
         FORGOT_PASSWORD_LINK.click();
     }
 
+    @Step("Проверка кнопки веридикации кредов")
     public void verifyRequestPasswordButton() {
         log.info("Проверка кнопки веридикации кредов");
         REQUEST_NEW_PASSWORD_BUTTON.shouldBe(visible);
         REQUEST_NEW_PASSWORD_BUTTON.shouldHave(text("Request New Password"));
     }
 
+    @Step("Нажать на ссылку Logout")
     public void logoutButtonClick() {
         log.info("Нажать на ссылку Logout");
         LOGOUT_BUTTON.shouldBe(visible, Duration.ofSeconds(5));
         LOGOUT_BUTTON.click();
     }
 
+    @Step("Нажать на ссылку Not registered?")
     public void notRegisteredLinkClick() {
         log.info("Нажать на ссылку Not registered?");
         SIGN_UP.shouldBe(visible, Duration.ofSeconds(5));
         SIGN_UP.click();
     }
 
+    @Step("Нажать чекбок Remember me")
     public void rememberMeCheckboxClick() {
         log.info("Нажать чекбок Remember me");
         CHECKBOX_REMEMBER_ME.shouldBe(visible);
@@ -115,6 +129,7 @@ public class LoginPage extends BasePage{
         CHECKBOX_REMEMBER_ME.shouldBe(checked);
     }
 
+    @Step("Проверка выбора чекбокса Remember me")
     public void isCheckBoxRememberMeNotSelected() {
         log.info("Проверка выбора чекбокса Remember me");
         SoftAssert softAssert = new SoftAssert();

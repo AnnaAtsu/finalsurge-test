@@ -12,11 +12,10 @@ import static com.codeborne.selenide.Selenide.title;
 import static constants.ConstantElements.email;
 import static constants.ConstantElements.password;
 import static elements.Elements.*;
+import static urls.Urls.urlCustomerSupport;
 
 public class CustomerSupportTest extends BaseTest {
 
-
-    Feedback customerSupportTest = FeedBackFactory.getFeedback();
 
     @Test(testName = "Переход на страницу поддержки", description ="Проверка отображения страницы")
     @Severity(SeverityLevel.CRITICAL)
@@ -31,9 +30,9 @@ public class CustomerSupportTest extends BaseTest {
         calendarPage.isPageOpened();
         calendarPage.clickCustomerSupportLink();
         softAssert.assertEquals(title(), titleForCUSTOMER_SUPPORTPage);
-        verifyUrl(urlCustomerSupport);
+        urlAssertion.verifyUrl(urlCustomerSupport);
         customerSupportPage.isPageOpened();
-        isTextDisplayed(CUSTOMER_SUPPORT_TITLE);
+        textAssertion.isTextDisplayed(CUSTOMER_SUPPORT_TITLE);
         softAssert.assertAll();
     }
 }

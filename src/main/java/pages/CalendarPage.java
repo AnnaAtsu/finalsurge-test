@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.testng.asserts.SoftAssert;
 
@@ -39,24 +40,29 @@ public class CalendarPage extends BasePage{
 
 
 
+    @Step("Нажать на правую стрелочку")
     public CalendarPage goToNextMonth() {
         log.info("Нажать на правую стрелочку");
         NAVIGATION_LINK_RIGHT.shouldBe(visible).click();
         return this;
     }
 
+    @Step("Нажать на левую стрелочку")
     public CalendarPage goToPrevMonth() {
+        log.info("Нажать на левую стрелочку");
         NAVIGATION_LINK_LEFT.shouldBe(visible).click();
         return this;
     }
 
 
+    @Step("Нажать на кнопку фидбека")
     public CalendarPage ckickGiveFeedBackLink() {
         log.info("Нажать на кнопку фидбека");
         GIVE_FEEDBACK_LINK.shouldBe(visible).click();
         return this;
     }
 
+    @Step("Нажать на кнопку клиентской поддержки")
     public CalendarPage clickCustomerSupportLink() {
         log.info("Нажать на кнопку клиентской поддержки");
         GIVE_FEEDBACK_LINK.shouldBe(visible).click();
@@ -64,6 +70,7 @@ public class CalendarPage extends BasePage{
     }
 
     @Override
+    @Step("Проверка, открыта ли страница календаря")
     public CalendarPage isPageOpened() {
         log.info("Проверка, открыта ли страница календаря");
         CALENDAR_CONTENT_BLOCK.should(visible);
@@ -71,7 +78,7 @@ public class CalendarPage extends BasePage{
         return this;
     }
 
-
+    @Step("Проверка наличия в календаре кнопок добавления тренировок, заголовка, ячеек")
     public CalendarPage verifyCalendarBlock() {
         log.info("Проверка наличия в календаре кнопок добавления тренировок, заголовка, ячеек");
         MONTH_TITLE.shouldBe(visible);
@@ -85,6 +92,7 @@ public class CalendarPage extends BasePage{
     }
 
 
+    @Step("Проверка актуального месяца и года в календаре")
     public void verifyCurrentMonthAndYear() {
         log.info("Проверка актуального месяца и года в календаре");
                String expected = LocalDate.now()
@@ -92,6 +100,7 @@ public class CalendarPage extends BasePage{
         MONTH_TITLE.shouldBe(visible).shouldHave(text(expected));
     }
 
+    @Step("Проверка  месяца и года в календаре при нажатии по правой стрелочке")
     public CalendarPage goToNextMonthAndWaitForUpdate() {
         log.info("Проверка  месяца и года в календаре при нажатии по правой стрелочке");
         String nextMonth = LocalDate.now()
@@ -101,6 +110,7 @@ public class CalendarPage extends BasePage{
         return this;
     }
 
+    @Step("Проверка  месяца и года в календаре при нажатии по левой стрелочке")
     public CalendarPage goToPrevMonthAndWaitForUpdate() {
         log.info("Проверка  месяца и года в календаре при нажатии по левой стрелочке");
         String nextMonth = LocalDate.now()
@@ -110,6 +120,7 @@ public class CalendarPage extends BasePage{
         return this;
     }
 
+    @Step("Проверка, что в ячейке без тренировки нет тренировки")
     public CalendarPage checkCellWithoutWorkout() {
         log.info("Проверка, что в ячейке без тренировки нет тренировки");
         CELL_WITHOUT_WORKOUT.shouldBe(visible);
@@ -119,6 +130,7 @@ public class CalendarPage extends BasePage{
         return this;
     }
 
+    @Step("Проверка, что в ячейке без тренировки нет тренировки")
     public CalendarPage checkCellWithtWorkout() {
         log.info("Проверка, что в ячейке без тренировки нет тренировки");
         CELL_WITH_WORKOUT.shouldBe(visible);
@@ -126,6 +138,7 @@ public class CalendarPage extends BasePage{
         return this;
     }
 
+    @Step("Проверка наличия метки в тренировке")
     public CalendarPage checkActivityLabelExistence() {
         log.info("Проверка наличия метки в тренировке");
         CELL_WITH_WORKOUT.shouldBe(visible);
@@ -145,6 +158,7 @@ public class CalendarPage extends BasePage{
         return String.format("rgb(%d, %d, %d)", r, g, b);
     }
 
+    @Step("Проверка цвета для тренировки типа '{}'")
     public CalendarPage checkColorInWorkout(String workoutType, String expectedColor) {
         log.info("Проверка цвета для тренировки типа '{}'", workoutType);
         SoftAssert softAssert = new SoftAssert();

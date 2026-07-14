@@ -1,5 +1,7 @@
 package tests;
 
+import assertions.TextAssertion;
+import assertions.UrlAssertion;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -34,6 +36,8 @@ public class BaseTest {
     WorkoutReportPage workoutReportPage;
     UserProfilePage userProfilePage;
     DailyVitalsPage dailyVitalsPage;
+    TextAssertion textAssertion;
+    UrlAssertion urlAssertion;
 
     @BeforeMethod
     public void setup() {
@@ -64,6 +68,8 @@ public class BaseTest {
         workoutReportPage = new WorkoutReportPage();
         userProfilePage = new UserProfilePage();
         dailyVitalsPage = new DailyVitalsPage();
+        textAssertion = new TextAssertion();
+        urlAssertion = new UrlAssertion();
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)
@@ -77,19 +83,5 @@ public class BaseTest {
             AllureUtils.takeScreenshot(getWebDriver());
         }
         getWebDriver().quit();
-    }
-
-    public void verifyUrl(String expectedUrl) {
-        webdriver().shouldHave(url(expectedUrl));
-    }
-
-    public boolean isTextDisplayed(String text) {
-        log.info("Проверка отображения текста " + text);
-        return $x("//*[contains(text(), '" + text + "')]").isDisplayed();
-    }
-
-    public void isTextNotDisplayed(String text) {
-        log.info("Проверка, что текст отсутствует: " + text);
-        $x("//*[contains(text(), '" + text + "')]").shouldNotBe(visible);
     }
 }
