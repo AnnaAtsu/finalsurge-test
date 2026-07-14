@@ -14,11 +14,12 @@ import static com.codeborne.selenide.Selenide.title;
 import static constants.ConstantElements.email;
 import static constants.ConstantElements.password;
 import static elements.Elements.*;
+import static urls.Urls.urlDailyVitals;
 
 public class DailyVitalsTest extends BaseTest{
 
-    @Test(testName = "Выбор даты для показателей"
-            ,  description = "Дата выбирается через календарь ")
+    @Test(testName = "Выбор даты для показателей",
+            description = "Дата выбирается через календарь ")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("DailyVitals component")
     public void checkSelectDate() {
@@ -29,9 +30,9 @@ public class DailyVitalsTest extends BaseTest{
         dailyVitalsPage.openPage()
                 .isPageOpened()
                         .selectRandomTimePeriod();
-        verifyUrl(urlDailyVitals);
+        urlAssertion.verifyUrl(urlDailyVitals);
         softAssert.assertEquals(title(), titleForDailyVitalsPage);
-        isTextDisplayed(DAILY_VITALS_TITLE);
+        textAssertion.isTextDisplayed(DAILY_VITALS_TITLE);
         softAssert.assertAll();
     }
 
@@ -51,7 +52,7 @@ public class DailyVitalsTest extends BaseTest{
                         .clickAddVitalButton()
                                 .fillVital(dailyVitals)
                                         .clickSaveVitalButton();
-        isTextDisplayed(expectedHealthNotes);
+        textAssertion.isTextDisplayed(expectedHealthNotes);
         softAssert.assertAll();
     }
 
@@ -69,7 +70,7 @@ public class DailyVitalsTest extends BaseTest{
         dailyVitalsPage.openeditedPage()
                 .editVital(dailyVitals)
                 .clickSaveVitalButton();
-        isTextDisplayed(expectedHealthNotes);
+       textAssertion.isTextDisplayed(expectedHealthNotes);
         softAssert.assertAll();
     }
 
@@ -78,14 +79,12 @@ public class DailyVitalsTest extends BaseTest{
     @Severity(SeverityLevel.MINOR)
     @Feature("DailyVitals component")
     public void checkWeightChange() {
-        SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
         dailyVitalsPage.openPage()
                 .isPageOpened()
                 .clickIconsExceptWeight();
-        softAssert.assertAll();
     }
 
     @Test(testName = "График изменения HR за период"
@@ -93,13 +92,11 @@ public class DailyVitalsTest extends BaseTest{
     @Severity(SeverityLevel.MINOR)
     @Feature("DailyVitals component")
     public void checkRestingHRChange() {
-        SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
         dailyVitalsPage.openPage()
                 .isPageOpened()
                 .clickIconsExceptRestingHR();
-        softAssert.assertAll();
     }
 }

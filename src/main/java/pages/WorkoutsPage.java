@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import dto.WorkOuts;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 
 import java.time.Duration;
@@ -40,6 +41,7 @@ public class WorkoutsPage extends BasePage{
 
 
     @Override
+    @Step("Проверка, открыта ли страница с тренировкой")
     public WorkoutsPage isPageOpened() {
         log.info("Проверка, открыта ли страница с тренировкой");
         ADD_WORKOUT_BUTTON.shouldBe(visible);
@@ -49,12 +51,14 @@ public class WorkoutsPage extends BasePage{
     }
 
 
+    @Step("Нажать на кнопку быстрого добавления тренировки")
     public WorkoutsPage clickAddWorkout() {
         log.info("Нажать на кнопку быстрого добавления тренировки");
         ADD_WORKOUT_BUTTON.shouldBe(visible).click();
         return this;
     }
 
+    @Step("Проверка наличия календаря в боковом меню тренировки")
     public WorkoutsPage verifyWorkoutCalendarInput() {
         log.info("Проверка наличия календаря в боковом меню тренировки");
         WORKOUT_CALENDAR_INPUT.should(visible);
@@ -63,6 +67,7 @@ public class WorkoutsPage extends BasePage{
         return this;
     }
 
+    @Step("Проверка актуального месяца и года в боковом календаре")
     public WorkoutsPage checkActualMonthSideCalendar() {
         log.info("Проверка актуального месяца и года в боковом календаре");
         String expected = LocalDate.now()
@@ -71,6 +76,7 @@ public class WorkoutsPage extends BasePage{
         return this;
     }
 
+    @Step("Нажать на активный день в календаре")
     public WorkoutsPage clickActiveDay() {
         log.info("Нажать на активный день в календаре");
         ACTIVE_DAY.shouldBe(visible).click();
@@ -78,6 +84,7 @@ public class WorkoutsPage extends BasePage{
         return this;
     }
 
+    @Step("Выбрать тип активности")
     public WorkoutsPage selectActivityType(String activityType) {
         log.info("Выбрать тип активности" + activityType);
         ACTIVITY_SELECT.shouldBe(visible)
@@ -85,6 +92,7 @@ public class WorkoutsPage extends BasePage{
         return this;
     }
 
+    @Step("Проверка отображения типа активности")
     public WorkoutsPage verifySelectedActivity(String subActivity) {
         log.info("Проверка отображения типа активности " + subActivity);
         ACTIVITY_SELECT.shouldBe(visible)
@@ -92,6 +100,7 @@ public class WorkoutsPage extends BasePage{
                return this;
     }
 
+    @Step("Заполнить поля с именем и описанием")
     public WorkoutsPage fillinNameAndDescription() {
         log.info("Заполнить поля с именем и описанием");
         String dateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy_HH-mm-ss"));
@@ -99,6 +108,7 @@ public class WorkoutsPage extends BasePage{
         WORKOUT_DESCRIPTION_INPUT.sendKeys("TestDescription" + dateTime);
         return this;
     }
+    @Step("Заполнить поля с дистанцией, длительностью")
     public WorkoutsPage fillinDistanceDurationPace() {
         log.info("Заполнить поля с дистанцией, длительностью");
         WORKOUT_DISTANCE_INPUT.sendKeys("2");
@@ -107,18 +117,21 @@ public class WorkoutsPage extends BasePage{
         return this;
     }
 
+    @Step("Нажать на кнопку Cancel")
     public WorkoutsPage clickCancelButton() {
         log.info("Нажать на кнопку Cancel");
         CANCEL_BUTTON.shouldBe(visible).click();
         return this;
     }
 
+    @Step("Нажать на кнопку Add Workout")
     public WorkoutsPage clickSaveWorkout() {
         log.info("Нажать на кнопку Add Workout");
     SAVE_BUTTON.shouldBe(visible).click();
         return this;
     }
 
+    @Step("Редактирование витальной тренировки '{}'")
     public WorkoutsPage fillQuickWorkout(WorkOuts workOuts) {
         log.info("Редактирование витальной тренировки '{}'", workOuts.getName());
         WORKOUT_NAME_INPUT.setValue(workOuts.getName());

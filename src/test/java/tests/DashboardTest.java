@@ -11,6 +11,7 @@ import static com.codeborne.selenide.Selenide.title;
 import static constants.ConstantElements.email;
 import static constants.ConstantElements.password;
 import static elements.Elements.*;
+import static urls.Urls.*;
 
 @Log4j2
 public class DashboardTest extends BaseTest {
@@ -24,7 +25,7 @@ public class DashboardTest extends BaseTest {
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
         dashboardPage.isPageOpened();
-        verifyUrl(urlCalendar);
+        urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
    }
@@ -39,16 +40,16 @@ public class DashboardTest extends BaseTest {
         loginPage.pushLoginButton();
         dashboardPage.isPageOpened();
         dashboardPage.clickDefaultPage();
-        verifyUrl(urlDefault);
+        urlAssertion.verifyUrl(urlDefault);
         softAssert.assertEquals(title(), titleForDefaultPage);
         dashboardPage.openPage();
         dashboardPage.clickReportPage();
-        verifyUrl(urlReport);
+        urlAssertion.verifyUrl(urlReport);
         softAssert.assertEquals(title(), titleForReportPage);
         dashboardPage.clickCalendarPage();
-        verifyUrl(urlCalendar);
+        urlAssertion.verifyUrl(urlCalendar);
         dashboardPage.clickMailPage();
-        verifyUrl(urlMail);
+        urlAssertion.verifyUrl(urlMail);
         softAssert.assertEquals(title(), titleForMailPage);
         softAssert.assertAll();
     }
@@ -63,7 +64,7 @@ public class DashboardTest extends BaseTest {
         dashboardPage.isPageOpened()
                  .clickWeekButton()
                 .verifyWeekHeader();
-        verifyUrl(urlCalendar);
+        urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
     }
@@ -77,10 +78,10 @@ public class DashboardTest extends BaseTest {
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
         dashboardPage.isPageOpened();
-        verifyUrl(urlCalendar);
+        urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         dashboardPage.clickGarminButton();
-        verifyUrl(urlGarmin);
+        urlAssertion.verifyUrl(urlGarmin);
         softAssert.assertEquals(title(), titleForGarminPage);
         softAssert.assertAll();
     }
@@ -94,7 +95,7 @@ public class DashboardTest extends BaseTest {
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
         dashboardPage.isPageOpened();
-        verifyUrl(urlCalendar);
+        urlAssertion.verifyUrl(urlCalendar);
         dashboardPage.clickSixWeeksButton();
         softAssert.assertEquals(dashboardPage.verifyWeekCount(), 6);
         softAssert.assertAll();
@@ -108,7 +109,7 @@ public class DashboardTest extends BaseTest {
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
         dashboardPage.isPageOpened();
-        verifyUrl(urlCalendar);
+        urlAssertion.verifyUrl(urlCalendar);
         dashboardPage.verifyDropdownMenuShouldBeVisibleAfterClick();
     }
 
@@ -116,14 +117,16 @@ public class DashboardTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Feature("Dashboard component")
     public void checkMessageBoardPage() {
+        SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
         dashboardPage.isPageOpened();
-        verifyUrl(urlCalendar);
+        urlAssertion.verifyUrl(urlCalendar);
         dashboardPage.clickMessageBoardButton();
-        verifyUrl(urlTeamForum);
-        isTextDisplayed(MESSAGE_BOARD_ACCESS_TEXT);
+        urlAssertion.verifyUrl(urlTeamForum);
+        softAssert.assertTrue(textAssertion.isTextDisplayed(MESSAGE_BOARD_ACCESS_TEXT));
+        softAssert.assertAll();
     }
     @Test(testName = "Логотип: переход на другую страницу ", description = "Страница Default: отображается блок Training Volume")
     @Severity(SeverityLevel.CRITICAL)
@@ -134,12 +137,13 @@ public class DashboardTest extends BaseTest {
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
         dashboardPage.isPageOpened();
-        verifyUrl(urlCalendar);
+        urlAssertion.verifyUrl(urlCalendar);
         dashboardPage.clickMainLogo();
-        verifyUrl(urlDefaultFromMainLogo);
+        urlAssertion.verifyUrl(urlDefaultFromMainLogo);
         softAssert.assertEquals(title(), titleForDefaultPage);
-        isTextDisplayed(MESSAGE_TRAINING_VOLUME);
-        isTextDisplayed(MESSAGE_WORKOUT_REPORTS);
-        isTextDisplayed(VIEW_CALENDAR_BUTTON);
+        softAssert.assertTrue(textAssertion.isTextDisplayed(MESSAGE_TRAINING_VOLUME));
+        softAssert.assertTrue(textAssertion.isTextDisplayed(MESSAGE_WORKOUT_REPORTS));
+        softAssert.assertTrue(textAssertion.isTextDisplayed(VIEW_CALENDAR_BUTTON));
+        softAssert.assertAll();
     }
 }

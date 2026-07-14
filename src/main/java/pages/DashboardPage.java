@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.testng.Assert;
 import org.testng.AssertJUnit;
@@ -54,6 +55,7 @@ public class DashboardPage extends BasePage{
     private final SelenideElement MESSAGE_MENU = $x("//a[text()='Message Boards']");
     private final SelenideElement MAIN_LOGO  = $x("//div[@class='main-logo']/a");
 
+    @Step("Открыть страницу дашборда")
     public DashboardPage openPage() {
         log.info("Открыть страницу дашборда");
         Selenide.open("/Calendar.cshtml");
@@ -61,6 +63,7 @@ public class DashboardPage extends BasePage{
     }
 
     @Override
+    @Step("Проверка, открыта ли страница дашборда")
     public DashboardPage isPageOpened() {
         log.info("Проверка, открыта ли страница дашборда");
         CALENDAR_CONTENT_BLOCK.should(visible);
@@ -74,26 +77,31 @@ public class DashboardPage extends BasePage{
         return this;
     }
 
+    @Step("Вернуться на страницу дашборда")
     public void clickCalendarPage() {
         log.info("Вернуться на страницу дашборда");
         CALENDAR_LINK.click();
     }
 
+    @Step("Открыть страницу дефолтную")
     public void clickDefaultPage() {
         log.info("Открыть страницу дефолтную");
         HOME_LINK.click();
     }
 
+    @Step("Открыть страницу отчетов")
     public void clickReportPage() {
         log.info("Открыть страницу отчетов");
         REPORTS_LINK.click();
     }
 
+    @Step("Открыть страницу сообщения")
     public void clickMailPage() {
         log.info("Открыть страницу сообщения");
         MAIL_LINK.click();
     }
 
+    @Step("Нажать на кнопку отображения недели")
     public DashboardPage clickWeekButton() {
         log.info("Нажать на кнопку отображения недели");
         WEEK_BUTTON.click();
@@ -106,6 +114,7 @@ public class DashboardPage extends BasePage{
         return this;
     }
 
+    @Step("Нажать на кнопку Garmin")
     public DashboardPage clickGarminButton() {
         log.info("Нажать на кнопку Garmin");
         GARMIN_BUTTON.should(visible);
@@ -113,6 +122,7 @@ public class DashboardPage extends BasePage{
         return this;
     }
 
+    @Step("Нажать на кнопку 6 weeks и выбрать в выпадающем списке 6 weeks")
     public DashboardPage clickSixWeeksButton() {
         log.info("Нажать на кнопку 6 weeks и выбрать в выпадающем списке 6 weeks");
         SIX_WEEKS_BUTTON.should(visible);
@@ -122,6 +132,7 @@ public class DashboardPage extends BasePage{
         return this;
     }
 
+    @Step("Подсчет количества строк для 6 недель")
     public int verifyWeekCount() {
         log.info("Подсчет количества строк для 6 недель");
         $$("td[data-weeknumber]").first().shouldBe(visible);
@@ -142,6 +153,7 @@ public class DashboardPage extends BasePage{
     private final List<String> TRAINING_PLAN_EXPECTED_ITEMS = Arrays.asList("View My Plans", "Find a Plan");
 
 
+    @Step("Отображение верхнего кликабельного меню над логотипом")
     public void verifyDropdownMenuShouldBeVisibleAfterClick() {
         log.info("Отображение верхнего кликабельного меню над логотипом");
         WORKOUT_MENU.shouldBe(visible).click();
@@ -156,11 +168,13 @@ public class DashboardPage extends BasePage{
         RESOURCES_ITEMS.shouldHave(texts("View Files & Resources"));
     }
 
+    @Step("Нажать на кнопку Message Board")
     public void clickMessageBoardButton() {
         log.info("Нажать на кнопку Message Board");
         MESSAGE_MENU.should(visible).click();
     }
 
+    @Step("Нажать на иконку логотипа")
     public void clickMainLogo() {
         log.info("Нажать на иконку логотипа");
         MAIN_LOGO.should(visible).click();

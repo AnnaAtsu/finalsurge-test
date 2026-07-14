@@ -4,8 +4,8 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
-import org.testng.asserts.SoftAssert;
 
 import java.io.File;
 import java.util.List;
@@ -49,6 +49,7 @@ public class UserProfilePage extends BasePage{
 
 
 
+    @Step("Открыть страницу фидбека")
     public UserProfilePage openPage() {
         log.info("Открыть страницу фидбека");
         Selenide.open("/UserProfile.cshtml");
@@ -56,6 +57,7 @@ public class UserProfilePage extends BasePage{
     }
 
     @Override
+    @Step("Проверка, открыта ли страница профиля юзера")
     public UserProfilePage isPageOpened() {
         log.info("Проверка, открыта ли страница профиля юзера");
         EDIT_PROFILE_BUTTON.shouldBe(visible);
@@ -65,6 +67,7 @@ public class UserProfilePage extends BasePage{
         return this;
     }
 
+    @Step("Проверка, есть ли на странице имя, фото пользователя, почта")
     public UserProfilePage verifyUserProfilePage() {
         log.info("Проверка, есть ли на странице имя, фото пользователя, почта");
         AVATAR_IMAGE.shouldBe(visible);
@@ -75,26 +78,26 @@ public class UserProfilePage extends BasePage{
         return this;
     }
 
+    @Step("Проверка соответствия имени и фамилии")
     public UserProfilePage verifyNameAfterEdit(String firstName, String lastName) {
         log.info("Проверка соответствия имени и фамилии");
-        SoftAssert softAssert = new SoftAssert();
         NAME_FIELD.shouldBe(visible)
                 .shouldNotBe(empty);
         EMAIL_FIELD.shouldBe(visible)
                 .shouldNotBe(empty);
         String expectedFullName = firstName + " " + lastName;
-        String actualProfileName = NAME_FIELD.getText();
-        softAssert.assertEquals(actualProfileName, expectedFullName,
-                "Имя в профиле не соответствует новому значению");
+        NAME_FIELD.shouldHave(text(expectedFullName));
         return this;
     }
 
+    @Step("Нажать на кнопку редактирования профиля")
     public UserProfilePage clickEditButton() {
         log.info("Нажать на кнопку редактирования профиля");
         EDIT_PROFILE_BUTTON.click();
         return this;
     }
 
+    @Step("Отредактировать имя пользователя на новое: {}")
     public UserProfilePage editName(String firstName, String lastName) {
         log.info("Отредактировать имя пользователя на новое: {}", firstName);
         FIRST_NAME_FIELD.shouldBe(visible).setValue(firstName);
@@ -103,12 +106,14 @@ public class UserProfilePage extends BasePage{
     return this;
     }
 
+    @Step("Нажать на кнопку редактирования настроек")
     public UserProfilePage clickEditSettingsButton() {
         log.info("Нажать на кнопку редактирования настроек");
         EDIT_SETTING_BUTTON.click();
         return this;
     }
 
+    @Step("Отредактировать настройки профиля")
     public String selectRandomSport() {
             log.info("Отредактировать настройки профиля");
             List<String> sports = SELECT_TRAINING_MENU.$$("option")
@@ -119,18 +124,21 @@ public class UserProfilePage extends BasePage{
             return randomSport;
         }
 
-        public  UserProfilePage saveSettings() {
+    @Step("Нажать на кнопку сохранения настроек")
+    public  UserProfilePage saveSettings() {
             log.info("Нажать на кнопку сохранения настроек");
         SAVE_BUTTON_SETTINGS.shouldBe(visible).click();
         return this;
         }
 
+    @Step("Проверка выбранного спорта")
     public  UserProfilePage verifySelectedSport(String expectedSport) {
         log.info("Проверка выбранного спорта");
         PRIMARY_SPORT_FIELD.shouldHave(text(expectedSport));
         return this;
     }
 
+    @Step("Выбор случайного языка в настройках")
     public UserProfilePage selectRandomLanguage() {
         log.info("Выбор случайного языка в настройках");
         int randomIndex = new Random().nextInt(LANGUAGES.size());
@@ -140,24 +148,28 @@ public class UserProfilePage extends BasePage{
         return this;
     }
 
+    @Step("Проверка выбранного языка")
     public UserProfilePage verifySelectedLanguage() {
         log.info("Проверка выбранного языка");
         CHECKED_LANGUAGE.shouldHave(text(selectedLanguage));
         return this;
     }
 
+    @Step("Нажать на кнопку редактирования cинхронизации календаря")
     public UserProfilePage clickEditCalendarSyncButton() {
         log.info("Нажать на кнопку редактирования cинхронизации календаря");
         CALENDAR_SYNC_BUTTON.click();
         return this;
     }
 
+    @Step("Нажать на кнопку редактирования cинхронизации календаря")
     public UserProfilePage clickSaveCalendarSyncButton() {
         log.info("Нажать на кнопку редактирования cинхронизации календаря");
         SAVE_BUTTON_CALENDAR_SYNC.click();
         return this;
     }
 
+    @Step("Нажать на радиобаттон синхронизации")
     public UserProfilePage changeCalendarSync() {
         log.info("Нажать на радиобаттон синхронизации");
         SelenideElement selectedRadio = $$("input[name='ECalSync']")
@@ -173,6 +185,7 @@ public class UserProfilePage extends BasePage{
         return this;
     }
 
+    @Step("Загрузка изображения профиля")
     public UserProfilePage uploadProfileImage(String fileName) {
         log.info("Загрузка изображения профиля");
         PUSH_IMAGE_BUTTON.click();
@@ -184,6 +197,7 @@ public class UserProfilePage extends BasePage{
         return this;
     }
 
+    @Step("Нажать на радиобаттон почтовых уведомлений")
     public UserProfilePage changeEmailNotification() {
         log.info("Нажать на радиобаттон почтовых уведомлений");
         SelenideElement selectedRadio = $$("input[name='EmailWorkouts']")
@@ -199,6 +213,7 @@ public class UserProfilePage extends BasePage{
         return this;
     }
 
+    @Step("Нажать на радиобаттон почтовых уведомлений")
     public UserProfilePage changeUpdates() {
         log.info("Нажать на радиобаттон почтовых уведомлений");
         SelenideElement selectedRadio = $$("input[name='EmailUpdates']")

@@ -27,6 +27,7 @@ public class Elements {
     public final static String CUSTOMER_SUPPORT_TITLE = "Final Surge Support Site";
     public final static String FEEDBACK_TITLE = "Provide Feedback";
     public final static String DAILY_VITALS_TITLE = "View & Add Vitals";
+    public final static String USER_PROFILE_TITLE = "User Profile";
 
     public final static String MESSAGE_BOARD_ACCESS_TEXT = "*You currently do not have access to any Message Boards. Your coach has the ability to create Message Boards and give teams access to them.";
     public final static String MESSAGE_FEEDBACK = "Your feedback has been sent to our staff. We appreciate the time you have taken to send this to us and we will respond as soon as possible.";
@@ -44,20 +45,6 @@ public class Elements {
     public final static String WORKOUT_DESCRIPTION = "TestDescription";
     public final static String ACTIVITY_ADD_ERROR_MESSAGE = "*Please select a valid Activity Type.";
 
-    public final static String urlCalendar = "https://log.finalsurge.com/Calendar.cshtml";
-    public final static String urlLogin = "https://log.finalsurge.com/login.cshtml";
-    public final static String urlLogout = "https://log.finalsurge.com/logout.cshtml";
-    public final static String urlRegister = "https://log.finalsurge.com/register.cshtml";
-    public final static String urlDefault = "https://log.finalsurge.com/Default.cshtml";
-    public final static String urlReport = "https://log.finalsurge.com/WorkoutReport.cshtml";
-    public final static String urlMail = "https://log.finalsurge.com/Mailbox.cshtml";
-    public final static String urlGarmin = "https://log.finalsurge.com/DeviceImport/Garmin/Default.cshtml";
-    public final static String urlTeamForum = "https://log.finalsurge.com/TeamForum/default";
-    public final static String urlDefaultFromMainLogo = "https://log.finalsurge.com/default.cshtml";
-    public final static String urlFeedback = "https://log.finalsurge.com/Feedback.cshtml";
-    public final static String urlCustomerSupport = "https://log.finalsurge.com/CustSupport.cshtml";
-    public final static String urlWorkoutReport = "https://log.finalsurge.com/WorkoutReport.cshtml";
-    public final static String urlUserProfile = "https://log.finalsurge.com/UserProfile.cshtml";
-    public final static String urlDailyVitals = "https://log.finalsurge.com/DailyVitals.cshtml";
+
 
 }

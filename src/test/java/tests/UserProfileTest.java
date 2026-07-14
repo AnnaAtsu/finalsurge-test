@@ -1,6 +1,9 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -11,6 +14,7 @@ import static com.codeborne.selenide.Selenide.title;
 import static constants.ConstantElements.email;
 import static constants.ConstantElements.password;
 import static elements.Elements.*;
+import static urls.Urls.urlUserProfile;
 
 public class UserProfileTest extends BaseTest{
 
@@ -28,6 +32,8 @@ public class UserProfileTest extends BaseTest{
 
     @Test(testName = "Просмотр профиля "
             ,  description = "Отображаются: имя, email, фото профиля")
+    @Severity(SeverityLevel.BLOCKER)
+    @Feature("UserProfile component")
     public void checkUserPrifilePage() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -35,18 +41,19 @@ public class UserProfileTest extends BaseTest{
         loginPage.pushLoginButton();
         userProfilePage.openPage()
                         .isPageOpened()
-                                .verifyUserProfilePage();
+                        .verifyUserProfilePage();
         softAssert.assertEquals(title(), titleForUserProfilePage);
-        verifyUrl(urlUserProfile);
-        isTextDisplayed("User Profile");
+        urlAssertion.verifyUrl(urlUserProfile);
+        softAssert.assertTrue(textAssertion.isTextDisplayed(USER_PROFILE_TITLE));
         softAssert.assertAll();
     }
 
     @Test(testName = "Редактирование имени и фамилии"
             , dataProvider = "validUserData"
             , description = "После сохранения новое имя отображается в профиле и шапке сайта")
+    @Severity(SeverityLevel.BLOCKER)
+    @Feature("UserProfile component")
     public void checkEditNameSurname(String firstName, String lastName) {
-        SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
@@ -55,13 +62,13 @@ public class UserProfileTest extends BaseTest{
                 .clickEditButton()
                 .editName(firstName, lastName)
                 .verifyNameAfterEdit(firstName, lastName);
-        softAssert.assertAll();
     }
 
     @Test(testName = "Редактирование User Settings тип тренировки"
             ,  description = "Выбор типа тренировки")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("UserProfile component")
     public void checkSettingsTrainningChange() {
-        SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
@@ -70,14 +77,14 @@ public class UserProfileTest extends BaseTest{
                 .clickEditSettingsButton();
         String expectedSport = userProfilePage.selectRandomSport();
         userProfilePage.saveSettings()
-                .verifySelectedSport(expectedSport);
-        softAssert.assertAll();
+                       .verifySelectedSport(expectedSport);
     }
 
     @Test(testName = "Редактирование User Settings язык"
             ,  description = "Выбор языка типа тренировки")
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("UserProfile component")
     public void checkSettingsLanguageChange() {
-        SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
@@ -87,11 +94,12 @@ public class UserProfileTest extends BaseTest{
                 .selectRandomLanguage()
                 .saveSettings()
                 .verifySelectedLanguage();
-        softAssert.assertAll();
     }
 
     @Test(testName = "Редактирование Calendar Sync"
             ,  description = "Чекбоксы on/off - сохранить изменения ")
+    @Severity(SeverityLevel.MINOR)
+    @Feature("UserProfile component")
     public void checkCalendarSyncChange() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
@@ -99,17 +107,18 @@ public class UserProfileTest extends BaseTest{
         loginPage.pushLoginButton();
         userProfilePage.openPage()
                 .isPageOpened()
-                        .clickEditCalendarSyncButton()
+                .clickEditCalendarSyncButton()
                 .changeCalendarSync()
-                                .clickSaveCalendarSyncButton();
-        isTextDisplayed(MESSAGE_CALENDAR_SYNC_SUCCESFULL);
+                .clickSaveCalendarSyncButton();
+        softAssert.assertTrue(textAssertion.isTextDisplayed(MESSAGE_CALENDAR_SYNC_SUCCESFULL));
         softAssert.assertAll();
     }
 
     @Test(testName = "Загрузка аватара"
             ,  description = "После выбора файла изображение отображается в профиле")
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("UserProfile component")
     public void checkAvatarUploaded() {
-        SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
@@ -118,13 +127,13 @@ public class UserProfileTest extends BaseTest{
                 .clickEditButton()
                 .uploadProfileImage("images/cat.jpg")
                 .saveSettings();
-        softAssert.assertAll();
     }
 
     @Test(testName = "Настройки уведомлений (Notifications)"
             ,  description = "Чекбоксы вкл/выкл сохраняются, настройки применяются ")
+    @Severity(SeverityLevel.MINOR)
+    @Feature("UserProfile component")
     public void checkNotification() {
-        SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
@@ -133,11 +142,12 @@ public class UserProfileTest extends BaseTest{
                 .clickEditSettingsButton()
                 .changeEmailNotification()
                 .saveSettings();
-        softAssert.assertAll();
     }
 
     @Test(testName = "Настройки приватности"
             ,  description = "Настройки видимости профиля сохраняются")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("UserProfile component")
     public void checkPrivacy() {
         SoftAssert softAssert = new SoftAssert();
         loginPage.openPage();

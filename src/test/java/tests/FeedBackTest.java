@@ -15,13 +15,14 @@ import static com.codeborne.selenide.Selenide.title;
 import static constants.ConstantElements.email;
 import static constants.ConstantElements.password;
 import static elements.Elements.*;
+import static urls.Urls.urlFeedback;
 
 public class FeedBackTest extends BaseTest {
 
 
     Feedback feedbackTest = FeedBackFactory.getFeedback();
 
-    @Test
+    @Test(testName = "Переход по странице фидбека", description = "Отображается страница фидбека и текст Provide Feedback")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("FeedBack component")
     public void checkFeedBackPage() {
@@ -34,13 +35,13 @@ public class FeedBackTest extends BaseTest {
         calendarPage.isPageOpened();
         calendarPage.ckickGiveFeedBackLink();
         softAssert.assertEquals(title(), titleForFeedbackPage);
-        verifyUrl(urlFeedback);
+        urlAssertion.verifyUrl(urlFeedback);
         feedbackPage.isPageOpened();
-        isTextDisplayed("Provide Feedback");
+        textAssertion.isTextDisplayed("Provide Feedback");
         softAssert.assertAll();
     }
 
-    @Test
+    @Test(testName = "Успешная отправка фидбека", description = "Отображается сообщение об успешной отправке фидбека")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("FeedBack component")
     public void checkSendFeedBack() {
@@ -53,12 +54,12 @@ public class FeedBackTest extends BaseTest {
         calendarPage.isPageOpened();
         calendarPage.ckickGiveFeedBackLink();
         softAssert.assertEquals(title(), titleForFeedbackPage);
-        verifyUrl(urlFeedback);
+        urlAssertion.verifyUrl(urlFeedback);
         feedbackPage.isPageOpened();
-        isTextDisplayed(FEEDBACK_TITLE);
+        textAssertion.isTextDisplayed(FEEDBACK_TITLE);
         feedbackPage.fillFeedback(feedbackTest)
                         .pushFeedbackButton();
-        isTextDisplayed(MESSAGE_FEEDBACK);
+        textAssertion.isTextDisplayed(MESSAGE_FEEDBACK);
         softAssert.assertAll();
     }
 }
