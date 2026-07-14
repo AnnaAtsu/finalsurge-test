@@ -44,6 +44,7 @@ public class Elements {
     public final static String WORKOUT_NAME = "TestName";
     public final static String WORKOUT_DESCRIPTION = "TestDescription";
     public final static String ACTIVITY_ADD_ERROR_MESSAGE = "*Please select a valid Activity Type.";
+    public final static String DELETE_WORKOUT_CALENDAR_MESSAGE = "Are you sure you want to delete this workout from the calendar?";
 
 
 

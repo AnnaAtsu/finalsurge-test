@@ -139,4 +139,69 @@ public class WorkoutsTest extends BaseTest{
         softAssert.assertTrue(textAssertion.isTextDisplayed(expectedWorkoutName));
         softAssert.assertAll();
     }
+
+    @Test(testName = "Редактирование тренировки"
+            , description = "После изменения полей и сохранения данные обновляются")
+    @Severity(SeverityLevel.BLOCKER)
+    @Feature("Workouts component")
+    public void checkUpdateWorkout() {
+        SoftAssert softAssert = new SoftAssert();
+        WorkOuts workOuts = WorkOutsFactory.getWorkOuts();
+        String expectedWorkoutName = workOuts.getName();
+        loginPage.openPage();
+        loginPage.isPageOpened();
+        loginPage.enterCreds(email, password);
+        loginPage.pushLoginButton();
+        urlAssertion.verifyUrl(urlCalendar);
+        softAssert.assertEquals(title(), titleForDashboardPage);
+        workoutsPage.clickWorkoutAndUpdate()
+                .clickButtonForWorkoutBlock()
+                .editQuickWorkout(workOuts)
+                .clickSaveWorkout();
+        softAssert.assertTrue(textAssertion.isTextDisplayed(expectedWorkoutName));
+        softAssert.assertTrue(textAssertion.isTextDisplayed("Update Workout"));
+        softAssert.assertAll();
+    }
+
+    @Test(testName = "Удаление тренировки"
+            , description = "Появляется диалог подтверждения; после подтверждения тренировка удаляется из списка")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("Workouts component")
+    public void checkDeleteWorkout() {
+        SoftAssert softAssert = new SoftAssert();
+        WorkOuts workOuts = WorkOutsFactory.getWorkOuts();
+        String expectedWorkoutName = workOuts.getName();
+        loginPage.openPage();
+        loginPage.isPageOpened();
+        loginPage.enterCreds(email, password);
+        loginPage.pushLoginButton();
+        urlAssertion.verifyUrl(urlCalendar);
+        softAssert.assertEquals(title(), titleForDashboardPage);
+        workoutsPage.clickWorkoutAndUpdate()
+                .clickButtonForDeleteWorkout();
+                textAssertion.isTextDisplayed(DELETE_WORKOUT_CALENDAR_MESSAGE);
+        workoutsPage.clickOKButtonForDelete();
+        textAssertion.isTextNotDisplayed(expectedWorkoutName);
+    }
+
+    @Test(testName = "Удаление тренировки: отмена"
+            , description = "Появляется диалог подтверждения; после Cancel тренировка не удаляется")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("Workouts component")
+    public void checkCancelDeleteWorkout() {
+        SoftAssert softAssert = new SoftAssert();
+        WorkOuts workOuts = WorkOutsFactory.getWorkOuts();
+        String expectedWorkoutName = workOuts.getName();
+        loginPage.openPage();
+        loginPage.isPageOpened();
+        loginPage.enterCreds(email, password);
+        loginPage.pushLoginButton();
+        urlAssertion.verifyUrl(urlCalendar);
+        softAssert.assertEquals(title(), titleForDashboardPage);
+        workoutsPage.clickWorkoutAndUpdate()
+                .clickButtonForDeleteWorkout();
+        textAssertion.isTextDisplayed(DELETE_WORKOUT_CALENDAR_MESSAGE);
+        workoutsPage.clickCancelButtonForDelete();
+        textAssertion.isTextDisplayed(expectedWorkoutName);
+    }
 }

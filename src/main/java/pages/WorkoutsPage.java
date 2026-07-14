@@ -1,5 +1,7 @@
 package pages;
 
+import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import dto.WorkOuts;
 import io.qameta.allure.Step;
@@ -10,10 +12,10 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
+import java.util.Random;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.*;
 
 @Log4j2
 public class WorkoutsPage extends BasePage{
@@ -37,8 +39,12 @@ public class WorkoutsPage extends BasePage{
     private final SelenideElement CANCEL_BUTTON = $("#CancelClose");
     private final SelenideElement SAVE_BUTTON = $("#saveButton");
     private final SelenideElement WORKOUT_NOTES_INPUT = $("#PostDesc");
+    private final SelenideElement UPDATE_WORKOUT_BUTTON = $x("//ul[@role='menu']//a[@class='full-edit' and text()='Update Workout']");
+    private final SelenideElement DELETE_WORKOUT_BUTTON = $x("//ul[@role='menu']//a[@class='quick-delete' and text()='Delete']");
 
-
+    private final SelenideElement MODAL_WINDOW = $(".bootbox.modal.fade.in");
+    private final SelenideElement OK_BUTTON_ON_MODAL_WINDOW = $x("//a[@class='btn btn-primary' and text()='OK']");
+    private final SelenideElement CANCEL_BUTTON_ON_MODAL_WINDOW = $x("//a[@class='btn null' and text()='Cancel']");
 
     @Override
     @Step("Проверка, открыта ли страница с тренировкой")
@@ -131,6 +137,33 @@ public class WorkoutsPage extends BasePage{
         return this;
     }
 
+    @Step("Нажать на первую тренировку в календаре, открыть её для редактирования и запомнить название")
+    public WorkoutsPage clickWorkoutAndUpdate() {
+        log.info("Нажать на кнопку Update Workout");
+        ElementsCollection items = $$("div.fc-event-activity-title").filter(visible);
+        items.shouldHave(CollectionCondition.sizeGreaterThan(0)); // ждем, что элемент есть
+        int randomIndex = new Random().nextInt(items.size());
+        SelenideElement randomElement = items.get(randomIndex);
+        String workoutText = randomElement.getText();
+        randomElement.click();
+        System.out.println("Клик по элементу с текстом: " + workoutText);
+        return this;
+    }
+
+    @Step("Нажать на кнопку обновления тренировки")
+    public WorkoutsPage clickButtonForDeleteWorkout() {
+        log.info("Нажать на кнопку Delete Workout");
+        executeJavaScript("arguments[0].click()", DELETE_WORKOUT_BUTTON);
+        return this;
+    }
+
+    @Step("Нажать на кнопку тренировки")
+    public WorkoutsPage clickButtonForWorkoutBlock() {
+        log.info("Нажать на кнопку Update Workout");
+        executeJavaScript("arguments[0].click()", UPDATE_WORKOUT_BUTTON);
+        return this;
+    }
+
     @Step("Редактирование витальной тренировки '{}'")
     public WorkoutsPage fillQuickWorkout(WorkOuts workOuts) {
         log.info("Редактирование витальной тренировки '{}'", workOuts.getName());
@@ -144,5 +177,29 @@ public class WorkoutsPage extends BasePage{
         return this;
     }
 
+    @Step("Редактирование витальной тренировки '{}'")
+    public WorkoutsPage editQuickWorkout(WorkOuts workOuts) {
+        log.info("Редактирование готовой витальной тренировки '{}'", workOuts.getName());
+        WORKOUT_NAME_INPUT.clear();
+        WORKOUT_NAME_INPUT.setValue(workOuts.getName());
+        WORKOUT_DESCRIPTION_INPUT.clear();
+        WORKOUT_DESCRIPTION_INPUT.setValue(workOuts.getDescription());
+        return this;
+    }
 
+    @Step("Нажать на кнопку OK для подтверждения удаления тренировки")
+    public WorkoutsPage clickOKButtonForDelete() {
+        log.info("Нажать на OK для подтверждения удаления тренировки");
+        MODAL_WINDOW.shouldBe(visible, Duration.ofSeconds(10));
+        OK_BUTTON_ON_MODAL_WINDOW.shouldBe(visible).click();
+        return this;
+    }
+
+    @Step("Нажать на кнопку Cancel для отмены удаления тренировки")
+    public WorkoutsPage clickCancelButtonForDelete() {
+        log.info("Нажать на Cancel для отмены удаления тренировки");
+        MODAL_WINDOW.shouldBe(visible, Duration.ofSeconds(10));
+        CANCEL_BUTTON_ON_MODAL_WINDOW.shouldBe(visible).click();
+        return this;
+    }
 }
