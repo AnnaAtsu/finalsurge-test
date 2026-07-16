@@ -51,6 +51,7 @@ public class WorkoutsTest extends BaseTest{
                 .selectActivityType(WORKOUT_ACTIVITY_TYPE)
                 .verifySelectedActivity(WORKOUT_ACTIVITY_TYPE);
     }
+
     @Test(testName = "Создание тренировки: заполнение названия и описания", description = "Поля Title и Description принимают текст, сохраняются после создания")
     @Severity(SeverityLevel.BLOCKER)
     @Feature("Workouts component")
@@ -203,5 +204,42 @@ public class WorkoutsTest extends BaseTest{
         textAssertion.isTextDisplayed(DELETE_WORKOUT_CALENDAR_MESSAGE);
         workoutsPage.clickCancelButtonForDelete();
         textAssertion.isTextDisplayed(expectedWorkoutName);
+    }
+
+    @Test(testName = "Копирование / дублирование тренировки"
+            , description = "Создаётся копия тренировки с теми же параметрами")
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("Workouts component")
+    public void checkCopyWorkout() {
+        SoftAssert softAssert = new SoftAssert();
+        WorkOuts workOuts = WorkOutsFactory.getWorkOuts();
+        String expectedWorkoutName = workOuts.getName();
+        loginPage.openPage();
+        loginPage.isPageOpened();
+        loginPage.enterCreds(email, password);
+        loginPage.pushLoginButton();
+        urlAssertion.verifyUrl(urlCalendar);
+        softAssert.assertEquals(title(), titleForDashboardPage);
+        workoutsPage.clickButtonForCopyWorkout()
+                    .fillDateWorkout(workOuts)
+                   .clickSaveWorkout();
+        textAssertion.isTextDisplayed(expectedWorkoutName);
+    }
+
+
+    @Test(testName = "Фильтрация тренировок по типу активности"
+            , description = "При выборе типа активности отображаются тренировки этого типа")
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("Workouts component")
+    public void checkfilterWorkoutOnActivity() {
+        SoftAssert softAssert = new SoftAssert();
+        loginPage.openPage();
+        loginPage.isPageOpened();
+        loginPage.enterCreds(email, password);
+        loginPage.pushLoginButton();
+        urlAssertion.verifyUrl(urlCalendar);
+        softAssert.assertEquals(title(), titleForDashboardPage);
+        workoutsPage.clickLibraryWorkoutButton(WORKOUT_ACTIVITY_TYPE_BIKE);
+        textAssertion.isTextNotDisplayed(ACTIVITY_TYPE_FILTER_MESSAGE);
     }
 }
