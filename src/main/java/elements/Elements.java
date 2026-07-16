@@ -20,7 +20,7 @@ public class Elements {
     public final static String titleForUserProfilePage = "Final Surge - User Profile";
     public final static String titleForDailyVitalsPage = "Final Surge - Daily Vitals";
     public final static String titleForTRainingPlansPage = "Final Surge - Training Plans";
-    public final static String titleForTrainingPlansItemsPage = "Final Surge | Training Plans";
+    public final static String titleForTrainingPlansHistoryPage = "Final Surge - Training Plan History";
 
     public final static String CANT_SIGN_IN_FORM_TITLE = "Can't sign in?";
     public final static String LOGIN_FORM_TITLE = "Account Login";
@@ -49,6 +49,6 @@ public class Elements {
     public final static String DELETE_WORKOUT_CALENDAR_MESSAGE = "Are you sure you want to delete this workout from the calendar?";
     public final static String ACTIVITY_TYPE_FILTER_MESSAGE = "You have no library entries for this Activity Type. ";
     public final static String TRAINING_PLAN_MESSAGE= "Apply Training Plans to Calendar";
-    public final static String TRAINING_PLAN_MESSAGE_ORDER_ID = "Training Plans for Every Goal";
+    public final static String TRAINING_PLAN_MESSAGE_HISTORY = "You currently have no training plan history.";
 
 }

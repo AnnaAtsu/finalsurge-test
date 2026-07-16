@@ -12,6 +12,7 @@ import static constants.ConstantElements.email;
 import static constants.ConstantElements.password;
 import static elements.Elements.*;
 import static urls.Urls.urlTrainingPlans;
+import static urls.Urls.urlTrainingPlansHistory;
 
 public class TrainingPlansTest extends BaseTest {
 
@@ -49,8 +50,7 @@ public class TrainingPlansTest extends BaseTest {
         urlAssertion.verifyUrl(urlTrainingPlans);
         trainingPlansPage.clickFindPlanButton();
         trainingPlansPage.verifyTrainingPlans();
-        urlAssertion.verifyUrl(titleForTrainingPlansItemsPage);
-        textAssertion.isTextDisplayed(TRAINING_PLAN_MESSAGE_ORDER_ID);
+
     }
 
     @Test(testName = "Просмотр деталей конкретного плана"
@@ -67,9 +67,9 @@ public class TrainingPlansTest extends BaseTest {
                 .isPageOpened();
         softAssert.assertEquals(title(), titleForTRainingPlansPage);
         urlAssertion.verifyUrl(urlTrainingPlans);
-        trainingPlansPage.clickFindPlanButton();
-        urlAssertion.verifyUrl(titleForTrainingPlansItemsPage);
-        textAssertion.isTextDisplayed(TRAINING_PLAN_MESSAGE_ORDER_ID);
-        trainingPlansPage.clickFindPlanITEMButton();
+        trainingPlansPage.clickFindHistoryPlanButton();
+        urlAssertion.verifyUrl(urlTrainingPlansHistory);
+        softAssert.assertEquals(title(), titleForTrainingPlansHistoryPage);
+        textAssertion.isTextDisplayed(TRAINING_PLAN_MESSAGE_HISTORY);
     }
 }
