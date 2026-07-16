@@ -58,6 +58,7 @@ public class DailyVitalsPage extends BasePage{
         Selenide.open("/DailyVitals.cshtml");
         return this;
     }
+
     @Override
     @Step("Проверка, что страница ежедневных тренировок открыта")
     public DailyVitalsPage isPageOpened() {

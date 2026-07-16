@@ -14,14 +14,14 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Random;
 
+import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 @Log4j2
 public class WorkoutsPage extends BasePage{
 
-    private final SelenideElement CALENDAR_CONTENT_BLOCK = $("#CalendarContent");
-    private final SelenideElement TRAINING_CALENDAR_LINK = $x("//a[text()='Training Calendar']");
+
     private final SelenideElement ADD_WORKOUT_BUTTON = $("#QuickAddToggle");
     private final SelenideElement WORKOUT_LIBRARY_BUTTON = $("#WorkoutLibAdd");
     private final SelenideElement FULL_WORKOUT_BUTTON = $("#FullAddBtn");
@@ -31,6 +31,7 @@ public class WorkoutsPage extends BasePage{
     private final SelenideElement ADD_ONN_CALENDAR_ICON = $("span.add-on .icon-calendar");
     private final SelenideElement ACTIVE_DAY = $(".day.active");
     private final SelenideElement ACTIVITY_SELECT = $("#ActivityType");
+    private final SelenideElement ACTIVITY_SELECT_FILTER = $("#ActivityTypeFilter");
     private final SelenideElement WORKOUT_NAME_INPUT = $("#Name");
     private final SelenideElement WORKOUT_DESCRIPTION_INPUT = $("#Desc");
     private final SelenideElement WORKOUT_DISTANCE_INPUT = $("#Distance");
@@ -41,6 +42,7 @@ public class WorkoutsPage extends BasePage{
     private final SelenideElement WORKOUT_NOTES_INPUT = $("#PostDesc");
     private final SelenideElement UPDATE_WORKOUT_BUTTON = $x("//ul[@role='menu']//a[@class='full-edit' and text()='Update Workout']");
     private final SelenideElement DELETE_WORKOUT_BUTTON = $x("//ul[@role='menu']//a[@class='quick-delete' and text()='Delete']");
+    private final SelenideElement COPY_WORKOUT_BUTTON = $x("//ul[@role='menu']//a[@class='quick-copy' and text()='Copy']");
 
     private final SelenideElement MODAL_WINDOW = $(".bootbox.modal.fade.in");
     private final SelenideElement OK_BUTTON_ON_MODAL_WINDOW = $x("//a[@class='btn btn-primary' and text()='OK']");
@@ -114,6 +116,7 @@ public class WorkoutsPage extends BasePage{
         WORKOUT_DESCRIPTION_INPUT.sendKeys("TestDescription" + dateTime);
         return this;
     }
+
     @Step("Заполнить поля с дистанцией, длительностью")
     public WorkoutsPage fillinDistanceDurationPace() {
         log.info("Заполнить поля с дистанцией, длительностью");
@@ -141,7 +144,7 @@ public class WorkoutsPage extends BasePage{
     public WorkoutsPage clickWorkoutAndUpdate() {
         log.info("Нажать на кнопку Update Workout");
         ElementsCollection items = $$("div.fc-event-activity-title").filter(visible);
-        items.shouldHave(CollectionCondition.sizeGreaterThan(0)); // ждем, что элемент есть
+        items.shouldHave(sizeGreaterThan(0)); // ждем, что элемент есть
         int randomIndex = new Random().nextInt(items.size());
         SelenideElement randomElement = items.get(randomIndex);
         String workoutText = randomElement.getText();
@@ -154,6 +157,13 @@ public class WorkoutsPage extends BasePage{
     public WorkoutsPage clickButtonForDeleteWorkout() {
         log.info("Нажать на кнопку Delete Workout");
         executeJavaScript("arguments[0].click()", DELETE_WORKOUT_BUTTON);
+        return this;
+    }
+
+    @Step("Нажать на кнопку дублирования тренировки")
+    public WorkoutsPage clickButtonForCopyWorkout() {
+        log.info("Нажать на кнопку Copy Workout");
+        executeJavaScript("arguments[0].click()", COPY_WORKOUT_BUTTON);
         return this;
     }
 
@@ -187,6 +197,13 @@ public class WorkoutsPage extends BasePage{
         return this;
     }
 
+    @Step("Редактирование только даты тренировки для копирования тренировки '{}'")
+    public WorkoutsPage fillDateWorkout(WorkOuts workOuts) {
+        log.info("Редактирование витальной тренировки '{}'", workOuts.getDate());
+        WORKOUT_CALENDAR_INPUT.setValue(workOuts.getDate());
+        return this;
+    }
+
     @Step("Нажать на кнопку OK для подтверждения удаления тренировки")
     public WorkoutsPage clickOKButtonForDelete() {
         log.info("Нажать на OK для подтверждения удаления тренировки");
@@ -200,6 +217,14 @@ public class WorkoutsPage extends BasePage{
         log.info("Нажать на Cancel для отмены удаления тренировки");
         MODAL_WINDOW.shouldBe(visible, Duration.ofSeconds(10));
         CANCEL_BUTTON_ON_MODAL_WINDOW.shouldBe(visible).click();
+        return this;
+    }
+
+    @Step("Нажать на кнопку Library для фильтрации данных и ввести тип активности")
+    public WorkoutsPage clickLibraryWorkoutButton(String activity) {
+        log.info("Нажать на кнопку Library для фильтрации данных");
+        WORKOUT_LIBRARY_BUTTON.shouldBe(visible).click();
+        ACTIVITY_SELECT_FILTER.selectOptionContainingText(activity);
         return this;
     }
 }

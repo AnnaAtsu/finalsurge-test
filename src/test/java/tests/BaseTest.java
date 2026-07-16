@@ -38,6 +38,7 @@ public class BaseTest {
     DailyVitalsPage dailyVitalsPage;
     TextAssertion textAssertion;
     UrlAssertion urlAssertion;
+    TrainingPlansPage trainingPlansPage;
 
     @BeforeMethod
     public void setup() {
@@ -70,6 +71,7 @@ public class BaseTest {
         dailyVitalsPage = new DailyVitalsPage();
         textAssertion = new TextAssertion();
         urlAssertion = new UrlAssertion();
+        trainingPlansPage = new TrainingPlansPage();
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)

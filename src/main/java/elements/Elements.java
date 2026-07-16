@@ -19,7 +19,8 @@ public class Elements {
     public final static String titleForWorkoutReportPage = "Final Surge - Athlete Workout Report";
     public final static String titleForUserProfilePage = "Final Surge - User Profile";
     public final static String titleForDailyVitalsPage = "Final Surge - Daily Vitals";
-
+    public final static String titleForTRainingPlansPage = "Final Surge - Training Plans";
+    public final static String titleForTrainingPlansItemsPage = "Final Surge | Training Plans";
 
     public final static String CANT_SIGN_IN_FORM_TITLE = "Can't sign in?";
     public final static String LOGIN_FORM_TITLE = "Account Login";
@@ -41,11 +42,13 @@ public class Elements {
     public final static String VIEW_CALENDAR_BUTTON = "View Calendar";
     public final static String WORKOUT_QUICK_ADD_TITLE = "Workout Quick Add";
     public final static String WORKOUT_ACTIVITY_TYPE = "Cross Training";
+    public final static String WORKOUT_ACTIVITY_TYPE_BIKE = "Bike";
     public final static String WORKOUT_NAME = "TestName";
     public final static String WORKOUT_DESCRIPTION = "TestDescription";
     public final static String ACTIVITY_ADD_ERROR_MESSAGE = "*Please select a valid Activity Type.";
     public final static String DELETE_WORKOUT_CALENDAR_MESSAGE = "Are you sure you want to delete this workout from the calendar?";
-
-
+    public final static String ACTIVITY_TYPE_FILTER_MESSAGE = "You have no library entries for this Activity Type. ";
+    public final static String TRAINING_PLAN_MESSAGE= "Apply Training Plans to Calendar";
+    public final static String TRAINING_PLAN_MESSAGE_ORDER_ID = "Training Plans for Every Goal";
 
 }
