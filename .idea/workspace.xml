@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d16654c-077b-4955-b046-e440735bfda5" name="Changes" comment="тест для feedback">
+    <list default="true" id="5d16654c-077b-4955-b046-e440735bfda5" name="Changes" comment="первые тесты для traning plans">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/elements/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elements/Elements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/WorkoutsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/WorkoutsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/WorkoutsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/WorkoutsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/TrainingPlansPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/TrainingPlansPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/urls/Urls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/urls/Urls.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TrainingPlansTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TrainingPlansTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +38,12 @@
     &quot;assignee&quot;: &quot;AnnaAtsu&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/AnnaAtsu/finalsurge-test&quot;,
-    &quot;accountId&quot;: &quot;d22df9c9-9be2-42d4-87da-a5bd7df5e467&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/AnnaAtsu/finalsurge-test.git",
+    "accountId": "d47bf71c-16d9-4a93-8ab7-f7dd3430d6e4"
   }
-}</component>
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -56,96 +57,101 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.finalsurge-test [clean].executor": "Run",
-    "Maven.finalsurge-test [compile].executor": "Run",
-    "Maven.finalsurge-test [io.qameta.allure:allure-maven:2.15.2:report].executor": "Run",
-    "Maven.finalsurge-test [io.qameta.allure:allure-maven:2.15.2:serve].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TestNG.CalendarTest.checkActivityColors.executor": "Run",
-    "TestNG.CalendarTest.checkActivityLabelExistence.executor": "Run",
-    "TestNG.CalendarTest.checkCalendarActualMonthExistence.executor": "Run",
-    "TestNG.CalendarTest.checkCalendarMonthNavigation.executor": "Run",
-    "TestNG.CalendarTest.checkCalendarMonthNavigationToTheLeft.executor": "Run",
-    "TestNG.CalendarTest.checkEmptyCalendarCell.executor": "Run",
-    "TestNG.CalendarTest.checkFeedBackPage.executor": "Run",
-    "TestNG.CalendarTest.checkFullCalendarCell.executor": "Run",
-    "TestNG.CustomerSupportTest.checkCustomerSupportPage.executor": "Run",
-    "TestNG.DailyVitalsTest.addVital.executor": "Run",
-    "TestNG.DailyVitalsTest.checkEdditVital.executor": "Run",
-    "TestNG.DailyVitalsTest.checkSelectDate.executor": "Run",
-    "TestNG.DailyVitalsTest.checkWeightChange.executor": "Run",
-    "TestNG.DashboardTest.checkClickNavMenu.executor": "Run",
-    "TestNG.DashboardTest.checkDropdownsOnPAge.executor": "Run",
-    "TestNG.DashboardTest.checkGarminButton.executor": "Run",
-    "TestNG.DashboardTest.checkMainLogo.executor": "Run",
-    "TestNG.DashboardTest.checkMessageBoardPage.executor": "Run",
-    "TestNG.DashboardTest.checkSixWeeksWidget.executor": "Run",
-    "TestNG.DashboardTest.checkWeeklySummary.executor": "Run",
-    "TestNG.DashboardTest.openDashboardPage.executor": "Run",
-    "TestNG.FeedBackTest.checkFeedBackPage.executor": "Run",
-    "TestNG.FeedBackTest.checkSendFeedBack.executor": "Run",
-    "TestNG.LoginTest.checkLogOut.executor": "Run",
-    "TestNG.LoginTest.checkLogin.executor": "Run",
-    "TestNG.LoginTest.checkRegistration.executor": "Run",
-    "TestNG.LoginTest.checkRequestNewPassword.executor": "Run",
-    "TestNG.LoginTest.checkRequestNewPasswordPage.executor": "Run",
-    "TestNG.LoginTest.checkSucceccfullLogout.executor": "Run",
-    "TestNG.LoginTest.checkSuccessfullLogin.executor": "Run",
-    "TestNG.LoginTest.checkSuccessfullLogout.executor": "Run",
-    "TestNG.LoginTest.checkUnregisteredPassword.executor": "Run",
-    "TestNG.LoginTest.executor": "Run",
-    "TestNG.LoginTest.loginWithRememberMeCheckbox.executor": "Run",
-    "TestNG.RegisterTest.checkLoginLink.executor": "Run",
-    "TestNG.RegisterTest.checkSuccessfullRegistration.executor": "Run",
-    "TestNG.RegisterTest.checkValidMessageForWeakPassword.executor": "Run",
-    "TestNG.RegisterTest.checkValidMessagesForEmailForRegistration.executor": "Run",
-    "TestNG.RegisterTest.checkValidMessagesForEmptyRegistration.executor": "Run",
-    "TestNG.RegisterTest.checkValidMessagesForFullRegistration.executor": "Run",
-    "TestNG.UserProfileTest.checkANotification.executor": "Run",
-    "TestNG.UserProfileTest.checkAvatarUploaded.executor": "Run",
-    "TestNG.UserProfileTest.checkCalendarSyncChange.executor": "Run",
-    "TestNG.UserProfileTest.checkEditNameSurname.executor": "Run",
-    "TestNG.UserProfileTest.checkNotification.executor": "Run",
-    "TestNG.UserProfileTest.checkPrivacy.executor": "Run",
-    "TestNG.UserProfileTest.checkSettingsChange.executor": "Run",
-    "TestNG.UserProfileTest.checkSettingsLanguageChange.executor": "Run",
-    "TestNG.UserProfileTest.checkUserPrifilePage.executor": "Run",
-    "TestNG.WorkoutReportTest.checkReportComment.executor": "Run",
-    "TestNG.WorkoutReportTest.checkReportForActivity.executor": "Run",
-    "TestNG.WorkoutReportTest.checkReportForActivityButton.executor": "Run",
-    "TestNG.WorkoutReportTest.checkReportForDates.executor": "Run",
-    "TestNG.WorkoutReportTest.checkReportForListView.executor": "Run",
-    "TestNG.WorkoutReportTest.checkReportForWeek.executor": "Run",
-    "TestNG.WorkoutReportTest.openDashboardPage.executor": "Run",
-    "TestNG.WorkoutsTest.checkActivityTypeExistence.executor": "Run",
-    "TestNG.WorkoutsTest.checkCalendarActualMonthExistence.executor": "Run",
-    "TestNG.WorkoutsTest.checkCancelButton.executor": "Run",
-    "TestNG.WorkoutsTest.checkCancelDeleteWorkout.executor": "Run",
-    "TestNG.WorkoutsTest.checkCreateWorkout.executor": "Run",
-    "TestNG.WorkoutsTest.checkDeleteWorkout.executor": "Run",
-    "TestNG.WorkoutsTest.checkEmptyNameWorkout.executor": "Run",
-    "TestNG.WorkoutsTest.checkIntervalExistence.executor": "Run",
-    "TestNG.WorkoutsTest.checkTtitleDescriptionExistence.executor": "Run",
-    "TestNG.WorkoutsTest.checkUpdateWorkout.executor": "Run",
-    "git-widget-placeholder": "feature/dashboard",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/anna/IdeaProjects/finalsurge-test/src/test/resources/images",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.finalsurge-test [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.finalsurge-test [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.finalsurge-test [io.qameta.allure:allure-maven:2.15.2:report].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.finalsurge-test [io.qameta.allure:allure-maven:2.15.2:serve].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TestNG.CalendarTest.checkActivityColors.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CalendarTest.checkActivityLabelExistence.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CalendarTest.checkCalendarActualMonthExistence.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CalendarTest.checkCalendarMonthNavigation.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CalendarTest.checkCalendarMonthNavigationToTheLeft.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CalendarTest.checkEmptyCalendarCell.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CalendarTest.checkFeedBackPage.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CalendarTest.checkFullCalendarCell.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CustomerSupportTest.checkCustomerSupportPage.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.DailyVitalsTest.addVital.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.DailyVitalsTest.checkEdditVital.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.DailyVitalsTest.checkSelectDate.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.DailyVitalsTest.checkWeightChange.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.DashboardTest.checkClickNavMenu.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.DashboardTest.checkDropdownsOnPAge.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.DashboardTest.checkGarminButton.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.DashboardTest.checkMainLogo.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.DashboardTest.checkMessageBoardPage.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.DashboardTest.checkSixWeeksWidget.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.DashboardTest.checkWeeklySummary.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.DashboardTest.openDashboardPage.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.FeedBackTest.checkFeedBackPage.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.FeedBackTest.checkSendFeedBack.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LoginTest.checkLogOut.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LoginTest.checkLogin.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LoginTest.checkRegistration.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LoginTest.checkRequestNewPassword.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LoginTest.checkRequestNewPasswordPage.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LoginTest.checkSucceccfullLogout.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LoginTest.checkSuccessfullLogin.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LoginTest.checkSuccessfullLogout.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LoginTest.checkUnregisteredPassword.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LoginTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LoginTest.loginWithRememberMeCheckbox.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.RegisterTest.checkLoginLink.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.RegisterTest.checkSuccessfullRegistration.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.RegisterTest.checkValidMessageForWeakPassword.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.RegisterTest.checkValidMessagesForEmailForRegistration.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.RegisterTest.checkValidMessagesForEmptyRegistration.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.RegisterTest.checkValidMessagesForFullRegistration.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TrainingPlansTest.checkTrainingPlansDetaiItem.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TrainingPlansTest.checkTrainingPlansDetail.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TrainingPlansTest.checkTrainingPlansPage.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.UserProfileTest.checkANotification.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.UserProfileTest.checkAvatarUploaded.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.UserProfileTest.checkCalendarSyncChange.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.UserProfileTest.checkEditNameSurname.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.UserProfileTest.checkNotification.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.UserProfileTest.checkPrivacy.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.UserProfileTest.checkSettingsChange.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.UserProfileTest.checkSettingsLanguageChange.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.UserProfileTest.checkUserPrifilePage.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutReportTest.checkReportComment.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutReportTest.checkReportForActivity.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutReportTest.checkReportForActivityButton.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutReportTest.checkReportForDates.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutReportTest.checkReportForListView.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutReportTest.checkReportForWeek.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutReportTest.openDashboardPage.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutsTest.checkActivityTypeExistence.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutsTest.checkCalendarActualMonthExistence.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutsTest.checkCancelButton.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutsTest.checkCancelDeleteWorkout.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutsTest.checkCopyWorkout.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutsTest.checkCreateWorkout.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutsTest.checkDeleteWorkout.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutsTest.checkEmptyNameWorkout.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutsTest.checkIntervalExistence.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutsTest.checkTtitleDescriptionExistence.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutsTest.checkUpdateWorkout.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.WorkoutsTest.checkfilterWorkoutOnActivity.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/dashboard&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/anna/IdeaProjects/finalsurge-test/src/test/resources/images&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources/images" />
       <recent name="C:\Users\takan\IdeaProjects\autojava\finalsurge-test" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.WorkoutsTest.checkCancelDeleteWorkout">
-    <configuration name="DailyVitalsTest.checkWeightChange" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.TrainingPlansTest.checkTrainingPlansDetaiItem">
+    <configuration name="TrainingPlansTest.checkTrainingPlansDetaiItem" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -154,8 +160,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.DailyVitalsTest" />
-      <option name="METHOD_NAME" value="checkWeightChange" />
+      <option name="MAIN_CLASS_NAME" value="tests.TrainingPlansTest" />
+      <option name="METHOD_NAME" value="checkTrainingPlansDetaiItem" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -163,7 +169,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WorkoutsTest.checkCancelDeleteWorkout" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TrainingPlansTest.checkTrainingPlansDetail" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="finalsurge-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.TrainingPlansTest" />
+      <option name="METHOD_NAME" value="checkTrainingPlansDetail" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TrainingPlansTest.checkTrainingPlansPage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="finalsurge-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.TrainingPlansTest" />
+      <option name="METHOD_NAME" value="checkTrainingPlansPage" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WorkoutsTest.checkCopyWorkout" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -173,7 +215,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.WorkoutsTest" />
-      <option name="METHOD_NAME" value="checkCancelDeleteWorkout" />
+      <option name="METHOD_NAME" value="checkCopyWorkout" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -181,7 +223,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WorkoutsTest.checkCreateWorkout" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="WorkoutsTest.checkfilterWorkoutOnActivity" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="finalsurge-test" />
       <extension name="coverage">
         <pattern>
@@ -191,43 +233,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.WorkoutsTest" />
-      <option name="METHOD_NAME" value="checkCreateWorkout" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WorkoutsTest.checkDeleteWorkout" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="finalsurge-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.WorkoutsTest" />
-      <option name="METHOD_NAME" value="checkDeleteWorkout" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WorkoutsTest.checkUpdateWorkout" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="finalsurge-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.WorkoutsTest" />
-      <option name="METHOD_NAME" value="checkUpdateWorkout" />
+      <option name="METHOD_NAME" value="checkfilterWorkoutOnActivity" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -237,20 +243,13 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.WorkoutsTest.checkCancelDeleteWorkout" />
-        <item itemvalue="TestNG.WorkoutsTest.checkDeleteWorkout" />
-        <item itemvalue="TestNG.WorkoutsTest.checkUpdateWorkout" />
-        <item itemvalue="TestNG.WorkoutsTest.checkCreateWorkout" />
-        <item itemvalue="TestNG.DailyVitalsTest.checkWeightChange" />
+        <item itemvalue="TestNG.TrainingPlansTest.checkTrainingPlansDetaiItem" />
+        <item itemvalue="TestNG.TrainingPlansTest.checkTrainingPlansDetail" />
+        <item itemvalue="TestNG.WorkoutsTest.checkfilterWorkoutOnActivity" />
+        <item itemvalue="TestNG.WorkoutsTest.checkCopyWorkout" />
+        <item itemvalue="TestNG.TrainingPlansTest.checkTrainingPlansPage" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -301,7 +300,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784020401964</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="первые тесты для traning plans">
+      <option name="closed" value="true" />
+      <created>1784202722722</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1784202722722</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -321,6 +328,7 @@
     <MESSAGE value="написала тесты для CalendarPage" />
     <MESSAGE value="тесты для профиля" />
     <MESSAGE value="поправлено на основании ревью" />
-    <option name="LAST_COMMIT_MESSAGE" value="поправлено на основании ревью" />
+    <MESSAGE value="первые тесты для traning plans" />
+    <option name="LAST_COMMIT_MESSAGE" value="первые тесты для traning plans" />
   </component>
 </project>

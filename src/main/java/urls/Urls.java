@@ -18,4 +18,5 @@ public class Urls {
     public final static String urlUserProfile = "https://log.finalsurge.com/UserProfile.cshtml";
     public final static String urlDailyVitals = "https://log.finalsurge.com/DailyVitals.cshtml";
     public final static String urlTrainingPlans = "https://log.finalsurge.com/TrainingPlans.cshtml";
+    public final static String urlTrainingPlansHistory = "https://log.finalsurge.com/TrainingPlansHist.cshtml";
 }

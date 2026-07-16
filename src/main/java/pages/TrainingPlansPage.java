@@ -39,15 +39,16 @@ public class TrainingPlansPage extends BasePage{
         return this;
     }
 
-    @Step("Нажать на кнопку поиска планов")
+    @Step("Нажать на кнопку поиска планов Find a Training Plan!")
     public void clickFindPlanButton() {
-        log.info("Нажать на кнопку поиска планов");
-        FIND_PLAN_BUTTON.shouldBe(visible).click();
+        log.info("Нажать на кнопку поиска планов Find a Training Plan!");
+        FIND_PLAN_BUTTON.shouldBe(visible, Duration.ofSeconds(30)).click();
     }
 
     @Step("Проверка списка чужих тренировок")
     public void verifyTrainingPlans() {
         log.info("Проверка списка чужих тренировок");
+        refresh();
         SPORT_SELECT.shouldBe(visible, Duration.ofSeconds(10));
         SEARCH_INPUT.shouldBe(visible, Duration.ofSeconds(10));
         TRAINING_PLAN_LIST_ITEM.shouldBe(visible, Duration.ofSeconds(10));
@@ -57,5 +58,13 @@ public class TrainingPlansPage extends BasePage{
     public void clickFindPlanITEMButton() {
         log.info("Нажать на кнопку конкретного плана");
         TRAINING_PLAN_LIST_ITEM_FIRST.shouldBe(visible).click();
+    }
+
+
+
+    @Step("Нажать на кнопку Plan History")
+    public void clickFindHistoryPlanButton() {
+        log.info("Нажать на кнопку Plan History");
+        PLAN_HISTORY_BUTTON.shouldBe(visible).click();
     }
 }
