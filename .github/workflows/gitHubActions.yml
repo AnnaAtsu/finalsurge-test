@@ -1,64 +1,56 @@
-# Имя вашего workflow. Оно будет отображаться во вкладке Actions на GitHub.
-name: Run Selenide Tests
+name: Run FinalSurge Tests with Allure
 
-# Указываем, когда запускать этот процесс.
 on:
-  # 1. При каждом "push" (отправке кода) в ветку main.
   push:
-    branches: [ "main" ]
-  # 2. При создании или обновлении Pull Request'а в ветку main.
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
-  # 3. По кнопке "Запустить" вручную (удобно для отладки).
+    branches: [ "master" ]
   workflow_dispatch:
 
-# Здесь описываем, что именно будет делать наш workflow.
 jobs:
   test:
-    # Запускаем всё на последней версии Ubuntu (это бесплатно).
     runs-on: ubuntu-latest
 
-    # Последовательность шагов.
     steps:
-      # 1. Скачиваем (клонируем) код вашего проекта на виртуальную машину.
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Настраиваем Java. Указываем версию (например, 17 или 11).
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
-          cache: 'maven'  # Это ускоряет сборку, кешируя зависимости.
+          cache: 'maven'
 
-      # 3. Запускаем тесты через Maven с генерацией Allure результатов.
+      #  Установка Allure через официальный action
+      - name: Install Allure
+        uses: simple-elf/allure-action@v1
+        with:
+          allure-version: '2.29.1'
+
+      #  Проверка установки Allure
+      - name: Verify Allure installation
+        run: allure --version
+
       - name: Run tests
         run: mvn clean test
-        continue-on-error: true  # Продолжить, даже если тесты упали (чтобы сгенерировать отчет)
+        continue-on-error: true
 
-      # 4. Загружаем результаты Allure как артефакт (чтобы скачать их при необходимости)
+      #  Загрузка Allure results как артефакт
       - name: Upload Allure results
-        if: always()  # Загружать всегда, даже если тесты упали
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
-          path: target/allure-results  # Путь к результатам Allure (если переопределены в pom.xml - укажите свой)
+          path: target/allure-results
 
-      # 5. Устанавливаем Allure командную строку
-      - name: Install Allure
-        if: always()  # Устанавливать всегда, даже если тесты упали
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y allure
-
-      # 6. Генерируем Allure отчет из результатов
+      #  Генерация Allure отчета
       - name: Generate Allure report
-        if: always()  # Генерировать всегда, даже если тесты упали
+        if: always()
         run: |
           allure generate target/allure-results --clean -o allure-report
 
-      # 7. Загружаем Allure отчет как артефакт (чтобы скачать ZIP-архив)
+      #  Загрузка отчета как артефакт
       - name: Upload Allure report
         if: always()
         uses: actions/upload-artifact@v4
@@ -66,15 +58,16 @@ jobs:
           name: allure-report
           path: allure-report
 
-      # 8. Публикуем Allure отчет на GitHub Pages (чтобы открывать в браузере)
+      #  Публикация на GitHub Pages
       - name: Deploy to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: allure-report
-          publish_branch: gh-pages  # или allure-pages
-          keep_files: false  # Очищать старые отчеты
+          publish_branch: gh-pages
+          keep_files: true
+          force_orphan: true
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: 'Обновление Allure отчета #${{ github.run_number }}'
