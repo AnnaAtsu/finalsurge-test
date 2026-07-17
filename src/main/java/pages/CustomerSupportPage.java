@@ -7,6 +7,7 @@ import lombok.extern.log4j.Log4j2;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
+import static urls.Urls.customerSupportEndpoint;
 
 @Log4j2
 public class CustomerSupportPage extends BasePage{
@@ -20,7 +21,7 @@ public class CustomerSupportPage extends BasePage{
     @Step("Открыть страницу поддержки")
     public CustomerSupportPage openPage() {
         log.info("Открыть страницу поддержки");
-        Selenide.open("/CustSupport.cshtml");
+        Selenide.open(customerSupportEndpoint);
         return this;
     }
 

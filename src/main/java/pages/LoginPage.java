@@ -12,6 +12,7 @@ import java.time.Duration;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static urls.Urls.loginEndpoint;
 
 @Log4j2
 public class LoginPage extends BasePage{
@@ -33,7 +34,7 @@ public class LoginPage extends BasePage{
     @Step("Открыть страницу авторизации")
     public LoginPage openPage() {
         log.info("Открыть страницу авторизации");
-        Selenide.open("/login.cshtml");
+        Selenide.open(loginEndpoint);
         return this;
     }
 

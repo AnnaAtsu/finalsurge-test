@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static elements.Elements.WORKOUT_REPORT_MESSAGE_FOR_NO_FILTER;
+import static urls.Urls.reportEndpoint;
 
 @Log4j2
 public class WorkoutReportPage extends BasePage{
@@ -24,7 +25,6 @@ public class WorkoutReportPage extends BasePage{
     private final SelenideElement TRAINIG_BLOCK = $(".table-striped.table-condensed");
     private final SelenideElement GROUP_BY_ACTIVITY_RADIO_BUTTON = $("#groupBy4");
     private final SelenideElement LEAVE_COMMENT_ICON = $(".icsw16-create-write");
-    private final SelenideElement COMMENT_BLOCK = $("#WorkoutComments");
     private final SelenideElement COMMENT_TEXTAREA = $("#CommentDesc");
     private final SelenideElement ADD_COMMENT_BUTTON  = $("#saveButtonComment");
     private final SelenideElement COMMENT_IFRAME = $("#WorkoutCommentsiFrame");
@@ -44,7 +44,7 @@ public class WorkoutReportPage extends BasePage{
     @Step("Открыть страницу репорта")
     public WorkoutReportPage openWorkoutReportPage() {
         log.info("Открыть страницу репорта");
-        Selenide.open("/WorkoutReport.cshtml");
+        Selenide.open(reportEndpoint);
         return this;
     }
 

@@ -13,6 +13,7 @@ import java.util.Random;
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
+import static urls.Urls.dailyVitalsEndpoint;
 
 @Log4j2
 
@@ -55,7 +56,7 @@ public class DailyVitalsPage extends BasePage{
     @Step("Открыть страницу ежедневных тренировок")
     public DailyVitalsPage openPage() {
         log.info("Открыть страницу ежедневных тренировок");
-        Selenide.open("/DailyVitals.cshtml");
+        Selenide.open(dailyVitalsEndpoint);
         return this;
     }
 
