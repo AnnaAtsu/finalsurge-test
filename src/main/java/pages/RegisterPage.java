@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 import static elements.Elements.REGISTRATION_FORM_TITLE;
+import static urls.Urls.registerEndpoint;
 
 @Log4j2
 public class RegisterPage extends BasePage{
@@ -35,7 +36,7 @@ public class RegisterPage extends BasePage{
     @Step("Открыть страницу регистрации")
     public RegisterPage openPage() {
         log.info("Открыть страницу регистрации");
-        Selenide.open("/register.cshtml");
+        Selenide.open(registerEndpoint);
         return this;
     }
     @Override

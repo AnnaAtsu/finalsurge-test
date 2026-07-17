@@ -21,7 +21,6 @@ import static com.codeborne.selenide.Selenide.*;
 public class CalendarPage extends BasePage{
 
     private final SelenideElement GIVE_FEEDBACK_LINK = $x("//a[text()='Give Feedback']");
-    private final SelenideElement CUSTOMER_SUPPORT_LINK = $x("//a[text()='Customer Support']");
     private final SelenideElement CALENDAR_CONTENT_BLOCK = $("#CalendarContent");
     private final SelenideElement TRAINING_CALENDAR_LINK = $x("//a[text()='Training Calendar']");
 

@@ -19,6 +19,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static elements.Elements.CANT_SIGN_IN_FORM_TITLE;
+import static urls.Urls.calendarEndpoint;
 
 
 @Log4j2
@@ -58,7 +59,7 @@ public class DashboardPage extends BasePage{
     @Step("Открыть страницу дашборда")
     public DashboardPage openPage() {
         log.info("Открыть страницу дашборда");
-        Selenide.open("/Calendar.cshtml");
+        Selenide.open(calendarEndpoint);
         return this;
     }
 
