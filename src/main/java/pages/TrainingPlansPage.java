@@ -10,6 +10,7 @@ import java.time.Duration;
 import static com.codeborne.selenide.Condition.visible;
 
 import static com.codeborne.selenide.Selenide.*;
+import static urls.Urls.trainingPlansEndpoint;
 
 @Log4j2
 public class TrainingPlansPage extends BasePage{
@@ -35,7 +36,7 @@ public class TrainingPlansPage extends BasePage{
     @Step("Открыть страницу с планом тренировки")
     public TrainingPlansPage openPage() {
         log.info("Открыть страницу с планом тренировки");
-        Selenide.open("/TrainingPlans.cshtml");
+        Selenide.open(trainingPlansEndpoint);
         return this;
     }
 

@@ -13,6 +13,7 @@ import java.util.Random;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
+import static urls.Urls.userProfileEndpoint;
 
 
 @Log4j2
@@ -52,7 +53,7 @@ public class UserProfilePage extends BasePage{
     @Step("Открыть страницу фидбека")
     public UserProfilePage openPage() {
         log.info("Открыть страницу фидбека");
-        Selenide.open("/UserProfile.cshtml");
+        Selenide.open(userProfileEndpoint);
         return this;
     }
 

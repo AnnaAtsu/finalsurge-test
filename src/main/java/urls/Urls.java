@@ -19,4 +19,23 @@ public class Urls {
     public final static String urlDailyVitals = "https://log.finalsurge.com/DailyVitals.cshtml";
     public final static String urlTrainingPlans = "https://log.finalsurge.com/TrainingPlans.cshtml";
     public final static String urlTrainingPlansHistory = "https://log.finalsurge.com/TrainingPlansHist.cshtml";
+
+    public final static String calendarEndpoint = "/Calendar.cshtml";
+    public final static String loginEndpoint = "/login.cshtml";
+    public final static String logoutEndpoint = "/logout.cshtml";
+    public final static String registerEndpoint = "/register.cshtml";
+    public final static String defaultEndpoint = "/Default.cshtml";
+    public final static String reportEndpoint = "/WorkoutReport.cshtml";
+    public final static String mailEndpoint = "/Mailbox.cshtml";
+    public final static String garminEndpoint = "/DeviceImport/Garmin/Default.cshtml";
+    public final static String teamForumEndpoint = "/TeamForum/default";
+    public final static String defaultFromMainLogoEndpoint = "/default.cshtml";
+    public final static String feedbackEndpoint = "/Feedback.cshtml";
+    public final static String customerSupportEndpoint = "/CustSupport.cshtml";
+    public final static String workoutReportEndpoint = "/WorkoutReport.cshtml";
+    public final static String userProfileEndpoint = "/UserProfile.cshtml";
+    public final static String dailyVitalsEndpoint = "/DailyVitals.cshtml";
+    public final static String trainingPlansEndpoint = "/TrainingPlans.cshtml";
+
+
 }
