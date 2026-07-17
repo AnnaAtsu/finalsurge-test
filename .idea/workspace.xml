@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d16654c-077b-4955-b046-e440735bfda5" name="Changes" comment="первые тесты для traning plans">
+    <list default="true" id="5d16654c-077b-4955-b046-e440735bfda5" name="Changes" comment=" добавила yml файл для github actions4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elements/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elements/Elements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/TrainingPlansPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/TrainingPlansPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/urls/Urls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/urls/Urls.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TrainingPlansTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TrainingPlansTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +37,16 @@
   "selectedUrlAndAccountId": {
     "url": "https://github.com/AnnaAtsu/finalsurge-test.git",
     "accountId": "d47bf71c-16d9-4a93-8ab7-f7dd3430d6e4"
+  },
+  "recentNewPullRequestHead": {
+    "server": {
+      "useHttp": false,
+      "host": "github.com",
+      "port": null,
+      "suffix": null
+    },
+    "owner": "AnnaAtsu",
+    "repository": "finalsurge-test"
   }
 }]]></component>
   <component name="MarkdownSettingsMigration">
@@ -243,11 +248,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TrainingPlansTest.checkTrainingPlansDetaiItem" />
-        <item itemvalue="TestNG.TrainingPlansTest.checkTrainingPlansDetail" />
         <item itemvalue="TestNG.WorkoutsTest.checkfilterWorkoutOnActivity" />
         <item itemvalue="TestNG.WorkoutsTest.checkCopyWorkout" />
         <item itemvalue="TestNG.TrainingPlansTest.checkTrainingPlansPage" />
+        <item itemvalue="TestNG.TrainingPlansTest.checkTrainingPlansDetail" />
+        <item itemvalue="TestNG.TrainingPlansTest.checkTrainingPlansDetaiItem" />
       </list>
     </recent_temporary>
   </component>
@@ -308,7 +313,39 @@
       <option name="project" value="LOCAL" />
       <updated>1784202722722</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary=" добавила yml файл для github actions">
+      <option name="closed" value="true" />
+      <created>1784270755078</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1784270755078</updated>
+    </task>
+    <task id="LOCAL-00008" summary=" добавила yml файл для github actions2">
+      <option name="closed" value="true" />
+      <created>1784271428678</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1784271428678</updated>
+    </task>
+    <task id="LOCAL-00009" summary=" добавила yml файл для github actions3">
+      <option name="closed" value="true" />
+      <created>1784272311286</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1784272311286</updated>
+    </task>
+    <task id="LOCAL-00010" summary=" добавила yml файл для github actions4">
+      <option name="closed" value="true" />
+      <created>1784272808089</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1784272808089</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -329,6 +366,10 @@
     <MESSAGE value="тесты для профиля" />
     <MESSAGE value="поправлено на основании ревью" />
     <MESSAGE value="первые тесты для traning plans" />
-    <option name="LAST_COMMIT_MESSAGE" value="первые тесты для traning plans" />
+    <MESSAGE value=" добавила yml файл для github actions" />
+    <MESSAGE value=" добавила yml файл для github actions2" />
+    <MESSAGE value=" добавила yml файл для github actions3" />
+    <MESSAGE value=" добавила yml файл для github actions4" />
+    <option name="LAST_COMMIT_MESSAGE" value=" добавила yml файл для github actions4" />
   </component>
 </project>
