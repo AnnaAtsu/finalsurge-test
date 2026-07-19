@@ -104,9 +104,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.version}</version>
                 <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                    <!-- <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/regress.xml</suiteXmlFile>
                     </suiteXmlFiles>
+                    -->
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                         -Dallure.results.directory=${project.build.directory}/allure-results
