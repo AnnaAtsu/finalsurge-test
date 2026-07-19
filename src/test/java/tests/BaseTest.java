@@ -57,6 +57,8 @@ public class BaseTest {
         options.addArguments("--disable-notifications");
         options.addArguments("--disable-popup-blocking");
         options.addArguments("--disable-infobars");
+        //добавила строку ниже для github actions
+        options.addArguments("--headless");
         Configuration.browserCapabilities = options;
 
         loginPage = new LoginPage();

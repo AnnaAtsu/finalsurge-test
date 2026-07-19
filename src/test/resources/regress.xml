@@ -3,7 +3,7 @@
 <suite thread-count="2" name="finalsurge" parallel="classes">
     <listeners>
         <listener class-name="listeners.TestListener"/>
-        <listener class-name="listeners.AnnotationTransformer"/>
+        <listener class-name="listeners.MyTransformer"/>
     </listeners>
     <test name="thread1">
         <classes>
