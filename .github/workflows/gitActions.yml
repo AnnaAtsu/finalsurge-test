@@ -29,3 +29,26 @@ jobs:
         cache: maven
     - name: Run tests
       run: mvn clean test
+
+    - name: Get Allure history
+      uses: actions/checkout@v4
+      if: always()
+      continue-on-error: true
+      with:
+          ref: gp-pagesnew
+          path: gp-pagesnew
+
+    - name: Allure Report action from marketplace
+      uses: simple-elf/allure-report-action@master
+      if: always()
+      with:
+            allure_results: target/allure-results
+            allure_history: allure-history
+
+    - name: Deploy report to Github Pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_branch: gp-pagesnew
+            publish_dir: allure-history
