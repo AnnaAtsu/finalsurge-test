@@ -13,6 +13,7 @@ import static constants.ConstantElements.email;
 import static constants.ConstantElements.password;
 import static elements.Elements.*;
 import static urls.Urls.urlCustomerSupport;
+import static urls.Urls.urlFeedback;
 
 public class CustomerSupportTest extends BaseTest {
 
@@ -29,8 +30,8 @@ public class CustomerSupportTest extends BaseTest {
         softAssert.assertEquals(title(), titleForDashboardPage);
         calendarPage.isPageOpened();
         calendarPage.clickCustomerSupportLink();
-        softAssert.assertEquals(title(), titleForCUSTOMER_SUPPORTPage);
-        urlAssertion.verifyUrl(urlCustomerSupport);
+        softAssert.assertEquals(title(), titleForFeedbackPage);
+        urlAssertion.verifyUrl(urlFeedback);
         customerSupportPage.isPageOpened();
         textAssertion.isTextDisplayed(CUSTOMER_SUPPORT_TITLE);
         softAssert.assertAll();

@@ -185,7 +185,7 @@ public class LoginTest extends BaseTest {
         loginPage.rememberMeCheckboxClick();
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
-        urlAssertion.verifyUrl(urlRegister);
+        urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
     }
