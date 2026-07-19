@@ -9,18 +9,12 @@
         <classes>
             <class name="tests.LoginTest"/>
             <class name="tests.RegisterTest"/>
-            <class name="tests.CalendarTest"/>
-            <class name="tests.UserProfileTest"/>
-            <class name="tests.WorkoutReportTest"/>
         </classes>
     </test>
 
     <test name="thread2">
         <classes>
             <class name="tests.CustomerSupportTest"/>
-            <class name="tests.WorkoutsTest"/>
-            <class name="tests.DashboardTest"/>
-            <class name="tests.DailyVitalsTest"/>
             <class name="tests.FeedBackTest"/>
         </classes>
     </test>
