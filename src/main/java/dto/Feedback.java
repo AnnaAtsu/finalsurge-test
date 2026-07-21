@@ -1,7 +1,5 @@
 package dto;
 
-import com.github.javafaker.Address;
-import com.github.javafaker.PhoneNumber;
 import lombok.*;
 
 @Data

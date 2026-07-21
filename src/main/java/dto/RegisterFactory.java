@@ -5,7 +5,6 @@ import lombok.experimental.UtilityClass;
 
 @UtilityClass
 public class RegisterFactory {
-
     public static Register getRegister(String password) {
         Faker faker = new Faker();
         return new Register(
@@ -13,6 +12,6 @@ public class RegisterFactory {
                 faker.name().lastName(),
                 faker.internet().emailAddress(),
                 password
-                );
+        );
     }
 }

@@ -2,23 +2,22 @@ package pages;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import dto.FeedBackFactory;
+
 import dto.Feedback;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
 import static urls.Urls.feedbackEndpoint;
 
 @Log4j2
-public class FeedbackPage extends BasePage{
+public class FeedbackPage extends BasePage {
 
-    private final SelenideElement PHONE_FIELD  = $("#Phone");
-    private final SelenideElement REASON_FIELD  = $("#Reason");
-    private final SelenideElement FEEDBACK_FIELD  = $("#Feedback");
-    private final SelenideElement FEEDBACK_SEND_BUTTON  = $("#submitButton");
+    private final SelenideElement PHONE_FIELD = $("#Phone");
+    private final SelenideElement REASON_FIELD = $("#Reason");
+    private final SelenideElement FEEDBACK_FIELD = $("#Feedback");
+    private final SelenideElement FEEDBACK_SEND_BUTTON = $("#submitButton");
 
     @Step("Открыть страницу фидбека")
     public FeedbackPage openPage() {

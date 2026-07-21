@@ -45,12 +45,11 @@ public class TrainingPlansTest extends BaseTest {
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
         trainingPlansPage.openPage()
-                         .isPageOpened();
+                .isPageOpened();
         softAssert.assertEquals(title(), titleForTRainingPlansPage);
         urlAssertion.verifyUrl(urlTrainingPlans);
         trainingPlansPage.clickFindPlanButton();
         trainingPlansPage.verifyTrainingPlans();
-
     }
 
     @Test(testName = "Просмотр деталей конкретного плана"

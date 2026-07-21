@@ -1,29 +1,22 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
-import org.testng.Assert;
-import org.testng.AssertJUnit;
-import org.testng.asserts.Assertion;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static elements.Elements.CANT_SIGN_IN_FORM_TITLE;
 import static urls.Urls.calendarEndpoint;
 
 
 @Log4j2
-public class DashboardPage extends BasePage{
+public class DashboardPage extends BasePage {
 
 
     private final SelenideElement HOME_LINK = $x("//a[@class='ptip_s' and @href='Default.cshtml']");
@@ -39,22 +32,22 @@ public class DashboardPage extends BasePage{
     private final SelenideElement WEEK_HEADER_TITLE = $x("//span/h2/a[contains(text(), 'Week')]");
     private final SelenideElement GARMIN_BUTTON = $("#GarminAddBtn");
     private final SelenideElement SIX_WEEKS_BUTTON = $x("//span[text()='6 weeks']");
-    private final SelenideElement SIX_WEEK_FIELD =  $x("//ul[@class='dropdown-menu']//a[text()='6 weeks (forward)']");
+    private final SelenideElement SIX_WEEK_FIELD = $x("//ul[@class='dropdown-menu']//a[text()='6 weeks (forward)']");
 
     private final SelenideElement WORKOUT_MENU = $x("//a[text()='Workouts']");
-    private final ElementsCollection WORKOUT_MENU_ITEMS  =  $$x("//a[text()='Workouts']/following-sibling::ul//a");
+    private final ElementsCollection WORKOUT_MENU_ITEMS = $$x("//a[text()='Workouts']/following-sibling::ul//a");
 
     private final SelenideElement DAILY_VITALS_MENU = $x("//a[text()='Daily Vitals']");
-    private final ElementsCollection DAILY_VITALS_ITEMS  =  $$x("//a[text()='Daily Vitals']/following-sibling::ul//a");
+    private final ElementsCollection DAILY_VITALS_ITEMS = $$x("//a[text()='Daily Vitals']/following-sibling::ul//a");
 
     private final SelenideElement GEAR_ROUTES_MENU = $x("//a[text()='Gear & Routes']");
-    private final ElementsCollection GEAR_ROUTES_ITEMS  =  $$x("//a[text()='Gear & Routes']/following-sibling::ul//a");
+    private final ElementsCollection GEAR_ROUTES_ITEMS = $$x("//a[text()='Gear & Routes']/following-sibling::ul//a");
     private final SelenideElement TRAINING_PLAN_MENU = $x("//a[text()='Training Plans']");
-    private final ElementsCollection TRAINING_PLAN_ITEMS  =  $$x("//a[text()='Training Plans']/following-sibling::ul//a");
+    private final ElementsCollection TRAINING_PLAN_ITEMS = $$x("//a[text()='Training Plans']/following-sibling::ul//a");
     private final SelenideElement RESOURCES_MENU = $x("//a[text()='Resources']");
-    private final ElementsCollection RESOURCES_ITEMS  =  $$x("//a[text()='Resources']/following-sibling::ul//a");
+    private final ElementsCollection RESOURCES_ITEMS = $$x("//a[text()='Resources']/following-sibling::ul//a");
     private final SelenideElement MESSAGE_MENU = $x("//a[text()='Message Boards']");
-    private final SelenideElement MAIN_LOGO  = $x("//div[@class='main-logo']/a");
+    private final SelenideElement MAIN_LOGO = $x("//div[@class='main-logo']/a");
 
     @Step("Открыть страницу дашборда")
     public DashboardPage openPage() {

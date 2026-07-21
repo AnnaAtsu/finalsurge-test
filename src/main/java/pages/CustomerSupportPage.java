@@ -10,12 +10,12 @@ import static com.codeborne.selenide.Selenide.$;
 import static urls.Urls.customerSupportEndpoint;
 
 @Log4j2
-public class CustomerSupportPage extends BasePage{
+public class CustomerSupportPage extends BasePage {
 
-    private final SelenideElement PHONE_FIELD  = $("#Phone");
-    private final SelenideElement REASON_FIELD  = $("#Reason");
-    private final SelenideElement FEEDBACK_FIELD  = $("#Feedback");
-    private final SelenideElement FEEDBACK_SEND_BUTTON  = $("#submitButton");
+    private final SelenideElement PHONE_FIELD = $("#Phone");
+    private final SelenideElement REASON_FIELD = $("#Reason");
+    private final SelenideElement FEEDBACK_FIELD = $("#Feedback");
+    private final SelenideElement FEEDBACK_SEND_BUTTON = $("#submitButton");
 
 
     @Step("Открыть страницу поддержки")

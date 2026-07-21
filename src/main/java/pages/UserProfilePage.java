@@ -1,13 +1,11 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 
-import java.io.File;
 import java.util.List;
 import java.util.Random;
 
@@ -17,10 +15,10 @@ import static urls.Urls.userProfileEndpoint;
 
 
 @Log4j2
-public class UserProfilePage extends BasePage{
+public class UserProfilePage extends BasePage {
 
-    private final SelenideElement EDIT_PROFILE_BUTTON  = $("#ProfileEditLink");
-    private final SelenideElement CALENDAR_SYNC_BUTTON  =
+    private final SelenideElement EDIT_PROFILE_BUTTON = $("#ProfileEditLink");
+    private final SelenideElement CALENDAR_SYNC_BUTTON =
             $x("//a[contains(@class, 'editlink')]//span[contains(text(), 'Edit Sync')]");
     private final SelenideElement EDIT_SECURITY_BUTTON =
             $x("//a[contains(@class, 'editlink')]//span[contains(text(), 'Edit Security Settings')]");
@@ -29,25 +27,23 @@ public class UserProfilePage extends BasePage{
     private final SelenideElement AVATAR_IMAGE = $x("//img[@class='img-avatar']");
     private final SelenideElement NAME_FIELD = $x("//p[.//small[text()='Name:']]");
     private final SelenideElement EMAIL_FIELD = $x("//p[.//small[text()='Email:']]");
-    private final SelenideElement FIRST_NAME_FIELD  = $("#fname");
-    private final SelenideElement LAST_NAME_FIELD  = $("#lname");
-    private final SelenideElement SAVE_BUTTON_PROFILE  = $("#saveButtonProfile");
-    private final SelenideElement SAVE_BUTTON_CALENDAR_SYNC  = $("#saveButtonSync");
+    private final SelenideElement FIRST_NAME_FIELD = $("#fname");
+    private final SelenideElement LAST_NAME_FIELD = $("#lname");
+    private final SelenideElement SAVE_BUTTON_PROFILE = $("#saveButtonProfile");
+    private final SelenideElement SAVE_BUTTON_CALENDAR_SYNC = $("#saveButtonSync");
     private final SelenideElement SELECT_TRAINING_MENU = $("#PSport");
     private final SelenideElement PRIMARY_SPORT_FIELD = $x("//p[small[contains(text(),'Primary Sport')]]");
-    private final  SelenideElement SAVE_BUTTON_SETTINGS = $("#saveButtonSettings");
-    private final  ElementsCollection LANGUAGES = $$x("//label[input[@name='Lang']]");
+    private final SelenideElement SAVE_BUTTON_SETTINGS = $("#saveButtonSettings");
+    private final ElementsCollection LANGUAGES = $$x("//label[input[@name='Lang']]");
     private final SelenideElement CHECKED_LANGUAGE =
             $x("//p[i[contains(@class,'flag-')]]");
     private String selectedLanguage;
     private String initialUpdatesValue;
-
     private final SelenideElement PUSH_IMAGE_BUTTON = $("#EditProfilePicOther");
-    private final SelenideElement SELECT_IMAGE_BUTTON =  $x("//input[@type='file' and @name='profilepic']");
+    private final SelenideElement SELECT_IMAGE_BUTTON = $x("//input[@type='file' and @name='profilepic']");
     private final SelenideElement UPLOAD_BUTTON = $("#NextStep");
     private final SelenideElement UPLOADER_FRAME = $("#uploader");
     private final SelenideElement SAVE_NEW_IMAGE_BUTTON = $x("//a[text()='Save']");
-
 
 
     @Step("Открыть страницу фидбека")
@@ -62,7 +58,7 @@ public class UserProfilePage extends BasePage{
     public UserProfilePage isPageOpened() {
         log.info("Проверка, открыта ли страница профиля юзера");
         EDIT_PROFILE_BUTTON.shouldBe(visible);
-       CALENDAR_SYNC_BUTTON.shouldBe(visible);
+        CALENDAR_SYNC_BUTTON.shouldBe(visible);
         EDIT_SECURITY_BUTTON.shouldBe(visible);
         EDIT_SETTING_BUTTON.shouldBe(visible);
         return this;
@@ -104,7 +100,7 @@ public class UserProfilePage extends BasePage{
         FIRST_NAME_FIELD.shouldBe(visible).setValue(firstName);
         LAST_NAME_FIELD.shouldBe(visible).setValue(lastName);
         SAVE_BUTTON_PROFILE.shouldBe(visible).click();
-    return this;
+        return this;
     }
 
     @Step("Нажать на кнопку редактирования настроек")
@@ -116,24 +112,24 @@ public class UserProfilePage extends BasePage{
 
     @Step("Отредактировать настройки профиля")
     public String selectRandomSport() {
-            log.info("Отредактировать настройки профиля");
-            List<String> sports = SELECT_TRAINING_MENU.$$("option")
-                    .texts();
-            sports.remove(0);
-            String randomSport = sports.get(new Random().nextInt(sports.size()));
-            SELECT_TRAINING_MENU.selectOption(randomSport);
-            return randomSport;
-        }
+        log.info("Отредактировать настройки профиля");
+        List<String> sports = SELECT_TRAINING_MENU.$$("option")
+                .texts();
+        sports.remove(0);
+        String randomSport = sports.get(new Random().nextInt(sports.size()));
+        SELECT_TRAINING_MENU.selectOption(randomSport);
+        return randomSport;
+    }
 
     @Step("Нажать на кнопку сохранения настроек")
-    public  UserProfilePage saveSettings() {
-            log.info("Нажать на кнопку сохранения настроек");
+    public UserProfilePage saveSettings() {
+        log.info("Нажать на кнопку сохранения настроек");
         SAVE_BUTTON_SETTINGS.shouldBe(visible).click();
         return this;
-        }
+    }
 
     @Step("Проверка выбранного спорта")
-    public  UserProfilePage verifySelectedSport(String expectedSport) {
+    public UserProfilePage verifySelectedSport(String expectedSport) {
         log.info("Проверка выбранного спорта");
         PRIMARY_SPORT_FIELD.shouldHave(text(expectedSport));
         return this;

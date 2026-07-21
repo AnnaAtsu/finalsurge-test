@@ -10,12 +10,11 @@ import org.testng.asserts.SoftAssert;
 import static com.codeborne.selenide.Selenide.title;
 import static constants.ConstantElements.email;
 import static constants.ConstantElements.password;
-import static elements.Elements.*;
 import static elements.Elements.titleForDashboardPage;
 import static urls.Urls.urlCalendar;
 
 @Log4j2
-public class CalendarTest extends BaseTest{
+public class CalendarTest extends BaseTest {
 
 
     @Test(testName = "Отображение календаря на текущий месяц", description = "Календарь показывает месяц и год")
@@ -61,7 +60,7 @@ public class CalendarTest extends BaseTest{
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
         calendarPage.goToNextMonth()
-                    .goToNextMonthAndWaitForUpdate();
+                .goToNextMonthAndWaitForUpdate();
 
     }
 
@@ -78,7 +77,7 @@ public class CalendarTest extends BaseTest{
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
         calendarPage.goToPrevMonth()
-                    .goToPrevMonthAndWaitForUpdate();
+                .goToPrevMonthAndWaitForUpdate();
 
     }
 
@@ -140,7 +139,7 @@ public class CalendarTest extends BaseTest{
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
         calendarPage.checkColorInWorkout("Bike", "#4dbd53")
-                    .checkColorInWorkout("Swim", "#4dabf7")
-                    .checkColorInWorkout("Run", "#8c8c8c");
+                .checkColorInWorkout("Swim", "#4dabf7")
+                .checkColorInWorkout("Run", "#8c8c8c");
     }
 }
