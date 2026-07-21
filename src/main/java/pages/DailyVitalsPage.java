@@ -3,7 +3,6 @@ package pages;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import dto.DailyVitals;
-import dto.Feedback;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 
@@ -17,26 +16,26 @@ import static urls.Urls.dailyVitalsEndpoint;
 
 @Log4j2
 
-public class DailyVitalsPage extends BasePage{
+public class DailyVitalsPage extends BasePage {
 
-    private final SelenideElement ADD_VITALS_BUTTON  = $x("//button[@title='Add Vitals']");
-    private final SelenideElement PAST_DAYS_SELECT  = $("#PastDays");
+    private final SelenideElement ADD_VITALS_BUTTON = $x("//button[@title='Add Vitals']");
+    private final SelenideElement PAST_DAYS_SELECT = $("#PastDays");
     private final SelenideElement TABLE =
             $("table.table.table-striped.table-condensed");
-    private final SelenideElement SAVE_VITALS_BUTTON  = $("#saveButton");
-    private final SelenideElement VITALS_DATE_FIELD  = $("#VitalsDate");
-    private final SelenideElement VITALS_WEIGHT_FIELD  = $("#Weight");
-    private final SelenideElement VITALS_STEPS_FIELD  = $("#Steps");
-    private final SelenideElement VITALS_CALORIE_CONSUMED_FIELD  = $("#Calories");
-    private final SelenideElement VITALS_BODY_FAT_FIELD  = $("#BodyFat");
-    private final SelenideElement VITALS_WATER_FIELD  = $("#WaterPercent");
-    private final SelenideElement VITALS_RESTINGHR_FIELD  = $("#RestHR");
-    private final SelenideElement VITALS_HRVARIABILITY_FIELD  = $("#HRVar");
-    private final SelenideElement VITALS_HOURS_SLEEP_FIELD  = $("#SleepHours");
-    private final SelenideElement VITALS_HEALTH_NOTES_FIELD  = $("#HealthNotes");
-    private final SelenideElement VITALS_SLEEP_AMOUNT_SELECT  = $("#SleepAmount");
-    private final SelenideElement VITALS_SLEEP_QUALITY_SELECT  = $("#SleepQuality");
-    private final SelenideElement HIGH_CHART_TABLE  = $("rect.highcharts-background");
+    private final SelenideElement SAVE_VITALS_BUTTON = $("#saveButton");
+    private final SelenideElement VITALS_DATE_FIELD = $("#VitalsDate");
+    private final SelenideElement VITALS_WEIGHT_FIELD = $("#Weight");
+    private final SelenideElement VITALS_STEPS_FIELD = $("#Steps");
+    private final SelenideElement VITALS_CALORIE_CONSUMED_FIELD = $("#Calories");
+    private final SelenideElement VITALS_BODY_FAT_FIELD = $("#BodyFat");
+    private final SelenideElement VITALS_WATER_FIELD = $("#WaterPercent");
+    private final SelenideElement VITALS_RESTINGHR_FIELD = $("#RestHR");
+    private final SelenideElement VITALS_HRVARIABILITY_FIELD = $("#HRVar");
+    private final SelenideElement VITALS_HOURS_SLEEP_FIELD = $("#SleepHours");
+    private final SelenideElement VITALS_HEALTH_NOTES_FIELD = $("#HealthNotes");
+    private final SelenideElement VITALS_SLEEP_AMOUNT_SELECT = $("#SleepAmount");
+    private final SelenideElement VITALS_SLEEP_QUALITY_SELECT = $("#SleepQuality");
+    private final SelenideElement HIGH_CHART_TABLE = $("rect.highcharts-background");
     private final SelenideElement WEIGHT_INDICATOR
             = $x("//*[local-name()='text' and text()='Weight']");
     private final SelenideElement SLEEP_INDICATOR
@@ -67,7 +66,7 @@ public class DailyVitalsPage extends BasePage{
         ADD_VITALS_BUTTON.shouldBe(visible);
         PAST_DAYS_SELECT.shouldBe(visible);
         TABLE.shouldBe(visible);
-        return this ;
+        return this;
     }
 
     @Step("Отредактировать настройки профиля")

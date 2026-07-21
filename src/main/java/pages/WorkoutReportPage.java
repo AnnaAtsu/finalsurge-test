@@ -11,22 +11,21 @@ import java.time.format.DateTimeFormatter;
 import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
-import static elements.Elements.WORKOUT_REPORT_MESSAGE_FOR_NO_FILTER;
 import static urls.Urls.reportEndpoint;
 
 @Log4j2
-public class WorkoutReportPage extends BasePage{
+public class WorkoutReportPage extends BasePage {
 
-    private final SelenideElement VIEW_REPORT_BUTTON  = $("#saveButton");
-    private final SelenideElement START_DATE_FIELD  = $("#WorkoutDate");
-    private final SelenideElement END_DATE_FIELD  = $("#WorkoutDateEnd");
-    private final SelenideElement ACTIVITY_TYPE_MENU  = $("#ActivityType");
+    private final SelenideElement VIEW_REPORT_BUTTON = $("#saveButton");
+    private final SelenideElement START_DATE_FIELD = $("#WorkoutDate");
+    private final SelenideElement END_DATE_FIELD = $("#WorkoutDateEnd");
+    private final SelenideElement ACTIVITY_TYPE_MENU = $("#ActivityType");
     private final SelenideElement GROUP_BY_WEEK_RADIO_BUTTON = $("#groupBy2");
     private final SelenideElement TRAINIG_BLOCK = $(".table-striped.table-condensed");
     private final SelenideElement GROUP_BY_ACTIVITY_RADIO_BUTTON = $("#groupBy4");
     private final SelenideElement LEAVE_COMMENT_ICON = $(".icsw16-create-write");
     private final SelenideElement COMMENT_TEXTAREA = $("#CommentDesc");
-    private final SelenideElement ADD_COMMENT_BUTTON  = $("#saveButtonComment");
+    private final SelenideElement ADD_COMMENT_BUTTON = $("#saveButtonComment");
     private final SelenideElement COMMENT_IFRAME = $("#WorkoutCommentsiFrame");
 
     @Override
@@ -78,6 +77,7 @@ public class WorkoutReportPage extends BasePage{
         GROUP_BY_WEEK_RADIO_BUTTON.click();
         return this;
     }
+
     @Step("Проверка отображения блока с тренировками")
     public WorkoutReportPage vefifyTrainigblockExistence() {
         log.info("Проверка отображения блока с тренировками");

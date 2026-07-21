@@ -28,7 +28,7 @@ public class DashboardTest extends BaseTest {
         urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
-   }
+    }
 
     @Test(testName = "Навигационное меню: все пункты кликабельны", description = "Каждый пункт меню ведёт на соответствующую страницу (Calendar, Workouts, Reports и т.д.)")
     @Severity(SeverityLevel.CRITICAL)
@@ -53,6 +53,7 @@ public class DashboardTest extends BaseTest {
         softAssert.assertEquals(title(), titleForMailPage);
         softAssert.assertAll();
     }
+
     @Test(testName = "Отображение сводки за неделю (Weekly Summary)", description = "Виджет показывает неделю и уменьшенный календарь")
     @Severity(SeverityLevel.BLOCKER)
     @Feature("Dashboard component")
@@ -62,7 +63,7 @@ public class DashboardTest extends BaseTest {
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
         dashboardPage.isPageOpened()
-                 .clickWeekButton()
+                .clickWeekButton()
                 .verifyWeekHeader();
         urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
@@ -128,6 +129,7 @@ public class DashboardTest extends BaseTest {
         softAssert.assertTrue(textAssertion.isTextDisplayed(MESSAGE_BOARD_ACCESS_TEXT));
         softAssert.assertAll();
     }
+
     @Test(testName = "Логотип: переход на другую страницу ", description = "Страница Default: отображается блок Training Volume")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("Dashboard component")

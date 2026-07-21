@@ -1,6 +1,5 @@
 package pages;
 
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import dto.WorkOuts;
@@ -19,7 +18,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 @Log4j2
-public class WorkoutsPage extends BasePage{
+public class WorkoutsPage extends BasePage {
 
 
     private final SelenideElement ADD_WORKOUT_BUTTON = $("#QuickAddToggle");
@@ -105,7 +104,7 @@ public class WorkoutsPage extends BasePage{
         log.info("Проверка отображения типа активности " + subActivity);
         ACTIVITY_SELECT.shouldBe(visible)
                 .selectOptionContainingText(subActivity);
-               return this;
+        return this;
     }
 
     @Step("Заполнить поля с именем и описанием")
@@ -136,7 +135,7 @@ public class WorkoutsPage extends BasePage{
     @Step("Нажать на кнопку Add Workout")
     public WorkoutsPage clickSaveWorkout() {
         log.info("Нажать на кнопку Add Workout");
-    SAVE_BUTTON.shouldBe(visible).click();
+        SAVE_BUTTON.shouldBe(visible).click();
         return this;
     }
 

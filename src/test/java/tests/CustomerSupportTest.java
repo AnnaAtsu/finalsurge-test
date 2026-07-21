@@ -1,7 +1,5 @@
 package tests;
 
-import dto.FeedBackFactory;
-import dto.Feedback;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -12,13 +10,12 @@ import static com.codeborne.selenide.Selenide.title;
 import static constants.ConstantElements.email;
 import static constants.ConstantElements.password;
 import static elements.Elements.*;
-import static urls.Urls.urlCustomerSupport;
 import static urls.Urls.urlFeedback;
 
 public class CustomerSupportTest extends BaseTest {
 
 
-    @Test(testName = "Переход на страницу поддержки", description ="Проверка отображения страницы")
+    @Test(testName = "Переход на страницу поддержки", description = "Проверка отображения страницы")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("CustomerSupport component")
     public void checkCustomerSupportPage() {

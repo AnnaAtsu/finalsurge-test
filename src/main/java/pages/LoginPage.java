@@ -2,7 +2,6 @@ package pages;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.WebElementCondition;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.testng.asserts.SoftAssert;
@@ -15,14 +14,14 @@ import static com.codeborne.selenide.Selenide.*;
 import static urls.Urls.loginEndpoint;
 
 @Log4j2
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
     private final SelenideElement LOGIN_FIELD = $("#login_name");
-    private  final SelenideElement PASSWORD_FIELD = $("#login_password");
-    private final SelenideElement LOGIN_BUTTON  =$("button[type=submit]");
-    private  final SelenideElement CHECKBOX_REMEMBER_ME = $("#login_remember");
-    private  final SelenideElement SIGN_UP = $(byText("Not registered?"));
-    private  final SelenideElement LOGIN_ERROR = $x("//label[@class='error' and @for='login_name']");
+    private final SelenideElement PASSWORD_FIELD = $("#login_password");
+    private final SelenideElement LOGIN_BUTTON = $("button[type=submit]");
+    private final SelenideElement CHECKBOX_REMEMBER_ME = $("#login_remember");
+    private final SelenideElement SIGN_UP = $(byText("Not registered?"));
+    private final SelenideElement LOGIN_ERROR = $x("//label[@class='error' and @for='login_name']");
     private final SelenideElement PASSWORD_ERROR = $x("//label[@class='error' and @for='login_password']");
     private final String LOGIN_FORM_TITLE = "Account Login";
     private final SelenideElement INVALID_LOGIN_CREDS_ERROR = $(".alert.alert-error strong");
@@ -37,7 +36,6 @@ public class LoginPage extends BasePage{
         Selenide.open(loginEndpoint);
         return this;
     }
-
 
     @Override
     @Step("Проверка, открыта ли страница авторизации")
@@ -58,7 +56,6 @@ public class LoginPage extends BasePage{
         log.info("Ввести креды для авторизации");
         LOGIN_FIELD.sendKeys(email);
         PASSWORD_FIELD.sendKeys(password);
-
     }
 
     @Step("Нажать кнопку логина")
@@ -94,8 +91,9 @@ public class LoginPage extends BasePage{
         INVALID_LOGIN_CREDS_ERROR.should(visible);
         INVALID_LOGIN_CREDS_ERROR.shouldHave(text("Invalid login credentials. Please try again."));
     }
+
     @Step("Нажать на ссылку Forgot password")
-    public  void clickForgotPasswordLink() {
+    public void clickForgotPasswordLink() {
         log.info("Нажать на ссылку Forgot password");
         FORGOT_PASSWORD_LINK.shouldBe(visible, Duration.ofSeconds(5));
         FORGOT_PASSWORD_LINK.click();

@@ -19,10 +19,6 @@ public class ConfigReader {
         }
     }
 
-    public static String getProperty(String key) {
-        return properties.getProperty(key);
-    }
-
     public static String getEmail() {
         return properties.getProperty("email");
     }
@@ -31,7 +27,4 @@ public class ConfigReader {
         return properties.getProperty("password");
     }
 
-    public static String getBaseUrl() {
-        return properties.getProperty("base.url");
-    }
 }

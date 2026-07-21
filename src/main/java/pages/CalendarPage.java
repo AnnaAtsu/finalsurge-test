@@ -8,7 +8,6 @@ import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.testng.asserts.SoftAssert;
 
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
@@ -18,14 +17,12 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 @Log4j2
-public class CalendarPage extends BasePage{
+public class CalendarPage extends BasePage {
 
     private final SelenideElement GIVE_FEEDBACK_LINK = $x("//a[text()='Give Feedback']");
     private final SelenideElement CALENDAR_CONTENT_BLOCK = $("#CalendarContent");
     private final SelenideElement TRAINING_CALENDAR_LINK = $x("//a[text()='Training Calendar']");
-
     private final SelenideElement MONTH_TITLE = $("#dpMonth");
-
     private final SelenideElement ADD_WORKOUT_BUTTON = $("#QuickAddToggle");
     private final SelenideElement WORKOUT_LIBRARY_BUTTON = $("#WorkoutLibAdd");
     private final SelenideElement FULL_WORKOUT_BUTTON = $("#FullAddBtn");
@@ -33,10 +30,8 @@ public class CalendarPage extends BasePage{
     private final ElementsCollection CALENDAR_CELLS = $$(".calendar-day");
     private final SelenideElement NAVIGATION_LINK_RIGHT = $(".cal_next");
     private final SelenideElement NAVIGATION_LINK_LEFT = $(".cal_prev");
-    private final SelenideElement CELL_WITH_WORKOUT=  $x("//td[contains(@class, 'calendar-day')][.//div[contains(@class, 'calendarworkout')]]");
+    private final SelenideElement CELL_WITH_WORKOUT = $x("//td[contains(@class, 'calendar-day')][.//div[contains(@class, 'calendarworkout')]]");
     private final SelenideElement CELL_WITHOUT_WORKOUT = $x("//td[contains(@class, 'calendar-day')][not(.//div[contains(@class, 'calendarworkout')])]");
-    private final SelenideElement ACTIVITY_LABEL = $(".fc-event-activity-title");
-
 
 
     @Step("Нажать на правую стрелочку")
@@ -94,7 +89,7 @@ public class CalendarPage extends BasePage{
     @Step("Проверка актуального месяца и года в календаре")
     public void verifyCurrentMonthAndYear() {
         log.info("Проверка актуального месяца и года в календаре");
-               String expected = LocalDate.now()
+        String expected = LocalDate.now()
                 .format(DateTimeFormatter.ofPattern("MMMM yyyy", Locale.ENGLISH));
         MONTH_TITLE.shouldBe(visible).shouldHave(text(expected));
     }
@@ -166,6 +161,6 @@ public class CalendarPage extends BasePage{
         String actualColor = targetCell.$(".fc-event").getCssValue("background-color");
         String expected = hexToRgb(expectedColor);
         softAssert.assertEquals(expected, actualColor);
-               return this;
+        return this;
     }
 }

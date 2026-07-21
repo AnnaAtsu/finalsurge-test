@@ -3,7 +3,6 @@ package dto;
 import com.github.javafaker.Faker;
 import lombok.experimental.UtilityClass;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.ThreadLocalRandom;
@@ -12,7 +11,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public class WorkOutsFactory {
 
     private static final Faker faker = new Faker();
-    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 
     public static WorkOuts getWorkOuts() {
 

@@ -8,12 +8,11 @@ import lombok.extern.log4j.Log4j2;
 import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.visible;
-
 import static com.codeborne.selenide.Selenide.*;
 import static urls.Urls.trainingPlansEndpoint;
 
 @Log4j2
-public class TrainingPlansPage extends BasePage{
+public class TrainingPlansPage extends BasePage {
     private final SelenideElement TRAINING_PLAN_HEADER = $("#AboutPlansHeader");
     private final SelenideElement TRAINING_PLAN_CONTENT = $("#AboutPlansContent");
     private final SelenideElement FIND_PLAN_BUTTON = $x("//a[text()='Find a Training Plan!']");
@@ -60,8 +59,6 @@ public class TrainingPlansPage extends BasePage{
         log.info("Нажать на кнопку конкретного плана");
         TRAINING_PLAN_LIST_ITEM_FIRST.shouldBe(visible).click();
     }
-
-
 
     @Step("Нажать на кнопку Plan History")
     public void clickFindHistoryPlanButton() {

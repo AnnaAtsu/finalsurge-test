@@ -3,8 +3,6 @@ package tests;
 
 import dto.FeedBackFactory;
 import dto.Feedback;
-import dto.Register;
-import dto.RegisterFactory;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -18,7 +16,6 @@ import static elements.Elements.*;
 import static urls.Urls.urlFeedback;
 
 public class FeedBackTest extends BaseTest {
-
 
     Feedback feedbackTest = FeedBackFactory.getFeedback();
 
@@ -58,7 +55,7 @@ public class FeedBackTest extends BaseTest {
         feedbackPage.isPageOpened();
         textAssertion.isTextDisplayed(FEEDBACK_TITLE);
         feedbackPage.fillFeedback(feedbackTest)
-                        .pushFeedbackButton();
+                .pushFeedbackButton();
         textAssertion.isTextDisplayed(MESSAGE_FEEDBACK);
         softAssert.assertAll();
     }

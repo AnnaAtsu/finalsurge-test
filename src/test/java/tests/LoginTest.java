@@ -20,36 +20,36 @@ import static urls.Urls.*;
 @Log4j2
 public class LoginTest extends BaseTest {
 
-     @Test(testName = "Успешная авторизация", description = "Успешный вход с валидными email и паролем")
-     @Severity(SeverityLevel.BLOCKER)
-     @Feature("Login component")
+    @Test(testName = "Успешная авторизация", description = "Успешный вход с валидными email и паролем")
+    @Severity(SeverityLevel.BLOCKER)
+    @Feature("Login component")
     public void checkSuccessfullLogin() {
-         SoftAssert softAssert = new SoftAssert();
-         loginPage.openPage();
-         loginPage.isPageOpened();
-         loginPage.enterCreds(email, password);
-         loginPage.pushLoginButton();
-         urlAssertion.verifyUrl(urlCalendar);
-         softAssert.assertEquals(title(), titleForDashboardPage);
-         softAssert.assertAll();
-     }
+        SoftAssert softAssert = new SoftAssert();
+        loginPage.openPage();
+        loginPage.isPageOpened();
+        loginPage.enterCreds(email, password);
+        loginPage.pushLoginButton();
+        urlAssertion.verifyUrl(urlCalendar);
+        softAssert.assertEquals(title(), titleForDashboardPage);
+        softAssert.assertAll();
+    }
 
-     @Test(testName = "Авторизация с пустым полем логина", description = "Авторизация с пустым полем login. Ошибка входа: пустое поле Email")
-     @Severity(SeverityLevel.CRITICAL)
-     @Feature("Login component")
-     public void checkLoginWithEmptyLogin() {
-         SoftAssert softAssert = new SoftAssert();
-         loginPage.openPage();
-         loginPage.isPageOpened();
-         loginPage.enterCreds("", password);
-         loginPage.pushLoginButton();
-         loginPage.verifyEmailError();
-         urlAssertion.verifyUrl(urlLogin);
-         softAssert.assertEquals(title(), titleForLoginPage);
-         softAssert.assertAll();
-     }
+    @Test(testName = "Авторизация с пустым полем логина", description = "Авторизация с пустым полем login. Ошибка входа: пустое поле Email")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("Login component")
+    public void checkLoginWithEmptyLogin() {
+        SoftAssert softAssert = new SoftAssert();
+        loginPage.openPage();
+        loginPage.isPageOpened();
+        loginPage.enterCreds("", password);
+        loginPage.pushLoginButton();
+        loginPage.verifyEmailError();
+        urlAssertion.verifyUrl(urlLogin);
+        softAssert.assertEquals(title(), titleForLoginPage);
+        softAssert.assertAll();
+    }
 
-    @Test(testName = "Авторизация с пустым полем пароля",description = "Авторизация с пустым полем password. Ошибка входа: пустое поле Password")
+    @Test(testName = "Авторизация с пустым полем пароля", description = "Авторизация с пустым полем password. Ошибка входа: пустое поле Password")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("Login component")
     public void checkLoginWithEmptyPassword() {
@@ -64,7 +64,7 @@ public class LoginTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(testName = "Авторизация с невалидным полем login",description = "Авторизация с невалидным полем login. Ошибка входа: email без @")
+    @Test(testName = "Авторизация с невалидным полем login", description = "Авторизация с невалидным полем login. Ошибка входа: email без @")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("Login component")
     public void checkLoginWithUnvalidLogin() {
@@ -110,7 +110,7 @@ public class LoginTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(testName = "Авторизация с password, которого нет в системе",description = "Авторизация с password, которого нет в системе. Сообщение об ошибке: `\"Invalid login credentials. Please try again.\"`")
+    @Test(testName = "Авторизация с password, которого нет в системе", description = "Авторизация с password, которого нет в системе. Сообщение об ошибке: `\"Invalid login credentials. Please try again.\"`")
     @Severity(SeverityLevel.BLOCKER)
     @Feature("Login component")
     public void checkUnregisteredPassword() {

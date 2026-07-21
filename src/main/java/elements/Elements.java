@@ -1,14 +1,10 @@
 package elements;
 
 public class Elements {
-
-    //public final static String email = ConfigReader.getEmail();
-    //public final static  String password = ConfigReader.getPassword();
-
-    public final static String titleForRequestNewPasswordPage =  "Can't sign in?";
+    public final static String titleForRequestNewPasswordPage = "Can't sign in?";
     public final static String titleForDashboardPage = "Final Surge - Training Calendar";
     public final static String titleForLogoutPage = "Final Surge - Logout";
-    public final static String titleForLoginPage =  "Final Surge - Login";
+    public final static String titleForLoginPage = "Final Surge - Login";
     public final static String titleForCreateNewAccount = "Final Surge - Create New Account";
     public final static String titleForDefaultPage = "Final Surge - Dashboard";
     public final static String titleForReportPage = "Final Surge - Athlete Workout Report";
@@ -48,7 +44,6 @@ public class Elements {
     public final static String ACTIVITY_ADD_ERROR_MESSAGE = "*Please select a valid Activity Type.";
     public final static String DELETE_WORKOUT_CALENDAR_MESSAGE = "Are you sure you want to delete this workout from the calendar?";
     public final static String ACTIVITY_TYPE_FILTER_MESSAGE = "You have no library entries for this Activity Type. ";
-    public final static String TRAINING_PLAN_MESSAGE= "Apply Training Plans to Calendar";
+    public final static String TRAINING_PLAN_MESSAGE = "Apply Training Plans to Calendar";
     public final static String TRAINING_PLAN_MESSAGE_HISTORY = "You currently have no training plan history.";
-
 }
