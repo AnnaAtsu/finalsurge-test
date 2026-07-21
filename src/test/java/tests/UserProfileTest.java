@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.apache.logging.log4j.core.config.Order;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -79,7 +80,7 @@ public class UserProfileTest extends BaseTest {
     }
 
     @Test(testName = "Редактирование User Settings язык"
-            , description = "Выбор языка типа тренировки")
+            , description = "Выбор языка типа тренировки", priority = 100)
     @Severity(SeverityLevel.NORMAL)
     @Feature("UserProfile component")
     public void checkSettingsLanguageChange() {
