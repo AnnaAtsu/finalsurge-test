@@ -9,6 +9,9 @@
         <classes>
             <class name="tests.LoginTest"/>
             <class name="tests.RegisterTest"/>
+            <class name="tests.UserProfileTest"/>
+            <class name="tests.WorkoutsTest"/>
+            <class name="tests.CalendarTest"/>
         </classes>
     </test>
 
@@ -16,6 +19,9 @@
         <classes>
             <class name="tests.CustomerSupportTest"/>
             <class name="tests.FeedBackTest"/>
+            <class name="tests.WorkoutReportTest"/>
+            <class name="tests.DashboardTest"/>
+            <class name="tests.DailyVitalsTest"/>
         </classes>
     </test>
 </suite>

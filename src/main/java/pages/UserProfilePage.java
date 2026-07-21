@@ -194,6 +194,13 @@ public class UserProfilePage extends BasePage {
         return this;
     }
 
+    @Step("Нажать на кнопку сохранения изображения")
+    public UserProfilePage saveProfileImage() {
+        log.info("Загрузка изображения профиля");
+        UPLOAD_BUTTON.shouldBe(visible).click();
+        return this;
+    }
+
     @Step("Нажать на радиобаттон почтовых уведомлений")
     public UserProfilePage changeEmailNotification() {
         log.info("Нажать на радиобаттон почтовых уведомлений");

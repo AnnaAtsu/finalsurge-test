@@ -124,7 +124,7 @@ public class UserProfileTest extends BaseTest {
                 .isPageOpened()
                 .clickEditButton()
                 .uploadProfileImage("images/cat.jpg")
-                .saveSettings();
+                .saveProfileImage();
     }
 
     @Test(testName = "Настройки уведомлений (Notifications)"
