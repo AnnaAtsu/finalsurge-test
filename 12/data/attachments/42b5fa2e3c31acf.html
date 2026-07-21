@@ -1,0 +1,543 @@
+<html lang="en-US"><head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Final Surge - User Profile</title>
+        <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <link href="img/branded/finalsurge-icon-32.png" rel="shortcut icon" type="image/x-icon">                    
+
+        <!-- common stylesheets-->
+        <!-- bootstrap framework css -->
+            <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+            <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css">
+        <!-- iconSweet2 icon pack (16x16) -->
+            <link rel="stylesheet" href="img/icsw2_16/icsw2_16.css">
+        <!-- splashy icon pack -->
+            <link rel="stylesheet" href="img/splashy/splashy.css">
+        <!-- flag icons -->
+            <link rel="stylesheet" href="img/flags/flags.css">
+        <!-- power tooltips -->
+            <link rel="stylesheet" href="js/lib/powertip/jquery.powertip.css">
+        <!-- google web fonts -->
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300">
+
+        <!-- aditional stylesheets -->
+            <link rel="stylesheet" href="js/lib/reveal/reveal.css?jsver=200">
+        <!--fullcalendar -->
+            <link rel="stylesheet" href="js/lib/fullcalendar/fullcalendar_beoro.css">
+
+        <!-- main stylesheet -->
+            <link rel="stylesheet" href="css/main.css?jsver=110">
+            <link rel="stylesheet" href="css/main.responsive.css">
+
+        <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css"><![endif]-->
+        <!--[if IE 9]><link rel="stylesheet" href="css/ie9.css"><![endif]-->
+            
+        <!--[if lt IE 9]>
+            <script src="js/ie/html5shiv.min.js"></script>
+            <script src="js/ie/respond.min.js"></script>
+            <script src="js/lib/flot-charts/excanvas.min.js"></script>
+        <![endif]-->        
+        
+        
+    <!-- datepicker -->
+    <link rel="stylesheet" href="js/lib/bootstrap-datepicker/css/datepicker.css">
+    <style type="text/css">
+        .bootbox {
+            width: 700px;
+            margin-left: -350px;
+        }
+    </style>
+
+        <style>
+            a { color: #c61201; }
+            a:hover { color: #c61201; }
+            header { background: #e9e9e9; }
+            header a { color: #c61201; }
+            header a:hover { color: #c61201; }
+            #breadcrumbs a:hover { background: #c61201; }
+            #breadcrumbs a:hover::before { border-color: #c61201 #c61201 #c61201 rgba(255,255,255,0); }
+            #breadcrumbs a:hover::after { border-left-color: #c61201; }   
+            
+            .w-box-blue .w-box-header { background: #368ca9 }
+            .fc-header-left .fc-state-active,.fc-header-left .fc-state-active:hover {
+	            background: #368ca9 !important;
+	            border: 1px solid #368ca9;
+	            color: #fff;
+	            text-shadow: none;
+	            cursor: default;
+            }                     
+        </style>
+        <style>
+            #fade-menu {
+            font-size: 11px !important;
+            font-weight: 400 !important;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+        </style>
+        <script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script type="text/javascript">
+            var JSSettingDatePickerOptions = {weekStart: 0 };
+        </script>
+    </head>
+    <body>
+
+    <!-- main wrapper (without footer) -->    
+        <div class="main-wrapper">
+        <!-- top bar -->
+            <div class="navbar navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <div class="pull-right top-search">
+                            <div style="padding-top: 7px; padding-right: 20px; font-size: 11px; color: #e9e9e9;">
+                                <a href="CoachingUpgrade.cshtml"><span class="badge pop-over" data-content="If you are a coach, click here to upgrade to a Coaching Account.  If you are not a coach, this link can be removed by going into your Settings and turning the Coaching Functionality off." data-title="Coaching Account Features" data-placement="bottom" data-trigger="hover" style="margin-right: 15px;" data-original-title="" title="">Upgrade to Coaching Account</span></a>
+                                <a href="Calendar.cshtml?m=7&amp;d=21&amp;y=2026" class="currentdatelink">Tuesday, July 21, 2026</a>
+                            </div>                            
+                        </div>
+                        <div id="fade-menu" class="pull-left">
+                            <ul class="clearfix" id="mobile-nav">
+                                <li>
+                                    <a href="javascript:void(0)" class="arrow_down">Workouts</a>
+                                    <ul style="top: 34px; display: none; visibility: visible;">
+                                        <li>
+                                            <a href="WorkoutAdd.cshtml">Add Workout</a>
+                                        </li>
+                                        <li>
+                                            <a href="DeviceImport/Garmin/Default.cshtml">Garmin / Device Upload</a>
+                                        </li>
+                                        <li>
+                                            <a href="Calendar.cshtml">View Calendar</a>
+                                        </li>
+                                        <li>
+                                            <a href="WorkoutReport.cshtml">Reports &amp; Statistics</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" data-reveal-id="PrintWorkouts" data-animation="fade" data-reveal-iframe="PrintWorkoutsiFrame" data-reveal-iframeurl="https://log.finalsurge.com/PrintWorkoutsSelect.cshtml?ssl=1">Print Workouts</a>
+                                        </li>
+                                        <li>
+                                            <a href="WorkoutLibrary.cshtml">Workout Library</a>
+                                        </li>
+                                        <li>
+                                            <a href="ActivityZones.cshtml">HR/Power/Pace Zones</a>
+                                        </li>
+                                        <li>
+                                            <a href="Activities.cshtml">Customize Activity Types</a>
+                                        </li>
+                                        <li>
+                                            <a href="ImportData.cshtml">Import Data</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="DailyVitals.cshtml" class="arrow_down">Daily Vitals</a>
+                                    <ul style="top: 34px; display: none; visibility: visible;">
+                                        <li><a href="DailyVitals.cshtml">View &amp; Add Vitals</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="Equipment.cshtml" class="arrow_down">Gear &amp; Routes</a>
+                                    <ul style="top: 34px; display: none; visibility: visible;">
+                                        <li><a href="EquipmentShoes.cshtml">Shoes</a></li>
+                                        <li><a href="EquipmentBikes.cshtml">Bikes</a></li>
+                                        <li><a href="Routes.cshtml">Routes</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="TrainingPlans.cshtml" class="arrow_down">Training Plans</a>
+                                    <ul style="top: 34px; display: none; visibility: visible;">
+                                        <li><a href="TrainingPlans.cshtml">View My Plans</a></li>
+                                        <li><a href="http://www.finalsurge.com/trainingplans">Find a Plan</a></li>
+                                    </ul>
+                                </li>                                            
+                                <li><a href="Resources" class="arrow_down">Resources</a>
+                                    <ul style="top: 34px; display: none; visibility: visible;">
+                                        <li><a href="Resources">View Files &amp; Resources</a></li>
+                                    </ul>
+                                </li>                                     
+                                <li><a href="TeamForum/default" class="arrow_down">Message Boards</a>
+                                    <ul style="top: 34px; display: none; visibility: visible;">
+                                        <li><a href="TeamForum/default">View Boards</a></li>
+                                    </ul>
+                                </li>                                   
+                            </ul><select class="selectnav" id="selectnav1"><option value="">- Navigation -</option><option value="javascript:void(0)">Workouts</option><option value="https://log.finalsurge.com/WorkoutAdd.cshtml">- Add Workout</option><option value="https://log.finalsurge.com/DeviceImport/Garmin/Default.cshtml">- Garmin / Device Upload</option><option value="https://log.finalsurge.com/Calendar.cshtml">- View Calendar</option><option value="https://log.finalsurge.com/WorkoutReport.cshtml">- Reports &amp; Statistics</option><option value="https://log.finalsurge.com/UserProfile.cshtml?edit=x#">- Print Workouts</option><option value="https://log.finalsurge.com/WorkoutLibrary.cshtml">- Workout Library</option><option value="https://log.finalsurge.com/ActivityZones.cshtml">- HR/Power/Pace Zones</option><option value="https://log.finalsurge.com/Activities.cshtml">- Customize Activity Types</option><option value="https://log.finalsurge.com/ImportData.cshtml">- Import Data</option><option value="https://log.finalsurge.com/DailyVitals.cshtml">Daily Vitals</option><option value="https://log.finalsurge.com/DailyVitals.cshtml">- View &amp; Add Vitals</option><option value="https://log.finalsurge.com/Equipment.cshtml">Gear &amp; Routes</option><option value="https://log.finalsurge.com/EquipmentShoes.cshtml">- Shoes</option><option value="https://log.finalsurge.com/EquipmentBikes.cshtml">- Bikes</option><option value="https://log.finalsurge.com/Routes.cshtml">- Routes</option><option value="https://log.finalsurge.com/TrainingPlans.cshtml">Training Plans</option><option value="https://log.finalsurge.com/TrainingPlans.cshtml">- View My Plans</option><option value="http://www.finalsurge.com/trainingplans">- Find a Plan</option><option value="https://log.finalsurge.com/Resources">Resources</option><option value="https://log.finalsurge.com/Resources">- View Files &amp; Resources</option><option value="https://log.finalsurge.com/TeamForum/default">Message Boards</option><option value="https://log.finalsurge.com/TeamForum/default">- View Boards</option></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- header -->
+            <header>
+                <div class="container">
+                    <div class="row">
+                        <div class="span3">
+                            <div class="main-logo"><a href="default.cshtml"><img src="https://finalsurgelivestore.blob.core.windows.net/branding/finalsurge_logo.png" alt="Final Surge"></a></div>
+                        </div>
+                        <div class="span6">
+                            <nav class="nav-icons">
+                                <ul>
+                                    <li><a href="Default.cshtml" class="ptip_s"><i class="icsw16-home"></i></a></li>
+                                    <li><a href="Calendar.cshtml" class="ptip_s"><i class="icsw16-day-calendar"></i></a></li>
+                                    <li><a href="#" class="ptip_s" data-reveal-id="IntensityCalc" data-animation="fade" data-reveal-iframe="IntensityCalciFrame" data-reveal-iframeurl="https://log.finalsurge.com/WorkoutIntensityCalc.cshtml?ssl=1"><i class="icsw16-stop-watch"></i></a></li>
+                                    <li><a href="#" class="ptip_s" data-reveal-id="OtherCalc" data-animation="fade" data-reveal-iframe="OtherCalciFrame" data-reveal-iframeurl="https://log.finalsurge.com/CaloricNeedsCalc.cshtml?ssl=1"><i class="icsw16-calculator"></i></a></li>
+                                    <li><a href="WorkoutReport.cshtml" class="ptip_s"><i class="icsw16-graph"></i></a></li>
+                                    <li><a href="Mailbox.cshtml" class="ptip_s"><i class="icsw16-mail"></i>
+</a></li>
+                                    <!--<li><a href="javascript:void(0)" class="ptip_s" title="System Messages (Coming Soon)"><i class="icsw16-speech-bubbles"></i><span class="badge badge-important">14</span></a></li>-->
+                                    <li><a href="#" class="ptip_s" data-reveal-id="PrintWorkouts" data-animation="fade" data-reveal-iframe="PrintWorkoutsiFrame" data-reveal-iframeurl="https://log.finalsurge.com/PrintWorkoutsSelect.cshtml?ssl=1"><i class="icsw16-printer"></i></a></li>
+                                    <li><a href="app/betaredirect" class="ptip_s"><i class="icsw16-computer_imac"></i><span class="badge badge-info">New</span></a></li>                                    
+                                </ul>
+                             </nav>
+                        </div>
+                        <div class="span3">
+                            <div class="user-box">
+                                <div class="user-box-inner">
+                                    <img id="LayoutProfilePic" src="Delivery/ProfilePic.cshtml?K=820bff1d-47e5-4147-bab4-1432546609f0&amp;S=50" alt="" class="user-avatar img-avatar">
+                                    <div class="user-info">
+                                        Welcome, <strong>Rodger</strong>
+                                        <ul class="unstyled">
+                                            <li><a href="UserProfile.cshtml">Settings</a></li>
+                                            <li>·</li>
+                                            <li><a href="logout.cshtml">Logout</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+        <!-- breadcrumbs -->
+            <div class="container">
+                <ul id="breadcrumbs">
+                    <li><a href="default.cshtml"><i class="icon-home"></i></a></li>
+                    
+    <li><a href="UserProfile.cshtml">User Profile</a></li>
+    <li><span>Customize your training log and preferences.</span></li>
+
+                </ul>
+            </div>
+            
+        <!-- main content -->
+            <div class="container">
+                
+
+
+
+
+                
+                
+<div class="row-fluid">
+    <div class="span6">
+            <div class="w-box">
+                <div class="w-box-header">
+                    <h4>User Profile</h4>
+                    <div class="pull-right">
+                        <a href="UserProfile.cshtml?edit=p#profile" class="editlink" id="ProfileEditLink">
+                            <div class="toggle-group">
+                                <span class="dropdown-toggle">Edit Profile
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="w-box-content cnt_a user_profile" id="EditProfile">
+                    <div class="row-fluid">
+                        <div class="span2">
+                            <div class="img-holder">
+                                <img class="img-avatar" alt="" src="Delivery/ProfilePic.cshtml?K=820bff1d-47e5-4147-bab4-1432546609f0&amp;S=100" width="74">
+                            </div>
+                        </div>
+                        <div class="span10">
+                            <p class="formSep"><small class="muted">Name:</small> Rodger Bins</p>
+                            <p class="formSep"><small class="muted">Email:</small> atsulus20@mail.ru</p>
+                            <p class="formSep"><small class="muted">Gender:</small> </p>
+                            <p class="formSep"><small class="muted">Birthday:</small> </p>
+                            <p class="formSep"><small class="muted">Weight:</small> </p>
+                            <p class="formSep"><small class="muted">Country:</small> </p>
+                            <p class="formSep"><small class="muted">State:</small> </p>
+                            <p class="formSep"><small class="muted">City:</small> </p>
+                            <p class="formSep"><small class="muted">Zip/Postal Code:</small> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="w-box">
+                <div class="w-box-header">
+                    <h4>Calendar Sync</h4>
+                    <div class="pull-right">
+                        <a href="UserProfile.cshtml" class="editlink">
+                            <div class="toggle-group">
+                                <span class="dropdown-toggle">Cancel
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="w-box-content" id="SyncBox">
+                    <form method="post">
+                    <input type="hidden" value="x" name="DE">
+                    <input type="hidden" value="x" name="edit">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="formSep">
+                                <label>Calendar Sync:</label>
+                                <label for="SyncOff" class="radio inline">
+                                    <input type="radio" value="False" name="CalSync" id="SyncOff" checked="">
+                                    Turn Off</label>
+                                <label for="SyncOn" class="radio inline">
+                                    <input type="radio" value="True" name="CalSync" id="SyncOn">
+                                    Turn On</label>
+                                <span class="help-block" style="padding-top: 10px;">*If you would like to sync your training log with other calendars, turn this feature "on" to enable the sync URL needed for third party applications.</span>
+                            </div>  
+                            <div class="formSep sepH_b">
+                                <input type="submit" class="btn btn-primary" name="btnSubmit" value="Save Changes" id="saveButtonSync">
+                                <a href="UserProfile.cshtml" class="btn btn-link">Cancel</a>
+                            </div>                                                     
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="w-box">
+                <div class="w-box-header">
+                    <h4>Social Media</h4>
+                    <div class="pull-right">
+                        <a href="UserProfile.cshtml?edit=m#social" class="editlink">
+                            <div class="toggle-group">
+                                <span class="dropdown-toggle">Edit Social Media
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="w-box-content cnt_a user_profile">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <p class="formSep"><small class="muted">Connect with Twitter:</small> <span class="label label-important">No</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+    </div>
+
+    <div class="span6">
+            <div class="w-box">
+                <div class="w-box-header">
+                    <h4>User Settings</h4>
+                    <div class="pull-right">
+                        <a href="UserProfile.cshtml?edit=s#settings" class="editlink">
+                            <div class="toggle-group">
+                                <span class="dropdown-toggle">Edit Settings
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="w-box-content cnt_a user_profile">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <p class="formSep"><small class="muted">Primary Sport:</small> Strength/Weight Training</p>
+                            <p class="formSep"><small class="muted">Language:</small> <i class="flag-us"></i> English</p>
+                            <p class="formSep"><small class="muted">Time Zone:</small> Eastern Standard Time</p>
+                            <p class="formSep"><small class="muted">Measurement Units:</small> Imperial</p>
+                            <p class="formSep"><small class="muted">Time Display:</small> 12 hour</p>
+                            <p class="formSep"><small class="muted">Date Display:</small> MM/DD/YYYY</p>
+                            <p class="formSep"><small class="muted">Start of Week:</small> Sunday</p>
+                            <p class="formSep"><small class="muted">Email Upcoming Workouts:</small> Never - 12:00 AM</p>
+                            <p class="formSep"><small class="muted">Text Message Upcoming Workouts:</small> Never</p>
+                            <p class="formSep"><small class="muted">Screen Layout:</small> Fixed Layout</p>
+                            <p class="formSep"><small class="muted">Send Email Updates:</small> <span class="label label-success">Yes</span></p>
+                            <p class="formSep"><small class="muted">Coaching Functionality:</small> <span class="label label-success">On</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-box">
+                <div class="w-box-header">
+                    <h4>Security Settings</h4>
+                    <div class="pull-right">
+                        <a href="UserProfile.cshtml?edit=y#security" class="editlink">
+                            <div class="toggle-group">
+                                <span class="dropdown-toggle">Edit Security Settings
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="w-box-content cnt_a user_profile">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <p class="formSep"><small class="muted">Password:</small> ********</p>
+                            <p class="formSep"><small class="muted">Security Question:</small> </p>
+                            <p class="formSep"><small class="muted">Security Answer:</small> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+    </div>
+</div>
+
+
+            </div>
+            <div class="footer_space"></div>
+        </div> 
+        <div id="IntensityCalc" class="reveal-modal largeplus">            
+            <iframe id="IntensityCalciFrame" width="641" height="660" style="border-width: 0px;"></iframe>
+            <a class="close-reveal-modal">×</a>
+        </div>
+        <div id="OtherCalc" class="reveal-modal large">            
+            <iframe id="OtherCalciFrame" width="541" height="660" style="border-width: 0px;"></iframe>
+            <a class="close-reveal-modal">×</a>
+        </div>    
+        <div id="ColorCompletion" class="reveal-modal large">            
+            <iframe id="ColorCompletioniFrame" width="541" height="660" style="border-width: 0px;"></iframe>
+            <a class="close-reveal-modal">×</a>
+        </div>    
+        <div id="WorkoutComments" class="reveal-modal large">            
+            <iframe id="WorkoutCommentsiFrame" width="541" height="660" style="border-width: 0px;"></iframe>
+            <a class="close-reveal-modal">×</a>
+        </div>
+        <div id="CopyWeeks" class="reveal-modal large">            
+            <iframe id="CopyWeeksiFrame" width="541" height="660" style="border-width: 0px;"></iframe>
+            <a class="close-reveal-modal">×</a>
+        </div>
+        <div id="ViewMessage" class="reveal-modal large">            
+            <iframe id="ViewMessageiFrame" width="541" height="660" style="border-width: 0px;"></iframe>
+            <a class="close-reveal-modal">×</a>
+        </div>          
+        <div id="WorkoutUpload" class="reveal-modal large">            
+            <iframe id="WorkoutUploadiFrame" width="541" height="660" style="border-width: 0px;"></iframe>
+            <a class="close-reveal-modal">×</a>
+        </div>
+        <div id="TrainingPlanDetails" class="reveal-modal large">            
+            <iframe id="TrainingPlanDetailsiFrame" width="541" height="660" style="border-width: 0px;"></iframe>
+            <a class="close-reveal-modal">×</a>
+        </div>
+        <div id="PrintWorkouts" class="reveal-modal large">            
+            <iframe id="PrintWorkoutsiFrame" width="541" height="600" style="border-width: 0px;"></iframe>
+            <a class="close-reveal-modal">×</a>
+        </div>    
+        <div id="PainInjuryModal" class="reveal-modal xxlarge" style="height:600px;background: white;">
+            <iframe id="PainInjuryFrame" scrolling="no" width="1000" style="border-width: 0px;height:100%;"></iframe>
+            <a class="close-reveal-modal">×</a>
+        </div>    
+        <div id="WorkoutCreatorModal" class="reveal-modal xxlarge" style="height:89vh;background: white;padding: 30px 0 30px 0;position:fixed;top: 40px;">
+            <iframe id="WorkoutCreatorFrame" width="1000" style="border-width: 0px;height:100%;"></iframe>
+            <a class="close-reveal-modal">×</a>
+        </div>    
+    <!-- footer --> 
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="span5">
+                        <div>Copyright © 2026 Final Surge LLC.</div>
+                    </div>
+                    <div class="span7" style="text-align: right;">
+                        <ul class="unstyled">
+                            <li><a href="Feedback.cshtml">Give Feedback</a></li>
+                            <li>·</li>
+                            <li><a href="CustSupport.cshtml">Customer Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+    <!-- Common JS -->
+        <!-- jQuery framework -->
+            <script src="js/jquery.min.js"></script>
+            <script src="js/lib/jquery-cookie/jquery.cookie.js"></script>
+            <script src="js/FSErrors.js"></script>
+        <!-- bootstrap Framework plugins -->
+            <script src="bootstrap/js/bootstrap.js"></script>
+        <!-- top menu -->
+            <script src="js/jquery.fademenu.js"></script>
+        <!-- top mobile menu -->
+            <script src="js/selectnav.min.js"></script>
+        <!-- actual width/height of hidden DOM elements -->
+            <script src="js/jquery.actual.min.js"></script>
+        <!-- jquery easing animations -->
+            <script src="js/jquery.easing.1.3.min.js"></script>
+        <!-- power tooltips -->
+            <script src="js/lib/powertip/jquery.powertip-1.1.0.min.js"></script>
+        <!-- date library -->
+            <script src="js/moment.min.js"></script>
+        <!-- common functions -->
+            <script src="js/beoro_common.js"></script>
+            <script src="js/form/bootstrap-fileupload.js"></script>
+        <!-- save panels -->
+            <script src="js/lib/jquery-ui/jquery-ui.js"></script>
+        <!-- reveal modal -->
+            <script src="js/lib/reveal/jquery.reveal.js?ver=4"></script>
+            
+    <script src="js/lib/jquery-ui/jquery-ui-1.9.2.custom.min.js"></script>
+    <!-- FSProgress -->
+    <script src="js/lib/fsprogress/fsprogress.js?v=2"></script>
+
+    <div id="AjaxGrey1" style="position: absolute; display:none; z-index: 99999;">
+        <div style="float:left; height: 100%; width: 100%; background: #b1b1b1; filter: alpha(opacity=30);opacity: 0.30;-moz-opacity:0.30;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=30)'"></div>
+    <div style="position:absolute; bottom: 50%; left: 50%; width: 32px; height: 32px; margin-top: -16px; margin-left: -16px;">
+        <img src="/img/loading.gif">
+    </div>
+</div>
+<div id="AjaxLoading1" style="position: absolute; display:none; z-index: 99999;">
+    <div style="float:left; height: 100%; width: 100%; background: #FFFFFF; filter: alpha(opacity=80);opacity: 0.80;-moz-opacity:0.80;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=80)'"></div>
+    <div style="position:absolute; top: 50%; left: 50%; width: 16px; height: 16px; margin-top: -10px; margin-left: -8px;">
+        <img src="/img/loading-sm.gif">
+    </div>
+</div>
+
+    <script>
+        $(document).ready(function () {
+            var g = $("#syncurl");
+            $("#syncurl").click(function () {
+                SelectText('syncurl');
+            });
+        });
+        function SelectText(element) {
+            var doc = document
+                , text = doc.getElementById(element)
+                , range, selection
+            ;
+            if (doc.body.createTextRange) {
+                range = document.body.createTextRange();
+                range.moveToElementText(text);
+                range.select();
+            } else if (window.getSelection) {
+                selection = window.getSelection();
+                range = document.createRange();
+                range.selectNodeContents(text);
+                selection.removeAllRanges();
+                selection.addRange(range);
+            }
+        }
+    </script>
+        <script>
+            $(document).ready(function () {
+                FSProgress.Init();
+                $('#saveButtonSync').click(function (e) {
+                    FSProgress.ShowWorking('AddEditForm', 'AjaxGrey1', 'SyncBox', 'AjaxLoading1', 'saveButtonSync');
+                });
+            });
+        </script>             
+
+
+
+
+
+
+        <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-44510237-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+    
+<div id="powerTip"></div><a href="javascript:void(0)" class="scrollup" style="display:none"><i class="icon-chevron-up icon-white"></i></a></body></html>
