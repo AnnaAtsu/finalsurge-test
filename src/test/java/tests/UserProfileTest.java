@@ -80,7 +80,7 @@ public class UserProfileTest extends BaseTest {
     }
 
     @Test(testName = "Редактирование User Settings язык"
-            , description = "Выбор языка типа тренировки", priority = 100)
+            , description = "Выбор языка типа тренировки")
     @Severity(SeverityLevel.NORMAL)
     @Feature("UserProfile component")
     public void checkSettingsLanguageChange() {
@@ -92,7 +92,9 @@ public class UserProfileTest extends BaseTest {
                 .clickEditSettingsButton()
                 .selectRandomLanguage()
                 .saveSettings()
-                .verifySelectedLanguage();
+                .verifySelectedLanguage()
+                .clickEditSettingsButton()
+                .selectLanguageEnglish();
     }
 
     @Test(testName = "Редактирование Calendar Sync"

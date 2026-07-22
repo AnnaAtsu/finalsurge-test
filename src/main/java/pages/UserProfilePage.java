@@ -23,7 +23,7 @@ public class UserProfilePage extends BasePage {
     private final SelenideElement EDIT_SECURITY_BUTTON =
             $x("//a[contains(@class, 'editlink')]//span[contains(text(), 'Edit Security Settings')]");
     private final SelenideElement EDIT_SETTING_BUTTON =
-            $x("//a[contains(@class, 'editlink')]//span[contains(text(), 'Edit Settings')]");
+            $x("//a[contains(@class, 'editlink') and contains(@href, '#settings')]");
     private final SelenideElement AVATAR_IMAGE = $x("//img[@class='img-avatar']");
     private final SelenideElement NAME_FIELD = $x("//p[.//small[text()='Name:']]");
     private final SelenideElement EMAIL_FIELD = $x("//p[.//small[text()='Email:']]");
@@ -149,6 +149,14 @@ public class UserProfilePage extends BasePage {
     public UserProfilePage verifySelectedLanguage() {
         log.info("Проверка выбранного языка");
         CHECKED_LANGUAGE.shouldHave(text(selectedLanguage));
+        return this;
+    }
+
+    @Step("Сбросить язык на английский")
+    public UserProfilePage selectLanguageEnglish() {
+        log.info("Сбросить язык на английский");
+        LANGUAGES.findBy(text("English")).click();
+        SAVE_BUTTON_SETTINGS.shouldBe(visible).click();
         return this;
     }
 
