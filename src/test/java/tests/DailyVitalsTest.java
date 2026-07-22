@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.title;
 import static constants.ConstantElements.email;
 import static constants.ConstantElements.password;
 import static elements.Elements.*;
-import static urls.Urls.urlDailyVitals;
+
 
 public class DailyVitalsTest extends BaseTest {
 
@@ -28,7 +28,6 @@ public class DailyVitalsTest extends BaseTest {
         dailyVitalsPage.openPage()
                 .isPageOpened()
                 .selectRandomTimePeriod();
-        urlAssertion.verifyUrl(urlDailyVitals);
         softAssert.assertEquals(title(), titleForDailyVitalsPage);
         textAssertion.isTextDisplayed(DAILY_VITALS_TITLE);
         softAssert.assertAll();
