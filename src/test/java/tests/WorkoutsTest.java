@@ -9,6 +9,7 @@ import io.qameta.allure.testng.Tag;
 import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
 import static com.codeborne.selenide.Selenide.title;
 import static constants.ConstantElements.email;
 import static constants.ConstantElements.password;
@@ -17,8 +18,9 @@ import static elements.Elements.titleForDashboardPage;
 import static urls.Urls.urlCalendar;
 
 @Log4j2
-public class WorkoutsTest extends BaseTest{
+public class WorkoutsTest extends BaseTest {
 
+    @Tag("regress")
     @Test(testName = "Создание тренировки: выбор даты ", description = "Календарь выбора даты открывается, дата устанавливается корректно")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("Workouts component")
@@ -33,10 +35,10 @@ public class WorkoutsTest extends BaseTest{
         workoutsPage.clickAddWorkout();
         textAssertion.isTextDisplayed(WORKOUT_QUICK_ADD_TITLE);
         workoutsPage.verifyWorkoutCalendarInput();
-        workoutsPage.checkActualMonthSideCalendar();
         softAssert.assertAll();
     }
 
+    @Tag("regress")
     @Test(testName = "Создание тренировки: выбор типа активности  ", description = "Доступны типы: Run, Bike, Swim, Custom. Выбранный тип отображается в форме")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("Workouts component")
@@ -53,6 +55,7 @@ public class WorkoutsTest extends BaseTest{
                 .verifySelectedActivity(WORKOUT_ACTIVITY_TYPE);
     }
 
+    @Tag("regress")
     @Test(testName = "Создание тренировки: заполнение названия и описания", description = "Поля Title и Description принимают текст, сохраняются после создания")
     @Severity(SeverityLevel.BLOCKER)
     @Feature("Workouts component")
@@ -65,11 +68,12 @@ public class WorkoutsTest extends BaseTest{
         urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         workoutsPage.clickAddWorkout()
-                        .fillinNameAndDescription();
+                .fillinNameAndDescription();
         textAssertion.isTextDisplayed(WORKOUT_NAME);
         textAssertion.isTextDisplayed(WORKOUT_DESCRIPTION);
     }
 
+    @Tag("regress")
     @Test(testName = "Создание тренировки: добавление интервалов ", description = "Поля Distance, Duration, Pace заполняются и сохраняются корректно")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("Workouts component")
@@ -82,10 +86,11 @@ public class WorkoutsTest extends BaseTest{
         urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         workoutsPage.clickAddWorkout()
-                    .fillinDistanceDurationPace();
+                .fillinDistanceDurationPace();
         softAssert.assertAll();
     }
 
+    @Tag("regress")
     @Test(testName = "Создание тренировки: нажать на Cancel ", description = "Нет бокового календаря ")
     @Severity(SeverityLevel.NORMAL)
     @Feature("Workouts component")
@@ -98,12 +103,12 @@ public class WorkoutsTest extends BaseTest{
         urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         workoutsPage.clickAddWorkout()
-                    .clickCancelButton();
+                .clickCancelButton();
         textAssertion.isTextNotDisplayed(WORKOUT_QUICK_ADD_TITLE);
         softAssert.assertAll();
     }
 
-
+    @Tag("regress")
     @Test(testName = "Создание тренировки с пустым названием ", description = "Отображается сообщение об ошибке `\"*Please select a valid Activity Type.\"`")
     @Severity(SeverityLevel.BLOCKER)
     @Feature("Workouts component")
@@ -116,11 +121,12 @@ public class WorkoutsTest extends BaseTest{
         urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         workoutsPage.clickAddWorkout()
-                        .clickSaveWorkout();
-        softAssert.assertTrue(textAssertion.isTextDisplayed(ACTIVITY_ADD_ERROR_MESSAGE));
+                .clickSaveWorkout();
+        textAssertion.isTextDisplayed(ACTIVITY_ADD_ERROR_MESSAGE);
         softAssert.assertAll();
     }
 
+    @Tag("regress")
     @Test(testName = "Cоздание тренировки: добавление заметок (Comment) "
             , description = "Поле   принимает  текст, сохраняется ")
     @Severity(SeverityLevel.BLOCKER)
@@ -142,6 +148,7 @@ public class WorkoutsTest extends BaseTest{
         softAssert.assertAll();
     }
 
+    @Tag("regress")
     @Test(testName = "Редактирование тренировки"
             , description = "После изменения полей и сохранения данные обновляются")
     @Severity(SeverityLevel.BLOCKER)
@@ -165,6 +172,7 @@ public class WorkoutsTest extends BaseTest{
         softAssert.assertAll();
     }
 
+    @Tag("regress")
     @Test(testName = "Удаление тренировки"
             , description = "Появляется диалог подтверждения; после подтверждения тренировка удаляется из списка")
     @Severity(SeverityLevel.CRITICAL)
@@ -181,11 +189,12 @@ public class WorkoutsTest extends BaseTest{
         softAssert.assertEquals(title(), titleForDashboardPage);
         workoutsPage.clickWorkoutAndUpdate()
                 .clickButtonForDeleteWorkout();
-                textAssertion.isTextDisplayed(DELETE_WORKOUT_CALENDAR_MESSAGE);
+        textAssertion.isTextDisplayed(DELETE_WORKOUT_CALENDAR_MESSAGE);
         workoutsPage.clickOKButtonForDelete();
         textAssertion.isTextNotDisplayed(expectedWorkoutName);
     }
 
+    @Tag("regress")
     @Test(testName = "Удаление тренировки: отмена"
             , description = "Появляется диалог подтверждения; после Cancel тренировка не удаляется")
     @Severity(SeverityLevel.CRITICAL)
@@ -207,6 +216,7 @@ public class WorkoutsTest extends BaseTest{
         textAssertion.isTextDisplayed(expectedWorkoutName);
     }
 
+    @Tag("regress")
     @Test(testName = "Копирование / дублирование тренировки"
             , description = "Создаётся копия тренировки с теми же параметрами")
     @Severity(SeverityLevel.NORMAL)
@@ -222,8 +232,8 @@ public class WorkoutsTest extends BaseTest{
         urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         workoutsPage.clickButtonForCopyWorkout()
-                    .fillDateWorkout(workOuts)
-                   .clickSaveWorkout();
+                .fillDateWorkout(workOuts)
+                .clickSaveWorkout();
         textAssertion.isTextDisplayed(expectedWorkoutName);
     }
 

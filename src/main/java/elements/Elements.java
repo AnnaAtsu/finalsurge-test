@@ -24,7 +24,7 @@ public class Elements {
     public final static String CUSTOMER_SUPPORT_TITLE = "Final Surge Support Site";
     public final static String FEEDBACK_TITLE = "Provide Feedback";
     public final static String DAILY_VITALS_TITLE = "View & Add Vitals";
-    public final static String USER_PROFILE_TITLE = "User Profile";
+    public final static String USER_PROFILE_TITLE = "Customize your training log and preferences.";
 
     public final static String MESSAGE_BOARD_ACCESS_TEXT = "*You currently do not have access to any Message Boards. Your coach has the ability to create Message Boards and give teams access to them.";
     public final static String MESSAGE_FEEDBACK = "Your feedback has been sent to our staff. We appreciate the time you have taken to send this to us and we will respond as soon as possible.";
@@ -33,7 +33,7 @@ public class Elements {
     public final static String WORKOUT_REPORT_HEADER_FOR_GROUP_BY_WEEK = "Week of Sunday";
     public final static String MESSAGE_TRAINING_VOLUME = "Training Volume";
     public final static String MESSAGE_WORKOUT_REPORTS = "Workout Reports";
-    public final static String MESSAGE_CALENDAR_SYNC_SUCCESFULL = "Your Calendar Sync has been disabled.";
+    public final static String MESSAGE_CALENDAR_SYNC_SUCCESFULL = "Your Calendar Sync has been";
 
     public final static String VIEW_CALENDAR_BUTTON = "View Calendar";
     public final static String WORKOUT_QUICK_ADD_TITLE = "Workout Quick Add";

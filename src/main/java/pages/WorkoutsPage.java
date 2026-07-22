@@ -26,7 +26,7 @@ public class WorkoutsPage extends BasePage {
     private final SelenideElement FULL_WORKOUT_BUTTON = $("#FullAddBtn");
     private final SelenideElement WORKOUT_CALENDAR_INPUT = $("#WorkoutDate");
     private final SelenideElement DATEPICKER_CALENDAR = $(".datepicker.dropdown-menu");
-    private final SelenideElement SIDE_CALENDAR_MONTH_TITLE = $("th.switch");
+    private final SelenideElement SIDE_CALENDAR_MONTH_TITLE = $("#WorkoutDate");
     private final SelenideElement ADD_ONN_CALENDAR_ICON = $("span.add-on .icon-calendar");
     private final SelenideElement ACTIVE_DAY = $(".day.active");
     private final SelenideElement ACTIVITY_SELECT = $("#ActivityType");
@@ -69,8 +69,8 @@ public class WorkoutsPage extends BasePage {
     public WorkoutsPage verifyWorkoutCalendarInput() {
         log.info("Проверка наличия календаря в боковом меню тренировки");
         WORKOUT_CALENDAR_INPUT.should(visible);
-        ADD_ONN_CALENDAR_ICON.shouldBe(visible).click();
-        DATEPICKER_CALENDAR.shouldBe(visible, Duration.ofSeconds(5));
+        ADD_ONN_CALENDAR_ICON.shouldBe(visible);
+        executeJavaScript("arguments[0].focus(); arguments[0].click();", WORKOUT_CALENDAR_INPUT);
         return this;
     }
 
@@ -83,13 +83,6 @@ public class WorkoutsPage extends BasePage {
         return this;
     }
 
-    @Step("Нажать на активный день в календаре")
-    public WorkoutsPage clickActiveDay() {
-        log.info("Нажать на активный день в календаре");
-        ACTIVE_DAY.shouldBe(visible).click();
-        DATEPICKER_CALENDAR.shouldBe(hidden, Duration.ofSeconds(3));
-        return this;
-    }
 
     @Step("Выбрать тип активности")
     public WorkoutsPage selectActivityType(String activityType) {

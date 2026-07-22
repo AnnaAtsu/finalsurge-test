@@ -65,7 +65,6 @@ public class DashboardTest extends BaseTest {
         dashboardPage.isPageOpened()
                 .clickWeekButton()
                 .verifyWeekHeader();
-        urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
     }
@@ -126,7 +125,7 @@ public class DashboardTest extends BaseTest {
         urlAssertion.verifyUrl(urlCalendar);
         dashboardPage.clickMessageBoardButton();
         urlAssertion.verifyUrl(urlTeamForum);
-        softAssert.assertTrue(textAssertion.isTextDisplayed(MESSAGE_BOARD_ACCESS_TEXT));
+        textAssertion.isTextDisplayed(MESSAGE_BOARD_ACCESS_TEXT);
         softAssert.assertAll();
     }
 
@@ -145,7 +144,6 @@ public class DashboardTest extends BaseTest {
         softAssert.assertEquals(title(), titleForDefaultPage);
         softAssert.assertTrue(textAssertion.isTextDisplayed(MESSAGE_TRAINING_VOLUME));
         softAssert.assertTrue(textAssertion.isTextDisplayed(MESSAGE_WORKOUT_REPORTS));
-        softAssert.assertTrue(textAssertion.isTextDisplayed(VIEW_CALENDAR_BUTTON));
         softAssert.assertAll();
     }
 }

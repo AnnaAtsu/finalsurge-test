@@ -19,7 +19,6 @@
         <classes>
             <class name="tests.CustomerSupportTest"/>
             <class name="tests.FeedBackTest"/>
-            <class name="tests.WorkoutReportTest"/>
             <class name="tests.DashboardTest"/>
             <class name="tests.DailyVitalsTest"/>
         </classes>

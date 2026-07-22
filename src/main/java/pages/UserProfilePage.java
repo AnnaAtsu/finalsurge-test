@@ -177,7 +177,7 @@ public class UserProfilePage extends BasePage {
     @Step("Нажать на радиобаттон синхронизации")
     public UserProfilePage changeCalendarSync() {
         log.info("Нажать на радиобаттон синхронизации");
-        SelenideElement selectedRadio = $$("input[name='ECalSync']")
+        SelenideElement selectedRadio = $$("input[name='CalSync']")
                 .findBy(selected);
         initialUpdatesValue = selectedRadio.getAttribute("id");
         if ("SyncOff".equals(initialUpdatesValue)) {
