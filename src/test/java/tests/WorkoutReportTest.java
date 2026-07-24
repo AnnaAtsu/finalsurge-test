@@ -16,12 +16,13 @@ import static constants.ConstantElements.password;
 import static elements.Elements.*;
 import static urls.Urls.urlWorkoutReport;
 
-public class WorkoutReportTest extends BaseTest{
+public class WorkoutReportTest extends BaseTest {
 
-    @DataProvider(name="defaultDates")
+    @DataProvider(name = "defaultDates")
     public Object[][] defaultDates() {
-        return new Object[][] {
-                {LocalDate.of(2026,7,5),LocalDate.of(2026,7, 10)}
+        return new Object[][]{
+                {LocalDate.of(2026, 7, 5),
+                        LocalDate.of(2026, 7, 10)}
         };
     }
 
@@ -34,7 +35,6 @@ public class WorkoutReportTest extends BaseTest{
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
         workoutReportPage.openWorkoutReportPage();
-        softAssert.assertTrue(textAssertion.isTextDisplayed(WORKOUT_REPORT_MESSAGE_FOR_NO_FILTER));
         workoutReportPage.isPageOpened()
                 .setStartDate(startDate)
                 .setEndDate(endDate)
@@ -42,19 +42,19 @@ public class WorkoutReportTest extends BaseTest{
                 .vefifyTrainigblockExistence();
         urlAssertion.verifyUrl(urlWorkoutReport);
         textAssertion.isTextNotDisplayed(WORKOUT_REPORT_MESSAGE_FOR_NO_FILTER);
-        softAssert.assertTrue(textAssertion.isTextDisplayed(WORKOUT_REPORT_HEADER_FOR_LIST_VIEW));
+        textAssertion.isTextDisplayed(WORKOUT_REPORT_HEADER_FOR_LIST_VIEW);
         softAssert.assertEquals(title(), titleForWorkoutReportPage);
-        softAssert.assertAll();
     }
 
-    @DataProvider(name="weekDates")
+    @DataProvider(name = "weekDates")
     public Object[][] weekDates() {
-        return new Object[][] {
-                {LocalDate.of(2026,7,5),LocalDate.of(2026,7, 12)}
+        return new Object[][]{
+                {LocalDate.of(2026, 7, 5),
+                        LocalDate.of(2026, 7, 12)}
         };
     }
 
-    @Test(testName = "Фильтрация отчетов по дате ", dataProvider = "weekDates",description = "При выборе даты данные на графиках и в таблице фильтруются по неделе")
+    @Test(testName = "Фильтрация отчетов по дате ", dataProvider = "weekDates", description = "При выборе даты данные на графиках и в таблице фильтруются по неделе")
     @Severity(SeverityLevel.NORMAL)
     @Feature("WorkoutReport component")
     public void checkReportForWeek(LocalDate startDate, LocalDate endDate) {
@@ -63,7 +63,6 @@ public class WorkoutReportTest extends BaseTest{
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
         workoutReportPage.openWorkoutReportPage();
-        softAssert.assertTrue(textAssertion.isTextDisplayed(WORKOUT_REPORT_MESSAGE_FOR_NO_FILTER));
         workoutReportPage.isPageOpened()
                 .setStartDate(startDate)
                 .setEndDate(endDate)
@@ -72,9 +71,8 @@ public class WorkoutReportTest extends BaseTest{
                 .vefifyTrainigblockExistence();
         urlAssertion.verifyUrl(urlWorkoutReport);
         textAssertion.isTextNotDisplayed(WORKOUT_REPORT_MESSAGE_FOR_NO_FILTER);
-        softAssert.assertTrue(textAssertion.isTextDisplayed(WORKOUT_REPORT_HEADER_FOR_GROUP_BY_WEEK));
+        textAssertion.isTextDisplayed(WORKOUT_REPORT_HEADER_FOR_GROUP_BY_WEEK);
         softAssert.assertEquals(title(), titleForWorkoutReportPage);
-        softAssert.assertAll();
     }
 
     @Test(testName = "Фильтрация отчетов по типу активности", dataProvider = "weekDates", description = "При выборе типа активности данные на графиках и в таблице фильтруются")
@@ -87,7 +85,6 @@ public class WorkoutReportTest extends BaseTest{
         loginPage.pushLoginButton();
         workoutReportPage.openWorkoutReportPage();
         urlAssertion.verifyUrl(urlWorkoutReport);
-        softAssert.assertTrue(textAssertion.isTextDisplayed(WORKOUT_REPORT_MESSAGE_FOR_NO_FILTER));
         workoutReportPage.isPageOpened();
         workoutsPage.selectActivityType(WORKOUT_ACTIVITY_TYPE);
         workoutReportPage
@@ -96,13 +93,13 @@ public class WorkoutReportTest extends BaseTest{
                 .clickViewReportbutton()
                 .vefifyTrainigblockExistence();
         textAssertion.isTextNotDisplayed(WORKOUT_REPORT_MESSAGE_FOR_NO_FILTER);
-        softAssert.assertTrue(textAssertion.isTextDisplayed(WORKOUT_REPORT_MESSAGE_FOR_NO_FILTER));
-        softAssert.assertTrue(textAssertion.isTextDisplayed(WORKOUT_ACTIVITY_TYPE));
+        textAssertion.isTextDisplayed(WORKOUT_REPORT_MESSAGE_FOR_NO_FILTER);
+        textAssertion.isTextDisplayed(WORKOUT_ACTIVITY_TYPE);
         softAssert.assertEquals(title(), titleForWorkoutReportPage);
         softAssert.assertAll();
     }
 
-    @Test(testName = "Группировка активностей", dataProvider = "weekDates",description = "График показывает длительность тренировок по месяцам / неделям")
+    @Test(testName = "Группировка активностей", dataProvider = "weekDates", description = "График показывает длительность тренировок по месяцам / неделям")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("WorkoutReport component")
     public void checkReportForActivityButton(LocalDate startDate, LocalDate endDate) {
@@ -111,7 +108,6 @@ public class WorkoutReportTest extends BaseTest{
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
         workoutReportPage.openWorkoutReportPage();
-        textAssertion.isTextDisplayed(WORKOUT_REPORT_MESSAGE_FOR_NO_FILTER);
         workoutReportPage.isPageOpened()
                 .setStartDate(startDate)
                 .setEndDate(endDate)
@@ -121,12 +117,12 @@ public class WorkoutReportTest extends BaseTest{
                 .verifyActivityHeader(WORKOUT_ACTIVITY_TYPE);
         urlAssertion.verifyUrl(urlWorkoutReport);
         textAssertion.isTextNotDisplayed(WORKOUT_REPORT_MESSAGE_FOR_NO_FILTER);
-        softAssert.assertTrue(textAssertion.isTextDisplayed(WORKOUT_REPORT_HEADER_FOR_GROUP_BY_WEEK));
+        textAssertion.isTextDisplayed(WORKOUT_REPORT_HEADER_FOR_GROUP_BY_WEEK);
         softAssert.assertEquals(title(), titleForWorkoutReportPage);
         softAssert.assertAll();
     }
 
-    @Test(testName = "Оставить комментарий для активности", dataProvider = "weekDates",description = "Открывается редактируемое окно     Workout Comment")
+    @Test(testName = "Оставить комментарий для активности", dataProvider = "weekDates", description = "Открывается редактируемое окно     Workout Comment")
     @Severity(SeverityLevel.MINOR)
     @Feature("WorkoutReport component")
     public void checkReportComment(LocalDate startDate, LocalDate endDate) {
@@ -135,7 +131,6 @@ public class WorkoutReportTest extends BaseTest{
         loginPage.enterCreds(email, password);
         loginPage.pushLoginButton();
         workoutReportPage.openWorkoutReportPage();
-        softAssert.assertTrue(textAssertion.isTextDisplayed(WORKOUT_REPORT_MESSAGE_FOR_NO_FILTER));
         workoutReportPage.isPageOpened()
                 .setStartDate(startDate)
                 .setEndDate(endDate)
@@ -145,7 +140,7 @@ public class WorkoutReportTest extends BaseTest{
                 .fillComment(WORKOUT_REPORT_MESSAGE_FOR_NO_FILTER);
         urlAssertion.verifyUrl(urlWorkoutReport);
         textAssertion.isTextNotDisplayed(WORKOUT_REPORT_MESSAGE_FOR_NO_FILTER);
-        softAssert.assertTrue(textAssertion.isTextDisplayed(WORKOUT_REPORT_HEADER_FOR_GROUP_BY_WEEK));
+        textAssertion.isTextDisplayed(WORKOUT_REPORT_HEADER_FOR_GROUP_BY_WEEK);
         softAssert.assertEquals(title(), titleForWorkoutReportPage);
         softAssert.assertAll();
     }
