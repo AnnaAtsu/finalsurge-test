@@ -11,7 +11,6 @@ public class Elements {
     public final static String titleForMailPage = "Final Surge - Mailbox";
     public final static String titleForGarminPage = "Final Surge - Import Device Files";
     public final static String titleForFeedbackPage = "Final Surge - Send Feedback";
-    public final static String titleForCUSTOMER_SUPPORTPage = "Final Surge - Customer Support";
     public final static String titleForWorkoutReportPage = "Final Surge - Athlete Workout Report";
     public final static String titleForUserProfilePage = "Final Surge - User Profile";
     public final static String titleForDailyVitalsPage = "Final Surge - Daily Vitals";
@@ -33,9 +32,7 @@ public class Elements {
     public final static String WORKOUT_REPORT_HEADER_FOR_GROUP_BY_WEEK = "Week of Sunday";
     public final static String MESSAGE_TRAINING_VOLUME = "Training Volume";
     public final static String MESSAGE_WORKOUT_REPORTS = "Workout Reports";
-    public final static String MESSAGE_CALENDAR_SYNC_SUCCESFULL = "Your Calendar Sync has been";
-
-    public final static String VIEW_CALENDAR_BUTTON = "View Calendar";
+    
     public final static String WORKOUT_QUICK_ADD_TITLE = "Workout Quick Add";
     public final static String WORKOUT_ACTIVITY_TYPE = "Cross Training";
     public final static String WORKOUT_ACTIVITY_TYPE_BIKE = "Bike";

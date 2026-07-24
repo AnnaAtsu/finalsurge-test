@@ -1,56 +1,56 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
-
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-name: FinalSurge CI
+name: Run FinalSurge Tests with Allure
 
 on:
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+  workflow_dispatch:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up JDK 17
+      - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
           distribution: 'temurin'
-          cache: maven
+          java-version: '17'
+          cache: 'maven'
 
-
+      #  Установка Allure через официальный action
       - name: Install Allure
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y allure
+        uses: simple-elf/allure-action@v1
+        with:
+          allure-version: '2.29.1'
+
+      #  Проверка установки Allure
+      - name: Verify Allure installation
+        run: allure --version
 
       - name: Run tests
         run: mvn clean test
         continue-on-error: true
 
-
-      - name: Check allure-results
+      #  Загрузка Allure results как артефакт
+      - name: Upload Allure results
         if: always()
-        run: |
-          ls -la target/allure-results || echo "allure-results not found"
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: target/allure-results
 
-
+      #  Генерация Allure отчета
       - name: Generate Allure report
         if: always()
         run: |
           allure generate target/allure-results --clean -o allure-report
 
-     
+      #  Загрузка отчета как артефакт
       - name: Upload Allure report
         if: always()
         uses: actions/upload-artifact@v4
@@ -58,13 +58,16 @@ jobs:
           name: allure-report
           path: allure-report
 
-
-      - name: Deploy report to Github Pages
+      #  Публикация на GitHub Pages
+      - name: Deploy to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gp-pagesnew
           publish_dir: allure-report
-          force_orphan: false
+          publish_branch: gh-pages
           keep_files: true
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'Обновление Allure отчета #${{ github.run_number }}'

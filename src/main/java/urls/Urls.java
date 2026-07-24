@@ -13,10 +13,8 @@ public class Urls {
     public final static String urlTeamForum = "https://log.finalsurge.com/TeamForum/default";
     public final static String urlDefaultFromMainLogo = "https://log.finalsurge.com/default.cshtml";
     public final static String urlFeedback = "https://log.finalsurge.com/Feedback.cshtml";
-    public final static String urlCustomerSupport = "https://log.finalsurge.com/CustSupport.cshtml";
     public final static String urlWorkoutReport = "https://log.finalsurge.com/WorkoutReport.cshtml";
     public final static String urlUserProfile = "https://log.finalsurge.com/UserProfile.cshtml";
-    public final static String urlDailyVitals = "https://log.finalsurge.com/DailyVitals.cshtml";
     public final static String urlTrainingPlans = "https://log.finalsurge.com/TrainingPlans.cshtml";
     public final static String urlTrainingPlansHistory = "https://log.finalsurge.com/TrainingPlansHist.cshtml";
 
