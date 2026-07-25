@@ -21,6 +21,7 @@
             <class name="tests.FeedBackTest"/>
             <class name="tests.DashboardTest"/>
             <class name="tests.DailyVitalsTest"/>
+            <class name="tests.WorkoutReportTest"/>
         </classes>
     </test>
 </suite>

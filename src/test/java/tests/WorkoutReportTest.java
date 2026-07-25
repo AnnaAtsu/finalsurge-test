@@ -54,7 +54,8 @@ public class WorkoutReportTest extends BaseTest {
         };
     }
 
-    @Test(testName = "Фильтрация отчетов по дате ", dataProvider = "weekDates", description = "При выборе даты данные на графиках и в таблице фильтруются по неделе")
+    @Test(testName = "Фильтрация отчетов по дате ", dataProvider = "weekDates", dependsOnMethods = "checkReportForListView",
+            description = "При выборе даты данные на графиках и в таблице фильтруются по неделе")
     @Severity(SeverityLevel.NORMAL)
     @Feature("WorkoutReport component")
     public void checkReportForWeek(LocalDate startDate, LocalDate endDate) {
@@ -75,7 +76,8 @@ public class WorkoutReportTest extends BaseTest {
         softAssert.assertEquals(title(), titleForWorkoutReportPage);
     }
 
-    @Test(testName = "Фильтрация отчетов по типу активности", dataProvider = "weekDates", description = "При выборе типа активности данные на графиках и в таблице фильтруются")
+    @Test(testName = "Фильтрация отчетов по типу активности", dataProvider = "weekDates", dependsOnMethods = "checkReportForWeek",
+            description = "При выборе типа активности данные на графиках и в таблице фильтруются")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("WorkoutReport component")
     public void checkReportForActivity(LocalDate startDate, LocalDate endDate) {
@@ -99,7 +101,8 @@ public class WorkoutReportTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(testName = "Группировка активностей", dataProvider = "weekDates", description = "График показывает длительность тренировок по месяцам / неделям")
+    @Test(testName = "Группировка активностей", dataProvider = "weekDates", dependsOnMethods = "checkReportForActivity",
+            description = "График показывает длительность тренировок по месяцам / неделям")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("WorkoutReport component")
     public void checkReportForActivityButton(LocalDate startDate, LocalDate endDate) {
@@ -122,7 +125,8 @@ public class WorkoutReportTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(testName = "Оставить комментарий для активности", dataProvider = "weekDates", description = "Открывается редактируемое окно     Workout Comment")
+    @Test(testName = "Оставить комментарий для активности", dataProvider = "weekDates", dependsOnMethods = "checkReportForActivityButton",
+            description = "Открывается редактируемое окно     Workout Comment")
     @Severity(SeverityLevel.MINOR)
     @Feature("WorkoutReport component")
     public void checkReportComment(LocalDate startDate, LocalDate endDate) {
