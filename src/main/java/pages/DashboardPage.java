@@ -33,13 +33,10 @@ public class DashboardPage extends BasePage {
     private final SelenideElement GARMIN_BUTTON = $("#GarminAddBtn");
     private final SelenideElement SIX_WEEKS_BUTTON = $x("//span[text()='6 weeks']");
     private final SelenideElement SIX_WEEK_FIELD = $x("//ul[@class='dropdown-menu']//a[text()='6 weeks (forward)']");
-
     private final SelenideElement WORKOUT_MENU = $x("//a[text()='Workouts']");
     private final ElementsCollection WORKOUT_MENU_ITEMS = $$x("//a[text()='Workouts']/following-sibling::ul//a");
-
     private final SelenideElement DAILY_VITALS_MENU = $x("//a[text()='Daily Vitals']");
     private final ElementsCollection DAILY_VITALS_ITEMS = $$x("//a[text()='Daily Vitals']/following-sibling::ul//a");
-
     private final SelenideElement GEAR_ROUTES_MENU = $x("//a[text()='Gear & Routes']");
     private final ElementsCollection GEAR_ROUTES_ITEMS = $$x("//a[text()='Gear & Routes']/following-sibling::ul//a");
     private final SelenideElement TRAINING_PLAN_MENU = $x("//a[text()='Training Plans']");

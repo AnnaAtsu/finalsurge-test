@@ -59,8 +59,7 @@ public class CalendarTest extends BaseTest {
         urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
-        calendarPage.goToNextMonth()
-                .goToNextMonthAndWaitForUpdate();
+        calendarPage.goToNextMonth().goToNextMonthAndWaitForUpdate();
 
     }
 
@@ -76,8 +75,7 @@ public class CalendarTest extends BaseTest {
         urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
-        calendarPage.goToPrevMonth()
-                .goToPrevMonthAndWaitForUpdate();
+        calendarPage.goToPrevMonth().goToPrevMonthAndWaitForUpdate();
 
     }
 
@@ -138,8 +136,6 @@ public class CalendarTest extends BaseTest {
         urlAssertion.verifyUrl(urlCalendar);
         softAssert.assertEquals(title(), titleForDashboardPage);
         softAssert.assertAll();
-        calendarPage.checkColorInWorkout("Bike", "#4dbd53")
-                .checkColorInWorkout("Swim", "#4dabf7")
-                .checkColorInWorkout("Run", "#8c8c8c");
+        calendarPage.checkColorInWorkout("Bike", "#4dbd53").checkColorInWorkout("Swim", "#4dabf7").checkColorInWorkout("Run", "#8c8c8c");
     }
 }

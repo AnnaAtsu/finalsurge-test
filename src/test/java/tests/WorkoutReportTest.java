@@ -26,7 +26,9 @@ public class WorkoutReportTest extends BaseTest {
         };
     }
 
-    @Test(testName = "Отображение сводки тренировок за период", dataProvider = "defaultDates", description = "Таблица с агрегированными данными: кол-во тренировок, общая дистанция, длительность")
+    @Test(testName = "Отображение сводки тренировок за период",
+            dataProvider = "defaultDates",
+            description = "Таблица с агрегированными данными: кол-во тренировок, общая дистанция, длительность")
     @Severity(SeverityLevel.BLOCKER)
     @Feature("WorkoutReport component")
     public void checkReportForListView(LocalDate startDate, LocalDate endDate) {
@@ -54,7 +56,9 @@ public class WorkoutReportTest extends BaseTest {
         };
     }
 
-    @Test(testName = "Фильтрация отчетов по дате ", dataProvider = "weekDates", dependsOnMethods = "checkReportForListView",
+    @Test(testName = "Фильтрация отчетов по дате ",
+            dataProvider = "weekDates",
+            dependsOnMethods = "checkReportForListView",
             description = "При выборе даты данные на графиках и в таблице фильтруются по неделе")
     @Severity(SeverityLevel.NORMAL)
     @Feature("WorkoutReport component")
@@ -76,7 +80,9 @@ public class WorkoutReportTest extends BaseTest {
         softAssert.assertEquals(title(), titleForWorkoutReportPage);
     }
 
-    @Test(testName = "Фильтрация отчетов по типу активности", dataProvider = "weekDates", dependsOnMethods = "checkReportForWeek",
+    @Test(testName = "Фильтрация отчетов по типу активности",
+            dataProvider = "weekDates",
+            dependsOnMethods = "checkReportForWeek",
             description = "При выборе типа активности данные на графиках и в таблице фильтруются")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("WorkoutReport component")
@@ -101,7 +107,9 @@ public class WorkoutReportTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(testName = "Группировка активностей", dataProvider = "weekDates", dependsOnMethods = "checkReportForActivity",
+    @Test(testName = "Группировка активностей",
+            dataProvider = "weekDates",
+            dependsOnMethods = "checkReportForActivity",
             description = "График показывает длительность тренировок по месяцам / неделям")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("WorkoutReport component")
@@ -125,7 +133,9 @@ public class WorkoutReportTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(testName = "Оставить комментарий для активности", dataProvider = "weekDates", dependsOnMethods = "checkReportForActivityButton",
+    @Test(testName = "Оставить комментарий для активности",
+            dataProvider = "weekDates",
+            dependsOnMethods = "checkReportForActivityButton",
             description = "Открывается редактируемое окно     Workout Comment")
     @Severity(SeverityLevel.MINOR)
     @Feature("WorkoutReport component")

@@ -17,8 +17,8 @@ import static urls.Urls.urlTrainingPlansHistory;
 public class TrainingPlansTest extends BaseTest {
 
 
-    @Test(testName = "Отображение списка доступных планов "
-            , description = "Список содержит карточки планов с названием, длительностью и кратким описанием")
+    @Test(testName = "Отображение списка доступных планов ",
+            description = "Список содержит карточки планов с названием, длительностью и кратким описанием")
     @Severity(SeverityLevel.NORMAL)
     @Feature("TrainingPlans component")
     public void checkTrainingPlansPage() {
@@ -34,8 +34,8 @@ public class TrainingPlansTest extends BaseTest {
         textAssertion.isTextDisplayed(TRAINING_PLAN_MESSAGE);
     }
 
-    @Test(testName = "Просмотр деталей планов  "
-            , description = " При клике открывается страница с полными описаниями, длительностью и тренировками")
+    @Test(testName = "Просмотр деталей планов  ",
+            description = " При клике открывается страница с полными описаниями, длительностью и тренировками")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("TrainingPlans component")
     public void checkTrainingPlansDetail() {
@@ -52,8 +52,8 @@ public class TrainingPlansTest extends BaseTest {
         trainingPlansPage.verifyTrainingPlans();
     }
 
-    @Test(testName = "Просмотр деталей конкретного плана"
-            , description = " При клике открывается страница с полными описаниями, длительностью и т.д.")
+    @Test(testName = "Просмотр деталей конкретного плана",
+            description = " При клике открывается страница с полными описаниями, длительностью и т.д.")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("TrainingPlans component")
     public void checkTrainingPlansDetaiItem() {

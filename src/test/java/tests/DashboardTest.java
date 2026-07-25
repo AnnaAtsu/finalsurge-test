@@ -30,7 +30,8 @@ public class DashboardTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(testName = "Навигационное меню: все пункты кликабельны", description = "Каждый пункт меню ведёт на соответствующую страницу (Calendar, Workouts, Reports и т.д.)")
+    @Test(testName = "Навигационное меню: все пункты кликабельны",
+            description = "Каждый пункт меню ведёт на соответствующую страницу (Calendar, Workouts, Reports и т.д.)")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("Dashboard component")
     public void checkClickNavMenu() {
@@ -113,7 +114,8 @@ public class DashboardTest extends BaseTest {
         dashboardPage.verifyDropdownMenuShouldBeVisibleAfterClick();
     }
 
-    @Test(testName = "Навигационная панель: дропдаун Message Board", description = "Страница TeamForum: красное инфосообщение на странице об органичении доступа")
+    @Test(testName = "Навигационная панель: дропдаун Message Board"
+            , description = "Страница TeamForum: красное инфосообщение на странице об органичении доступа")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("Dashboard component")
     public void checkMessageBoardPage() {

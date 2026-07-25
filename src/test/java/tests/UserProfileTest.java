@@ -4,7 +4,6 @@ import com.github.javafaker.Faker;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import org.apache.logging.log4j.core.config.Order;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -29,8 +28,8 @@ public class UserProfileTest extends BaseTest {
         };
     }
 
-    @Test(testName = "Просмотр профиля "
-            , description = "Отображаются: имя, email, фото профиля")
+    @Test(testName = "Просмотр профиля ",
+            description = "Отображаются: имя, email, фото профиля")
     @Severity(SeverityLevel.BLOCKER)
     @Feature("UserProfile component")
     public void checkUserProfilePage() {
@@ -47,9 +46,9 @@ public class UserProfileTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(testName = "Редактирование имени и фамилии"
-            , dataProvider = "validUserData"
-            , description = "После сохранения новое имя отображается в профиле и шапке сайта")
+    @Test(testName = "Редактирование имени и фамилии",
+            dataProvider = "validUserData",
+            description = "После сохранения новое имя отображается в профиле и шапке сайта")
     @Severity(SeverityLevel.BLOCKER)
     @Feature("UserProfile component")
     public void checkEditNameSurname(String firstName, String lastName) {
@@ -63,8 +62,8 @@ public class UserProfileTest extends BaseTest {
                 .verifyNameAfterEdit(firstName, lastName);
     }
 
-    @Test(testName = "Редактирование User Settings тип тренировки"
-            , description = "Выбор типа тренировки")
+    @Test(testName = "Редактирование User Settings тип тренировки",
+            description = "Выбор типа тренировки")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("UserProfile component")
     public void checkSettingsTrainningChange() {
@@ -79,8 +78,8 @@ public class UserProfileTest extends BaseTest {
                 .verifySelectedSport(expectedSport);
     }
 
-    @Test(testName = "Редактирование User Settings язык"
-            , description = "Выбор языка типа тренировки")
+    @Test(testName = "Редактирование User Settings язык",
+            description = "Выбор языка типа тренировки")
     @Severity(SeverityLevel.NORMAL)
     @Feature("UserProfile component")
     public void checkSettingsLanguageChange() {
@@ -97,8 +96,8 @@ public class UserProfileTest extends BaseTest {
                 .selectLanguageEnglish();
     }
 
-    @Test(testName = "Редактирование Calendar Sync"
-            , description = "Чекбоксы on/off - сохранить изменения ")
+    @Test(testName = "Редактирование Calendar Sync",
+            description = "Чекбоксы on/off - сохранить изменения ")
     @Severity(SeverityLevel.MINOR)
     @Feature("UserProfile component")
     public void checkCalendarSyncChange() {
@@ -112,8 +111,8 @@ public class UserProfileTest extends BaseTest {
                 .clickSaveCalendarSyncButton();
     }
 
-    @Test(testName = "Загрузка аватара"
-            , description = "После выбора файла изображение отображается в профиле")
+    @Test(testName = "Загрузка аватара",
+            description = "После выбора файла изображение отображается в профиле")
     @Severity(SeverityLevel.NORMAL)
     @Feature("UserProfile component")
     public void checkAvatarUploaded() {
@@ -127,8 +126,8 @@ public class UserProfileTest extends BaseTest {
                 .saveProfileImage();
     }
 
-    @Test(testName = "Настройки уведомлений (Notifications)"
-            , description = "Чекбоксы вкл/выкл сохраняются, настройки применяются ")
+    @Test(testName = "Настройки уведомлений (Notifications)",
+            description = "Чекбоксы вкл/выкл сохраняются, настройки применяются ")
     @Severity(SeverityLevel.MINOR)
     @Feature("UserProfile component")
     public void checkNotification() {
@@ -142,8 +141,8 @@ public class UserProfileTest extends BaseTest {
                 .saveSettings();
     }
 
-    @Test(testName = "Настройки приватности"
-            , description = "Настройки видимости профиля сохраняются")
+    @Test(testName = "Настройки приватности",
+            description = "Настройки видимости профиля сохраняются")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("UserProfile component")
     public void checkPrivacy() {

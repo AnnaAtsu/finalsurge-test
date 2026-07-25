@@ -33,8 +33,8 @@ public class DailyVitalsTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(testName = "Добавление ежедневных показателей"
-            , description = "Поля Weight, Resting HR, Sleep Hours и др. заполняются и сохраняются ")
+    @Test(testName = "Добавление ежедневных показателей",
+            description = "Поля Weight, Resting HR, Sleep Hours и др. заполняются и сохраняются ")
     @Severity(SeverityLevel.CRITICAL)
     @Feature("DailyVitals component")
     public void checkAddVital() {
@@ -53,8 +53,8 @@ public class DailyVitalsTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(testName = "Редактирование записи показателей"
-            , description = "После подтверждения запись отредактирована")
+    @Test(testName = "Редактирование записи показателей",
+            description = "После подтверждения запись отредактирована")
     @Severity(SeverityLevel.BLOCKER)
     @Feature("DailyVitals component")
     public void checkEdditVital() {
@@ -71,8 +71,8 @@ public class DailyVitalsTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(testName = "График изменения веса за период"
-            , description = "График отображает динамику веса по дням")
+    @Test(testName = "График изменения веса за период",
+            description = "График отображает динамику веса по дням")
     @Severity(SeverityLevel.MINOR)
     @Feature("DailyVitals component")
     public void checkWeightChange() {
@@ -84,8 +84,8 @@ public class DailyVitalsTest extends BaseTest {
                 .clickIconsExceptWeight();
     }
 
-    @Test(testName = "График изменения HR за период"
-            , description = "рафик отображает динамику Resting HR по дням ")
+    @Test(testName = "График изменения HR за период",
+            description = "рафик отображает динамику Resting HR по дням ")
     @Severity(SeverityLevel.MINOR)
     @Feature("DailyVitals component")
     public void checkRestingHRChange() {

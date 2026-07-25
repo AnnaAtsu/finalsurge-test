@@ -25,10 +25,8 @@ public class WorkoutsPage extends BasePage {
     private final SelenideElement WORKOUT_LIBRARY_BUTTON = $("#WorkoutLibAdd");
     private final SelenideElement FULL_WORKOUT_BUTTON = $("#FullAddBtn");
     private final SelenideElement WORKOUT_CALENDAR_INPUT = $("#WorkoutDate");
-    private final SelenideElement DATEPICKER_CALENDAR = $(".datepicker.dropdown-menu");
     private final SelenideElement SIDE_CALENDAR_MONTH_TITLE = $("#WorkoutDate");
     private final SelenideElement ADD_ONN_CALENDAR_ICON = $("span.add-on .icon-calendar");
-    private final SelenideElement ACTIVE_DAY = $(".day.active");
     private final SelenideElement ACTIVITY_SELECT = $("#ActivityType");
     private final SelenideElement ACTIVITY_SELECT_FILTER = $("#ActivityTypeFilter");
     private final SelenideElement WORKOUT_NAME_INPUT = $("#Name");
@@ -42,7 +40,6 @@ public class WorkoutsPage extends BasePage {
     private final SelenideElement UPDATE_WORKOUT_BUTTON = $x("//ul[@role='menu']//a[@class='full-edit' and text()='Update Workout']");
     private final SelenideElement DELETE_WORKOUT_BUTTON = $x("//ul[@role='menu']//a[@class='quick-delete' and text()='Delete']");
     private final SelenideElement COPY_WORKOUT_BUTTON = $x("//ul[@role='menu']//a[@class='quick-copy' and text()='Copy']");
-
     private final SelenideElement MODAL_WINDOW = $(".bootbox.modal.fade.in");
     private final SelenideElement OK_BUTTON_ON_MODAL_WINDOW = $x("//a[@class='btn btn-primary' and text()='OK']");
     private final SelenideElement CANCEL_BUTTON_ON_MODAL_WINDOW = $x("//a[@class='btn null' and text()='Cancel']");
@@ -56,7 +53,6 @@ public class WorkoutsPage extends BasePage {
         FULL_WORKOUT_BUTTON.shouldBe(visible);
         return this;
     }
-
 
     @Step("Нажать на кнопку быстрого добавления тренировки")
     public WorkoutsPage clickAddWorkout() {
@@ -77,26 +73,22 @@ public class WorkoutsPage extends BasePage {
     @Step("Проверка актуального месяца и года в боковом календаре")
     public WorkoutsPage checkActualMonthSideCalendar() {
         log.info("Проверка актуального месяца и года в боковом календаре");
-        String expected = LocalDate.now()
-                .format(DateTimeFormatter.ofPattern("MMMM yyyy", Locale.ENGLISH));
+        String expected = LocalDate.now().format(DateTimeFormatter.ofPattern("MMMM yyyy", Locale.ENGLISH));
         SIDE_CALENDAR_MONTH_TITLE.shouldBe(visible).shouldHave(text(expected));
         return this;
     }
 
-
     @Step("Выбрать тип активности")
     public WorkoutsPage selectActivityType(String activityType) {
         log.info("Выбрать тип активности" + activityType);
-        ACTIVITY_SELECT.shouldBe(visible)
-                .selectOption(activityType);
+        ACTIVITY_SELECT.shouldBe(visible).selectOption(activityType);
         return this;
     }
 
     @Step("Проверка отображения типа активности")
     public WorkoutsPage verifySelectedActivity(String subActivity) {
         log.info("Проверка отображения типа активности " + subActivity);
-        ACTIVITY_SELECT.shouldBe(visible)
-                .selectOptionContainingText(subActivity);
+        ACTIVITY_SELECT.shouldBe(visible).selectOptionContainingText(subActivity);
         return this;
     }
 

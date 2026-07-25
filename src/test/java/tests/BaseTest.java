@@ -72,10 +72,7 @@ public class BaseTest {
         urlAssertion = new UrlAssertion();
         trainingPlansPage = new TrainingPlansPage();
 
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
-                .screenshots(true)
-                .savePageSource(true)
-        );
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
     }
 
     @AfterMethod

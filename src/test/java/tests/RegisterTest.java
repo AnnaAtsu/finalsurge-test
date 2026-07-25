@@ -8,6 +8,7 @@ import io.qameta.allure.SeverityLevel;
 import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
 import static com.codeborne.selenide.Selenide.title;
 import static elements.Elements.*;
 import static urls.Urls.*;
@@ -39,7 +40,7 @@ public class RegisterTest extends BaseTest {
     public void checkValidMessageForEmailForRegistration() {
         SoftAssert softAssert = new SoftAssert();
         registerPage.openPage()
-                     .isPageOpened();
+                .isPageOpened();
         registerPage.createAccount(registerTestForEmailValidation);
         registerPage.pushRegisterButton();
         registerPage.verifyInvalidEmailErrorMessage();
@@ -77,7 +78,8 @@ public class RegisterTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(testName = "Проверка перехода на страницу логина по ссылке по страницы регистрации", description = "Проверка перехода на страницу логина")
+    @Test(testName = "Проверка перехода на страницу логина по ссылке по страницы регистрации",
+            description = "Проверка перехода на страницу логина")
     @Severity(SeverityLevel.NORMAL)
     @Feature("Register component")
     public void checkLoginLink() {

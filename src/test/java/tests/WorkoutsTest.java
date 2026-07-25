@@ -3,6 +3,7 @@ package tests;
 import dto.WorkOuts;
 import dto.WorkOutsFactory;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Flaky;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.testng.Tag;
@@ -237,6 +238,7 @@ public class WorkoutsTest extends BaseTest {
         textAssertion.isTextDisplayed(expectedWorkoutName);
     }
 
+    @Flaky
     @Tag("regress")
     @Test(testName = "Фильтрация тренировок по типу активности"
             , description = "При выборе типа активности отображаются тренировки этого типа")

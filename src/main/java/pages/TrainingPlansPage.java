@@ -14,7 +14,6 @@ import static urls.Urls.trainingPlansEndpoint;
 @Log4j2
 public class TrainingPlansPage extends BasePage {
     private final SelenideElement TRAINING_PLAN_HEADER = $("#AboutPlansHeader");
-    private final SelenideElement TRAINING_PLAN_CONTENT = $("#AboutPlansContent");
     private final SelenideElement FIND_PLAN_BUTTON = $x("//a[text()='Find a Training Plan!']");
     private final SelenideElement PLAN_HISTORY_BUTTON = $x("//button[text()='Plan History']");
     private final SelenideElement SPORT_SELECT = $("input[placeholder='All Sports']");

@@ -72,30 +72,23 @@ public class RegisterPage extends BasePage {
     @Step("Проверка валидации пустых полей при создании аккаунта")
     public void verifyEmptyFieldsErrorMessage() {
         log.info("Проверка валидации пустых полей при создании аккаунта");
-        EMPTY_FIELD_EMAIL_ERROR_MESSAGE.shouldBe(visible)
-                .shouldHave(text("This field is required."));
-        EMPTY_FIELD_LAST_NAME_ERROR_MESSAGE.shouldBe(visible)
-                .shouldHave(text("This field is required."));
-        EMPTY_FIELD_FIRST_NAME_ERROR_MESSAGE.shouldBe(visible)
-                .shouldHave(text("This field is required."));
-        EMPTY_FIELD_PASSWORD_ERROR_MESSAGE.shouldBe(visible)
-                .shouldHave(text("This field is required."));
-        EMPTY_FIELD_RE_PASSWORD_ERROR_MESSAGE.shouldBe(visible)
-                .shouldHave(text("This field is required."));
+        EMPTY_FIELD_EMAIL_ERROR_MESSAGE.shouldBe(visible).shouldHave(text("This field is required."));
+        EMPTY_FIELD_LAST_NAME_ERROR_MESSAGE.shouldBe(visible).shouldHave(text("This field is required."));
+        EMPTY_FIELD_FIRST_NAME_ERROR_MESSAGE.shouldBe(visible).shouldHave(text("This field is required."));
+        EMPTY_FIELD_PASSWORD_ERROR_MESSAGE.shouldBe(visible).shouldHave(text("This field is required."));
+        EMPTY_FIELD_RE_PASSWORD_ERROR_MESSAGE.shouldBe(visible).shouldHave(text("This field is required."));
     }
 
     @Step("Проверка валидации невалидного email при создании аккаунта")
     public void verifyInvalidEmailErrorMessage() {
         log.info("Проверка валидации невалидного email при создании аккаунта");
-        EMPTY_FIELD_EMAIL_ERROR_MESSAGE.shouldBe(visible)
-                .shouldHave(text("Please enter a valid email address."));
+        EMPTY_FIELD_EMAIL_ERROR_MESSAGE.shouldBe(visible).shouldHave(text("Please enter a valid email address."));
     }
 
     @Step("Проверка валидации слабого пароля при создании аккаунта")
     public void verifyWeakPasswordErrorMessage() {
         log.info("Проверка валидации слабого пароля при создании аккаунта");
-        WEAK_PASSWORD_ERROR_MESSAGE.shouldBe(visible)
-                .shouldHave(text(" *Please enter a Password value with at least one number, lower-case letter, and upper-case letter between 7 and 15 characters in length."));
+        WEAK_PASSWORD_ERROR_MESSAGE.shouldBe(visible).shouldHave(text(" *Please enter a Password value with at least one number, lower-case letter, and upper-case letter between 7 and 15 characters in length."));
     }
 
     @Step("Нажать на ссылку Already have an account? Login here.")

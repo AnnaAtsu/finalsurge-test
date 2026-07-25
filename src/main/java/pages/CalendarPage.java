@@ -85,7 +85,6 @@ public class CalendarPage extends BasePage {
         return this;
     }
 
-
     @Step("Проверка актуального месяца и года в календаре")
     public void verifyCurrentMonthAndYear() {
         log.info("Проверка актуального месяца и года в календаре");
